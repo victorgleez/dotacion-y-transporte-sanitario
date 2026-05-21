@@ -1088,7 +1088,7 @@ function renderQuestions(){
     const card=document.createElement('div');
     card.className='qcard';
     card.id='card-'+i;
-    let optsHTML=shuffOpts.map((o,si)=>`<button class="opt" id="opt-${i}-${si}" onclick="answer(${i},${si},${o.orig},${q.c})" data-idx="${si}">${o.text}</button>`).join('');
+    let optsHTML=shuffOpts.map((o,si)=>`<button class="opt" id="opt-${i}-${si}" onclick="answer(${i},${si},${o.orig},${q.c})" data-orig="${o.orig}">${o.text}</button>`).join('');
     card.innerHTML=`<div class="qnum">Pregunta ${i+1} de ${currentQuestions.length}</div>
 <span class="ud-badge ${udColors[q.ud]}">${udNames[q.ud]}</span>
 <div class="qtxt">${q.q}</div>
@@ -1106,19 +1106,14 @@ function answer(qIdx,selIdx,selOrig,correctOrig){
   const isCorrect=selOrig===correctOrig;
   if(isCorrect) correct++;
   else wrong++;
-  // find correct option index in shuffled array
   card.querySelectorAll('.opt').forEach((btn,si)=>{
-    const origIdx=parseInt(btn.getAttribute('data-idx')||si);
-    // find original index from button id
     btn.disabled=true;
-    const btnIdx=parseInt(btn.id.split('-')[2]);
-    if(btnIdx===selIdx){
-      btn.classList.add(isCorrect?'correct':'wrong');
-    }
-    // reveal correct
-    if(origIdx===correctOrig){
-      btn.classList.add(isCorrect?'correct':'reveal');
-    }
+    const origIdx=parseInt(btn.getAttribute('data-orig'));
+    const isSelected=(parseInt(btn.id.split('-')[2])===selIdx);
+    const isCorrectBtn=(origIdx===correctOrig);
+    if(isSelected && isCorrect) btn.classList.add('correct');
+    else if(isSelected && !isCorrect) btn.classList.add('wrong');
+    if(!isSelected && isCorrectBtn) btn.classList.add('reveal');
   });
   document.getElementById('exp-'+qIdx).classList.add('show');
   updateScore();
