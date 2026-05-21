@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOTACIÓN SANITARIA — Guía de estudio Examen 22 Mayo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e8e8e8; line-height: 1.6; }
+  
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+  }
+  .header h1 { font-size: 1.8em; color: #e94560; letter-spacing: 2px; }
+  .header p { color: #a0a0c0; margin-top: 8px; font-size: 0.95em; }
+  
+  .exam-box {
+    background: #1a0a0a;
+    border: 2px solid #e94560;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 20px;
+  }
+  .exam-box h2 { color: #e94560; font-size: 1.1em; margin-bottom: 12px; }
+  .exam-box .formula {
+    background: #0a0a1a;
+    border-left: 4px solid #4fc3f7;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-family: monospace;
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #4fc3f7;
+  }
+
+  .schedule {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    margin: 20px;
+    overflow: hidden;
+  }
+  .schedule h2 { background: #161b22; padding: 14px 20px; color: #58a6ff; font-size: 1em; border-bottom: 1px solid #30363d; }
+  .schedule-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #1c2128;
+    gap: 14px;
+  }
+  .schedule-row:last-child { border-bottom: none; }
+  .time-badge { background: #21262d; padding: 4px 10px; border-radius: 6px; font-size: 0.8em; color: #8b949e; white-space: nowrap; min-width: 110px; text-align: center; }
+  .priority-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .p-red { background: #e94560; }
+  .p-orange { background: #ff9800; }
+  .p-yellow { background: #ffc107; }
+  .ud-name { font-size: 0.9em; }
+
+  .section {
+    margin: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #30363d;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-header h2 { font-size: 1em; flex: 1; }
+  .section-header .badge {
+    font-size: 0.75em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .section-content { padding: 0 20px 20px; display: none; }
+  .section-content.open { display: block; }
+  
+  /* Color themes per section */
+  .s-problemas .section-header { background: #1a0014; border-bottom: 2px solid #e91e8c; }
+  .s-problemas .section-header h2 { color: #e91e8c; }
+  .s-problemas { border-color: #e91e8c; }
+  
+  .s-ud1 .section-header { background: #001a10; border-bottom: 2px solid #00c853; }
+  .s-ud1 .section-header h2 { color: #00c853; }
+  .s-ud1 { border-color: #00c853; }
+
+  .s-ud2 .section-header { background: #001520; border-bottom: 2px solid #00b0ff; }
+  .s-ud2 .section-header h2 { color: #00b0ff; }
+  .s-ud2 { border-color: #00b0ff; }
+
+  .s-ud3 .section-header { background: #1a1000; border-bottom: 2px solid #ff9800; }
+  .s-ud3 .section-header h2 { color: #ff9800; }
+  .s-ud3 { border-color: #ff9800; }
+
+  .s-ud4 .section-header { background: #0a0a1a; border-bottom: 2px solid #7c4dff; }
+  .s-ud4 .section-header h2 { color: #7c4dff; }
+  .s-ud4 { border-color: #7c4dff; }
+
+  .s-ud5 .section-header { background: #1a0a00; border-bottom: 2px solid #ff6d00; }
+  .s-ud5 .section-header h2 { color: #ff6d00; }
+  .s-ud5 { border-color: #ff6d00; }
+
+  .s-ud6 .section-header { background: #001a1a; border-bottom: 2px solid #00bfa5; }
+  .s-ud6 .section-header h2 { color: #00bfa5; }
+  .s-ud6 { border-color: #00bfa5; }
+
+  .s-extra .section-header { background: #1a001a; border-bottom: 2px solid #ea80fc; }
+  .s-extra .section-header h2 { color: #ea80fc; }
+  .s-extra { border-color: #ea80fc; }
+
+  h3 { color: #c9d1d9; margin: 16px 0 8px; font-size: 0.95em; border-bottom: 1px solid #21262d; padding-bottom: 6px; }
+  h4 { color: #8b949e; margin: 12px 0 6px; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; }
+  
+  .formula-box {
+    background: #0d1117;
+    border: 1px solid #4fc3f7;
+    border-left: 4px solid #4fc3f7;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-family: monospace;
+    font-size: 0.95em;
+    margin: 12px 0;
+    color: #4fc3f7;
+  }
+  .formula-box .comment { color: #8b949e; font-style: italic; font-family: sans-serif; font-size: 0.85em; margin-top: 4px; }
+
+  .alert {
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 0.88em;
+  }
+  .alert-red { background: #1a0808; border: 1px solid #e94560; color: #ff8080; }
+  .alert-blue { background: #080d1a; border: 1px solid #4fc3f7; color: #80d4ff; }
+  .alert-green { background: #081a0a; border: 1px solid #00c853; color: #80ff9a; }
+  .alert-yellow { background: #1a1400; border: 1px solid #ffc107; color: #ffe580; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.85em;
+  }
+  th { background: #161b22; color: #8b949e; padding: 8px 12px; text-align: left; border-bottom: 2px solid #30363d; }
+  td { padding: 7px 12px; border-bottom: 1px solid #1c2128; vertical-align: top; }
+  tr:hover td { background: #0d1117; }
+  
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    margin: 2px;
+    font-weight: bold;
+  }
+  .tag-red { background: #2d0a0a; color: #e94560; border: 1px solid #e94560; }
+  .tag-green { background: #0a2d0a; color: #00c853; border: 1px solid #00c853; }
+  .tag-blue { background: #0a1a2d; color: #4fc3f7; border: 1px solid #4fc3f7; }
+  .tag-orange { background: #2d1a00; color: #ff9800; border: 1px solid #ff9800; }
+  .tag-purple { background: #1a0a2d; color: #b39ddb; border: 1px solid #b39ddb; }
+
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 3px 0; font-size: 0.88em; }
+  p { font-size: 0.88em; margin: 6px 0; }
+
+  .mnemonic {
+    background: #1a1000;
+    border: 1px dashed #ffc107;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    font-size: 0.88em;
+  }
+  .mnemonic .title { color: #ffc107; font-weight: bold; font-size: 0.85em; margin-bottom: 6px; }
+
+  .problema-ejemplo {
+    background: #0a0d12;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 12px 0;
+  }
+  .problema-ejemplo .enunciado { color: #c9d1d9; margin-bottom: 12px; font-size: 0.87em; }
+  .problema-ejemplo .paso { display: flex; gap: 10px; margin: 6px 0; align-items: flex-start; }
+  .problema-ejemplo .num { background: #21262d; color: #58a6ff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; flex-shrink: 0; font-weight: bold; margin-top: 1px; }
+  .problema-ejemplo .texto { font-size: 0.87em; color: #e8e8e8; font-family: monospace; }
+  .problema-ejemplo .resultado { background: #0a2010; border: 1px solid #00c853; border-radius: 6px; padding: 8px 12px; margin-top: 10px; font-weight: bold; color: #00c853; font-family: monospace; font-size: 0.9em; }
+
+  .toggle-icon { font-size: 1.2em; transition: transform 0.2s; }
+  .open .toggle-icon { transform: rotate(180deg); }
+
+  @media (max-width: 600px) {
+    .schedule-row { flex-wrap: wrap; }
+    .time-badge { min-width: auto; }
+    table { font-size: 0.78em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📋 DOTACIÓN SANITARIA</h1>
+  <p>Guía de estudio intensivo · Examen 22 de Mayo · Preparada desde el temario oficial</p>
+</div>
+
+<!-- EXAM INFO BOX -->
+<div class="exam-box">
+  <h2>⚠️ FORMATO DEL EXAMEN</h2>
+  <table>
+    <tr><th>Parte</th><th>Contenido</th><th>Puntuación</th></tr>
+    <tr><td>Parte 1</td><td>60 preguntas tipo test</td><td>Penaliza: errores÷3</td></tr>
+    <tr><td>Parte 2</td><td>2 problemas + reconocimiento de material</td><td>Justificar respuesta</td></tr>
+  </table>
+  <div class="formula">Nota = (Aciertos - Errores/3) / 60 × 10</div>
+  <div class="alert alert-red">🚨 ESTRATEGIA: Si no estás seguro, NO contestes. Cada 3 errores = 1 acierto perdido</div>
+  <div class="alert alert-blue">📝 Los 3 tipos de problema posibles: Cálculo de oxígeno · Control de almacén · Diluciones</div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="schedule">
+  <h2>⏱️ PLAN DE ATAQUE HOY — 21 MAYO</h2>
+  <div class="schedule-row">
+    <div class="time-badge">15:00 – 16:00</div>
+    <div class="priority-dot p-red"></div>
+    <div class="ud-name"><strong>BLOQUE A:</strong> Problemas y fórmulas (oxígeno + almacén + diluciones) — Practícalos todos</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">16:00 – 17:00</div>
+    <div class="priority-dot p-red"></div>
+    <div class="ud-name"><strong>UD1:</strong> Tipos de transporte sanitario + normativa RD 836/2012</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">17:00 – 18:30</div>
+    <div class="priority-dot p-red"></div>
+    <div class="ud-name"><strong>UD2:</strong> Dotación sanitaria por tipo de vehículo (SVB/SVA/VIR/aéreo/marítimo)</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">18:30 – 19:15</div>
+    <div class="priority-dot p-orange"></div>
+    <div class="ud-name"><strong>UD3:</strong> Mantenimiento básico de la dotación</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">19:15 – 20:00</div>
+    <div class="priority-dot p-red"></div>
+    <div class="ud-name"><strong>UD4:</strong> Control de existencias y materiales (stock, almacén)</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">20:00 – 20:45</div>
+    <div class="priority-dot p-orange"></div>
+    <div class="ud-name"><strong>UD5:</strong> Limpieza, desinfección y esterilización</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">20:45 – 21:30</div>
+    <div class="priority-dot p-orange"></div>
+    <div class="ud-name"><strong>UD6:</strong> Documentación sanitaria y calidad</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">21:30 – 22:00</div>
+    <div class="priority-dot p-orange"></div>
+    <div class="ud-name"><strong>EXTRA:</strong> Dispositivos supraglóticos + Imágenes complementarias</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">22:00 – 22:30</div>
+    <div class="priority-dot p-red"></div>
+    <div class="ud-name"><strong>REPASO ERRATAS:</strong> Leer todas las correcciones del profesor (¡entran en examen!)</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">22:30 – 23:00</div>
+    <div class="priority-dot p-yellow"></div>
+    <div class="ud-name"><strong>Repaso express:</strong> Fórmulas + tablas clave de memoria</div>
+  </div>
+  <div class="schedule-row">
+    <div class="time-badge">6:10 – 7:30</div>
+    <div class="priority-dot p-red"></div>
+    <div class="ud-name"><strong>Mañana:</strong> Repaso de fórmulas, tabla ambulancias y 5 errores más probables</div>
+  </div>
+</div>
+
+
+<!-- ======================== BLOQUE A: PROBLEMAS ======================== -->
+<div class="section s-problemas" id="sec-problemas">
+  <div class="section-header" onclick="toggle('sec-problemas')">
+    <h2>🔢 BLOQUE A — PROBLEMAS Y FÓRMULAS (ESTUDIAR PRIMERO)</h2>
+    <span class="badge tag-red">CRÍTICO · Parte 2 del examen</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content open">
+    
+    <!-- PROBLEMA 1: OXÍGENO -->
+    <h3>🫧 PROBLEMA TIPO 1: CÁLCULO DE OXÍGENO</h3>
+    <div class="formula-box">
+      <strong>PASO 1:</strong> Volumen disponible = Capacidad × (Presión real − Presión residual)<br>
+      <strong>PASO 2:</strong> Tiempo (min) = Volumen disponible ÷ Flujo (L/min)<br>
+      <strong>PASO 3:</strong> Convertir minutos a horas:min (ej: 197 min → 3h 17min)
+      <div class="comment">⚠️ OJO: 0.28 horas NO son 28 minutos → 0.28 × 60 = 17 minutos</div>
+    </div>
+    <div class="alert alert-yellow">Si el enunciado NO da presión residual → usar 20 bares por defecto</div>
+
+    <div class="problema-ejemplo">
+      <div class="enunciado"><strong>Ejemplo oficial del examen:</strong> Botella 80L, Presión manómetro 55 bar, Presión residual 18 bar, Flujo 15 L/min. ¿Duración máxima del viaje?</div>
+      <div class="paso"><div class="num">1</div><div class="texto">Volumen = 80 × (55 − 18) = 80 × 37 = 2.960 L</div></div>
+      <div class="paso"><div class="num">2</div><div class="texto">Tiempo = 2.960 ÷ 15 = 197,3 min</div></div>
+      <div class="paso"><div class="num">3</div><div class="texto">197 min = 3h + (197 − 180) = 3h + 17min</div></div>
+      <div class="resultado">✅ RESPUESTA: 3 horas y 17 minutos</div>
+    </div>
+
+    <div class="problema-ejemplo">
+      <div class="enunciado"><strong>Práctica:</strong> Botella 3L, manómetro 200 bar, sin presión residual indicada, flujo 5 L/min</div>
+      <div class="paso"><div class="num">1</div><div class="texto">Volumen = 3 × (200 − 20) = 3 × 180 = 540 L</div></div>
+      <div class="paso"><div class="num">2</div><div class="texto">Tiempo = 540 ÷ 5 = 108 min = 1h 48min</div></div>
+      <div class="resultado">✅ RESPUESTA: 1 hora y 48 minutos</div>
+    </div>
+
+    <div class="problema-ejemplo">
+      <div class="enunciado"><strong>Práctica 2 (del temario UD2):</strong> Botella 3L, presión 200 bar, flujo 5 L/min → ¿cuánto tiempo?</div>
+      <div class="paso"><div class="num">1</div><div class="texto">Litros = 3 × 200 = 600 L (sin residual indicada en este ejemplo)</div></div>
+      <div class="paso"><div class="num">2</div><div class="texto">Tiempo = 600 ÷ 5 = 120 min = 2 horas</div></div>
+      <div class="resultado">✅ RESPUESTA: 120 minutos (2 horas)</div>
+    </div>
+
+    <!-- PROBLEMA 2: ALMACÉN -->
+    <h3>📦 PROBLEMA TIPO 2: CONTROL DE ALMACÉN</h3>
+    <div class="formula-box">
+      <strong>Stock de seguridad</strong> = Stock mínimo + % indicado sobre stock mínimo<br>
+      <strong>Punto de Pedido</strong> = Stock seguridad + (Consumo diario × Días de entrega)<br>
+      <strong>Unidades a pedir</strong> = Stock máximo − Stock de seguridad
+    </div>
+
+    <div class="problema-ejemplo">
+      <div class="enunciado"><strong>Ejemplo oficial:</strong> Stock mínimo 10 ud. Margen de seguridad 20% sobre stock mínimo. Almacén máx 144 ud. Tiempo entrega 5 días. Consumo 2 ud/día.</div>
+      <div class="paso"><div class="num">1</div><div class="texto">Stock seguridad = 10 + (20% × 10) = 10 + 2 = 12 unidades</div></div>
+      <div class="paso"><div class="num">2</div><div class="texto">Punto de Pedido = 12 + (2 × 5) = 12 + 10 = 22 unidades</div></div>
+      <div class="paso"><div class="num">3</div><div class="texto">Unidades a pedir = 144 − 12 = 132 unidades</div></div>
+      <div class="resultado">✅ Pedir cuando queden 22 ud · Pedir 132 ud para llenar el almacén</div>
+    </div>
+
+    <!-- PROBLEMA 3: DILUCIONES -->
+    <h3>🧪 PROBLEMA TIPO 3: DILUCIONES</h3>
+    <div class="formula-box">
+      <strong>V1 × C1 = V2 × C2</strong><br>
+      V1 = volumen del concentrado que necesitas | C1 = concentración del concentrado<br>
+      V2 = volumen final deseado | C2 = concentración final deseada<br>
+      <strong>Agua a añadir</strong> = V2 − V1
+    </div>
+
+    <div class="problema-ejemplo">
+      <div class="enunciado"><strong>Ejemplo oficial:</strong> Preparar 100 ml de alcohol 70º usando alcohol 96º y agua destilada.</div>
+      <div class="paso"><div class="num">1</div><div class="texto">V1 × 96 = 100 × 70</div></div>
+      <div class="paso"><div class="num">2</div><div class="texto">V1 = (100 × 70) ÷ 96 = 7000 ÷ 96 = 72,9 ≈ 73 ml de alcohol 96º</div></div>
+      <div class="paso"><div class="num">3</div><div class="texto">Agua destilada = 100 − 73 = 27 ml</div></div>
+      <div class="resultado">✅ Mezclar 73 ml de alcohol 96º + 27 ml de agua destilada</div>
+    </div>
+
+    <div class="problema-ejemplo">
+      <div class="enunciado"><strong>Práctica:</strong> Preparar 5 L de desinfectante al 3% con concentrado al 20%</div>
+      <div class="paso"><div class="num">1</div><div class="texto">V1 × 20 = 5000 × 3</div></div>
+      <div class="paso"><div class="num">2</div><div class="texto">V1 = 15000 ÷ 20 = 750 ml del concentrado</div></div>
+      <div class="paso"><div class="num">3</div><div class="texto">Agua = 5000 − 750 = 4250 ml</div></div>
+      <div class="resultado">✅ 750 ml de concentrado + 4250 ml de agua</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ======================== UD1 ======================== -->
+<div class="section s-ud1" id="sec-ud1">
+  <div class="section-header" onclick="toggle('sec-ud1')">
+    <h2>🚑 UD1 — TIPOS DE TRANSPORTE SANITARIO</h2>
+    <span class="badge tag-green">RD 836/2012</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content open">
+
+    <h3>📜 Normativa clave</h3>
+    <div class="alert alert-blue">
+      <strong>RD 836/2012</strong> (25 de mayo) = Normativa VIGENTE · Establece características técnicas, equipamiento y dotación de personal de vehículos de transporte sanitario por carretera<br>
+      ⚠️ El RD 619/1998 está DEROGADO (pero puede aparecer en test para confundirte)
+    </div>
+    <div class="alert alert-yellow">
+      En la Comunidad de Madrid también aplica el <strong>Decreto 128/1996</strong> para inspecciones técnicas sanitarias (ITS)
+    </div>
+
+    <h3>🏷️ Clasificación por titularidad</h3>
+    <table>
+      <tr><th>Tipo</th><th>Definición</th><th>Ejemplo</th></tr>
+      <tr><td><span class="tag tag-blue">PÚBLICO</span></td><td>Prestado por cuenta ajena con retribución. Empresas privadas con convenio con consejerías de sanidad</td><td>Ambulancias concertadas SUMMA</td></tr>
+      <tr><td><span class="tag tag-purple">PRIVADO</span></td><td>Prestado por entidades asistenciales o empresas privadas, sin retribución independiente</td><td>Mutuas, aseguradoras, ONG</td></tr>
+      <tr><td><span class="tag tag-orange">OFICIAL</span></td><td>Efectuado directamente por organismos públicos para sus finalidades</td><td>SAMUR-Protección Civil</td></tr>
+    </table>
+
+    <h3>🚌 Clasificación de ambulancias (RD 836/2012)</h3>
+    <table>
+      <tr><th>Tipo</th><th>Nombre</th><th>Personal mínimo</th><th>Uso</th></tr>
+      <tr><td><span class="tag tag-blue">A1</span></td><td>No asistencial individual</td><td>Conductor (cert. profesionalidad transporte sanitario)</td><td>Traslado pacientes que no requieren asistencia sanitaria</td></tr>
+      <tr><td><span class="tag tag-blue">A2</span></td><td>No asistencial colectiva</td><td>Conductor (cert. profesionalidad transporte sanitario)</td><td>Traslado de varios pacientes</td></tr>
+      <tr><td><span class="tag tag-green">B</span></td><td>Asistencial SVB</td><td>Conductor TES + Ayudante TES</td><td>Soporte Vital Básico</td></tr>
+      <tr><td><span class="tag tag-red">C</span></td><td>Asistencial SVA</td><td>Conductor TES + Enfermero (± Médico)</td><td>Soporte Vital Avanzado / UVI móvil</td></tr>
+    </table>
+    <div class="mnemonic">
+      <div class="title">🧠 MNEMOTECNIA: "A-A-B-C = No-No-Básico-Crítico"</div>
+      A1/A2 = no asistenciales · B = básico (2 TES) · C = crítico (TES + Enfermero ± Médico)
+    </div>
+
+    <h3>🚁 Otros vehículos de transporte sanitario terrestre</h3>
+    <div class="alert alert-red">
+      <strong>VIR (Vehículo Intervención Rápida)</strong> = también llamado VAM (Vehículo de Apoyo Médico)<br>
+      ⚠️ NO es ambulancia (no transporta pacientes). Traslada sanitarios y material al lugar del incidente.
+    </div>
+    <ul>
+      <li><strong>VIR:</strong> Material avanzado, sin camilla de paciente. Triaje en múltiples víctimas.</li>
+      <li><strong>Urgencias todo terreno:</strong> Tracción total. Para zonas de difícil acceso. Transporta pacientes en camilla.</li>
+      <li><strong>Vehículos de rescate:</strong> Para primeras intervenciones. No transportan pacientes.</li>
+      <li><strong>Ambulancias psiquiátricas:</strong> Sin O₂. Medicación sedante. Legalmente tipo A1 o B.</li>
+      <li><strong>SVA pediátrico:</strong> NO es categoría legal. Se usan ambulancias B o C. Para neonatos → incubadora en tipo C.</li>
+    </ul>
+
+    <h3>✈️ Transporte según distancia</h3>
+    <table>
+      <tr><th>Distancia</th><th>Medio</th></tr>
+      <tr><td>&lt; 150 km</td><td>Ambulancia o helicóptero sanitario</td></tr>
+      <tr><td>150 – 300 km</td><td>Helicóptero sanitario</td></tr>
+      <tr><td>300 – 1.000 km</td><td>Avión sanitario</td></tr>
+      <tr><td>&gt; 1.000 km</td><td>Avión de línea regular adaptado</td></tr>
+      <tr><td>Casos especiales</td><td>Barco o ferrocarril</td></tr>
+    </table>
+
+    <h3>📐 Dimensiones del habitáculo (anchos entre paredes)</h3>
+    <div class="alert alert-yellow">
+      Unidades NO asistenciales (A1/A2): mínimo <strong>1,30 metros</strong> de anchura (aunque en general suelen ser mayores)
+    </div>
+  </div>
+</div>
+
+
+<!-- ======================== UD2 ======================== -->
+<div class="section s-ud2" id="sec-ud2">
+  <div class="section-header" onclick="toggle('sec-ud2')">
+    <h2>🏥 UD2 — DOTACIÓN SANITARIA POR TIPO DE VEHÍCULO</h2>
+    <span class="badge tag-blue">Material SVB · SVA · VIR · Aéreo · Marítimo</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content">
+
+    <h3>📄 Documentación obligatoria en TODAS las ambulancias (RD 836/2012)</h3>
+    <table>
+      <tr><th>Documentos obligatorios</th><th>Equipamiento del vehículo</th><th>Célula sanitaria</th></tr>
+      <tr>
+        <td>
+          • Registro desinfecciones del habitáculo y equipamiento<br>
+          • Libro de reclamaciones<br>
+          • Registro de solicitudes y prestaciones<br>
+          • Registro de revisiones del material
+        </td>
+        <td>
+          • Neumáticos de invierno (nov-mar) o cadenas<br>
+          • Herramientas para atención del vehículo<br>
+          • Señales triangulares de peligro<br>
+          • <strong>Extintor</strong> (equip. del VEHÍCULO, no sanitario)
+        </td>
+        <td>
+          • Armarios para material e instrumental<br>
+          • Cuña y botella irrompibles
+        </td>
+      </tr>
+    </table>
+    <div class="alert alert-red">⚠️ TEST TRAMPA: El extintor NO es equipamiento SANITARIO, es equipamiento del vehículo</div>
+
+    <h3>💊 Medicamentos clave (grupos más relevantes)</h3>
+    <table>
+      <tr><th>Grupo</th><th>Ejemplos clave</th></tr>
+      <tr><td>Analgésicos</td><td>Morfina, ketorolaco</td></tr>
+      <tr><td>Antianginosos</td><td><strong>Nitroglicerina</strong></td></tr>
+      <tr><td>Antiarrítmicos</td><td><strong>Amiodarona, Digoxina</strong></td></tr>
+      <tr><td>Anticolinérgicos</td><td><strong>Atropina</strong></td></tr>
+      <tr><td>Benzodiacepinas</td><td>Diacepam, Midazolam</td></tr>
+      <tr><td>Broncodilatadores</td><td><strong>Salbutamol, Bromuro de ipratropio</strong></td></tr>
+      <tr><td>Sedantes/Anestésicos</td><td>Propofol, Etomidato, Fentanilo</td></tr>
+      <tr><td>Antagonistas</td><td>Flumazenilo (antagonista BZD, NO sedante), Naloxona</td></tr>
+      <tr><td>Corticoides</td><td>Metilprednisolona, Hidrocortisona</td></tr>
+    </table>
+    <div class="alert alert-red">⚠️ TEST TRAMPA: <strong>FLUMAZENILO</strong> = antagonista de benzodiacepinas, NO es anestésico sedante</div>
+
+    <h3>🩸 Sueros (clasificación)</h3>
+    <table>
+      <tr><th>Tipo</th><th>Ejemplos</th><th>Uso principal</th></tr>
+      <tr><td><span class="tag tag-blue">CRISTALOIDES</span></td><td>Suero fisiológico 0,9% · Suero glucosado 5% · Ringer lactato · Manitol</td><td>Deshidratación, shock, quemados</td></tr>
+      <tr><td><span class="tag tag-orange">COLOIDES</span></td><td>Hidroxietilalmidón (Voluven®) · Gelatina (Gelafundina®)</td><td>Shock hemorrágico, sangrado activo</td></tr>
+    </table>
+    <div class="alert alert-yellow">Gelatina y Hidroxietilalmidón = COLOIDES (expansores plasmáticos). Los demás = cristaloides</div>
+
+    <h3>🫧 OXÍGENO MEDICINAL — Sistema y cálculo</h3>
+    <div class="formula-box">
+      Si no se indica presión residual → usar <strong>20 bares</strong><br>
+      Litros O₂ = Capacidad (L) × (Presión manómetro − Presión residual)<br>
+      Tiempo (min) = Litros O₂ ÷ Flujo (L/min)
+    </div>
+    <p>Elementos del sistema: <strong>Central O₂ → Manorreductor → Manómetro → Caudalímetro → Humidificador → Sistema de administración</strong></p>
+    <p>La ambulancia debe tener capacidad &gt;4.000L de O₂ total, con reserva mínima de 2.000L</p>
+    <p>Botellas portátiles: 3-5L · Botellas fijas: 7-11L cada una</p>
+    <div class="alert alert-yellow">Manómetro en franja ROJA (30-50 bar) → cambiar botella por seguridad</div>
+
+    <h4>Sistemas de administración O₂</h4>
+    <ul>
+      <li><strong>Bajo flujo:</strong> Cánulas/gafas nasales</li>
+      <li><strong>Alto flujo:</strong> Mascarilla Venturi · Mascarilla con reservorio</li>
+    </ul>
+    <p>Saturación O₂ adecuada: ≥90% (bronquítico crónico: 85-90% es su habitual)</p>
+
+    <h3>🚑 Dotación SVB (Ambulancia tipo B)</h3>
+    <ul>
+      <li>Balón resucitador (Ambú) adulto + pediátrico con mascarillas</li>
+      <li>Sistema oxigenoterapia: 2 caudalímetros con humidificador, botellas O₂ &gt;4000L</li>
+      <li>Fonendoscopio para adultos</li>
+      <li>Camilla de traslado + silla de transporte</li>
+      <li>Material fungible básico: gasas, vendas, apósitos, guantes</li>
+      <li>Monitor-desfibrilador portátil</li>
+      <li>Esfigmomanómetro · Pulsioxímetro · Glucómetro</li>
+      <li>Collarines cervicales de distintos tamaños</li>
+      <li>Férulas de inmovilización</li>
+    </ul>
+
+    <h3>🏥 Dotación SVA adicional (sobre SVB)</h3>
+    <ul>
+      <li>Tomas de corriente 220V CA (para aparatos con motor en marcha)</li>
+      <li>Incubadora neonatal con O₂ y pulsioxímetro pediátrico</li>
+      <li>Monitor digital de TA (por ruidos en ambulancia)</li>
+      <li>Equipo de partos completo</li>
+      <li>Equipo de sondaje nasogástrico</li>
+      <li>Material estéril de pequeña cirugía (bisturí, pinzas, mosquitos, etc.)</li>
+      <li>Capnógrafo · Ventilador portátil · Bomba de perfusión</li>
+      <li>Equipo de drenaje pleural · Equipo de cricotirotomía</li>
+    </ul>
+
+    <h3>🚗 Dotación VIR</h3>
+    <ul>
+      <li>Botellas O₂ de 300 litros · Balones resucitación</li>
+      <li>Monitor-desfibrilador con marcapasos externo</li>
+      <li>Maletín respiratorio + maletín circulatorio</li>
+      <li>Camilla de cuchara · Férula de Kendrick · Collarines</li>
+      <li>Equipos NBQ (Nuclear, Biológico, Químico)</li>
+      <li>Mochila pediátrica · Mochila escalada</li>
+      <li>Laringoscopios · Sistemas drenaje torácico</li>
+      <li>Detector de gases tóxicos · Cascos de protección · Conos señalizadores</li>
+    </ul>
+    <div class="alert alert-red">⚠️ VIR: NO transporta pacientes. Solo material y sanitarios. En situaciones especiales PUEDE realizar traslado si es necesario.</div>
+
+    <h3>🚢 Transporte marítimo</h3>
+    <p>España tiene 2 buques sanitarios. Zona hospitalaria incluye: sala de curas, quirófano, UCI, lab, radiología, sala de aislamiento, camarotes.</p>
+    <p>Servicios: consultas radio/videoconferencia, desplazamiento personal sanitario, hospitalizaciones, evacuaciones a tierra.</p>
+
+    <h3>🦟 Ambulancias psiquiátricas</h3>
+    <ul>
+      <li>Externamente iguales que el resto de ambulancias</li>
+      <li>Interior acondicionado (sin elementos peligrosos)</li>
+      <li><strong>Sin botellas de O₂</strong></li>
+      <li>Dotación similar a SVB en material</li>
+      <li>Medicación específica: Propofol, Etomidato, Flumazenilo, Benzodiacepinas (Diacepam/Midazolam), Haloperidol, Tiopental Sódico</li>
+      <li>Legalmente: Tipo A1 o B según su inspección técnica</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ======================== UD3 ======================== -->
+<div class="section s-ud3" id="sec-ud3">
+  <div class="section-header" onclick="toggle('sec-ud3')">
+    <h2>🔧 UD3 — MANTENIMIENTO BÁSICO DE LA DOTACIÓN</h2>
+    <span class="badge tag-orange">Verificación · Revisión · Check diario</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content">
+
+    <h3>📋 Revisión al inicio de la jornada</h3>
+    <p>Antes de iniciar el servicio hay que revisar que el vehículo y el material están en condiciones óptimas. <strong>Nunca se sale de base sin verificar</strong>.</p>
+
+    <h4>Verificación del mobiliario</h4>
+    <ul>
+      <li>Cajones y contenido (orden y cantidad)</li>
+      <li>Silla de transporte · Lámpara de luz fría · Maletín rígido</li>
+      <li>Cubos de desecho · Dispensador de jabón y toallas de papel</li>
+      <li>Bala de oxígeno (presión y estado)</li>
+    </ul>
+
+    <h4>Verificación de la camilla</h4>
+    <ul>
+      <li>Sábana cambiada y limpia · Cinturones de sujeción operativos</li>
+      <li>Mecanismo de elevación/bloqueo correcto</li>
+    </ul>
+
+    <h4>Verificación del equipamiento electromédico</h4>
+    <ul>
+      <li>Monitor-desfibrilador: batería cargada, electrodos disponibles</li>
+      <li>Pulsioxímetro y glucómetro: funcionamiento y consumibles</li>
+      <li>Respirador portátil (si aplica)</li>
+      <li>Aspirador de secreciones: funcionamiento y nivel de vacío</li>
+    </ul>
+
+    <h3>🧪 Cálculo de O₂ al inicio de jornada</h3>
+    <div class="alert alert-blue">
+      La ambulancia debe tener &gt;4.000L. Para calcularlo: leer manómetro y multiplicar presión × capacidad de cada botella.
+      <br>⚠️ FALSO: Para calcularlo se divide presión / capacidad (es al revés: se MULTIPLICA)
+    </div>
+
+    <h3>🔄 Reposición de material</h3>
+    <p>Tras cada servicio reponer el material fungible utilizado. Verificar caducidades periódicamente. El material ha de estar sujeto (en armarios/cajones/anclado) — un frenazo lo convierte en proyectil.</p>
+
+    <h3>📝 Registros obligatorios</h3>
+    <ul>
+      <li>Registro de revisiones del material sanitario</li>
+      <li>Registro de desinfecciones del habitáculo y equipamiento</li>
+      <li>Registro de solicitudes y prestaciones de servicios</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ======================== UD4 ======================== -->
+<div class="section s-ud4" id="sec-ud4">
+  <div class="section-header" onclick="toggle('sec-ud4')">
+    <h2>📦 UD4 — CONTROL DE EXISTENCIAS Y MATERIALES</h2>
+    <span class="badge tag-purple">Almacén · Stock · Pedidos · CRÍTICO por cálculos</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content">
+
+    <h3>📊 Conceptos de stock (ERRATAS UD4 — oficial profesor)</h3>
+    <table>
+      <tr><th>Concepto</th><th>Definición</th></tr>
+      <tr><td><strong>Stock mínimo</strong></td><td>Cantidad mínima que puede haber sin riesgo de agotamiento con consumo habitual</td></tr>
+      <tr><td><strong>Stock de seguridad</strong></td><td>Cantidad SUPERIOR al mínimo necesaria para cubrir incidencias puntuales</td></tr>
+      <tr><td><strong>Stock máximo</strong></td><td>Cantidad máxima que puede haber en el almacén</td></tr>
+      <tr><td><strong>Rotura de stock</strong></td><td>El distribuidor no tiene suficiente producto = demanda no satisfecha</td></tr>
+      <tr><td><strong>Punto de Pedido</strong></td><td>Nivel de stock que obliga a hacer un nuevo pedido para no agotarse</td></tr>
+    </table>
+
+    <div class="formula-box">
+      <strong>Punto de Pedido</strong> = Stock de seguridad + (Consumo diario × Plazo de entrega en días)<br>
+      <strong>Unidades a pedir</strong> = Stock máximo − Stock de seguridad<br>
+      <strong>Stock de seguridad</strong> = Stock mínimo + % sobre stock mínimo (si así se indica)
+    </div>
+
+    <div class="mnemonic">
+      <div class="title">🧠 Regla del Punto de Pedido</div>
+      "¿Cuándo pedimos?" → Cuando el stock llegue al PUNTO DE PEDIDO<br>
+      "¿Cuánto pedimos?" → Hasta llenar el almacén = Máximo − Stock seguridad
+    </div>
+
+    <h3>🎒 Material en el chaleco (nota de erratas del profesor)</h3>
+    <div class="alert alert-yellow">
+      La descripción del chaleco del temario es un <strong>EJEMPLO</strong>, no es una norma obligatoria.<br>
+      • El equipo de transmisión → lo lleva generalmente el TES (1 por equipo, no cada miembro)<br>
+      • Ambú, laringoscopio, tubos orotraqueales → van en el MALETÍN AZUL (respiratorio), no en el chaleco<br>
+      • El médico normalmente NO porta material de venoclisis (lo hace el enfermero)
+    </div>
+
+    <h3>📋 Tipos de inventario</h3>
+    <ul>
+      <li><strong>Inventario periódico:</strong> Revisión en periodos fijos (semanal/mensual)</li>
+      <li><strong>Inventario permanente:</strong> Actualización continua de existencias</li>
+      <li><strong>Inventario anual:</strong> Recuento total al cierre del ejercicio</li>
+    </ul>
+
+    <h3>🏷️ Clasificación ABC de materiales</h3>
+    <ul>
+      <li><strong>Clase A:</strong> Pocos artículos, alto valor económico (~80% del valor, 20% artículos)</li>
+      <li><strong>Clase B:</strong> Artículos intermedios</li>
+      <li><strong>Clase C:</strong> Muchos artículos, bajo valor individual (~80% artículos, 20% valor)</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ======================== UD5 ======================== -->
+<div class="section s-ud5" id="sec-ud5">
+  <div class="section-header" onclick="toggle('sec-ud5')">
+    <h2>🧹 UD5 — LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN</h2>
+    <span class="badge tag-orange">Niveles · Productos · Métodos</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content">
+
+    <h3>🔢 Jerarquía de procesos (de menor a mayor eliminación)</h3>
+    <table>
+      <tr><th>Proceso</th><th>Qué elimina</th><th>Cómo</th></tr>
+      <tr><td><strong>LIMPIEZA</strong></td><td>Suciedad física, materia orgánica</td><td>Agua + detergente. Siempre PRIMERO antes de desinfectar</td></tr>
+      <tr><td><strong>DESINFECCIÓN</strong></td><td>Mayoría de microorganismos patógenos (NO esporas)</td><td>Productos químicos (nivel bajo, medio o alto)</td></tr>
+      <tr><td><strong>ESTERILIZACIÓN</strong></td><td>TODOS los microorganismos incluidas esporas</td><td>Calor húmedo (autoclave), calor seco, esterilización química</td></tr>
+    </table>
+    <div class="alert alert-green">✅ PRIMERO limpiar → LUEGO desinfectar. NO hace falta desinfectar antes de limpiar.</div>
+
+    <h3>📊 Niveles de desinfección</h3>
+    <table>
+      <tr><th>Nivel</th><th>Elimina</th><th>No elimina</th><th>Uso</th></tr>
+      <tr><td><span class="tag tag-blue">BAJO</span></td><td>Bacterias vegetativas, algunos virus y hongos</td><td>Micobacterias, esporas</td><td>Superficies de bajo riesgo</td></tr>
+      <tr><td><span class="tag tag-orange">INTERMEDIO</span></td><td>Bacterias + micobacterias + virus + hongos</td><td>Esporas</td><td>Material semicrítico</td></tr>
+      <tr><td><span class="tag tag-red">ALTO</span></td><td>Todo excepto grandes cantidades de esporas</td><td>Grandes cantidades de esporas</td><td>Material semicrítico de alto riesgo</td></tr>
+    </table>
+
+    <h3>🧴 Desinfectantes principales</h3>
+    <table>
+      <tr><th>Producto</th><th>Nivel</th><th>Concentración</th><th>Características clave</th></tr>
+      <tr>
+        <td><strong>Glutaraldehído</strong><br>(Instrunet®, Esporicida/30®)</td>
+        <td><span class="tag tag-red">ALTO</span></td>
+        <td>2% (usual)</td>
+        <td>Bactericida muy activo · No deteriora metales/gomas/material cortante · Es esterilizante químico · 8-10h para esterilizar</td>
+      </tr>
+      <tr>
+        <td><strong>Hipoclorito sódico</strong><br>(Lejía)</td>
+        <td>Bajo-Intermedio</td>
+        <td>Variable</td>
+        <td>Barato y eficaz · Corrosivo con metales · Se inactiva con materia orgánica</td>
+      </tr>
+      <tr>
+        <td><strong>Alcohol isopropílico/etílico</strong></td>
+        <td>Intermedio</td>
+        <td>70-90%</td>
+        <td>Solo sobre piel sana · No uso en mucosas · Rápido</td>
+      </tr>
+      <tr>
+        <td><strong>Clorhexidina</strong></td>
+        <td>Antiséptico</td>
+        <td>Var.</td>
+        <td>Amplio espectro · No irritante · No se absorbe · Actividad residual hasta 6h · No se inactiva con materia orgánica</td>
+      </tr>
+      <tr>
+        <td><strong>Povidona yodada (Betadine®)</strong></td>
+        <td>Antiséptico</td>
+        <td>10%</td>
+        <td>Color marrón-naranja · Activa frente a esporas · Actividad residual 4h · Se absorbe sistémicamente (evitar en alérgicos a yodo)</td>
+      </tr>
+    </table>
+
+    <div class="alert alert-blue">
+      🏆 La <strong>clorhexidina</strong> ha relegado a la povidona yodada en la práctica clínica por sus ventajas (no se absorbe, no alergénica, 6h de actividad residual)
+    </div>
+
+    <h3>♻️ Esterilización</h3>
+    <h4>Esterilización física — Autoclave (vapor a presión)</h4>
+    <table>
+      <tr><th>Ciclo</th><th>Temperatura</th><th>Tiempo de meseta</th></tr>
+      <tr><td>Ciclo estándar</td><td>121°C</td><td>~20 minutos</td></tr>
+      <tr><td>Ciclo rápido</td><td>134°C</td><td>~4 minutos</td></tr>
+    </table>
+    <div class="alert alert-green">Si el material aguanta 134°C → usar ese ciclo (deteriora menos que el de 121°C)</div>
+    <p>Se rotula la <strong>fecha de caducidad</strong> (NO la fecha de esterilización) en el paquete antes del ciclo.</p>
+    <p>Miniclaves (pequeños) = tienen recipiente con agua destilada. Los grandes están conectados a red de ósmosis.</p>
+
+    <h4>Esterilización química (frío)</h4>
+    <p>Inmersión en glutaraldehído al 2% durante <strong>8-10 horas</strong>. Para material que NO soporta temperatura elevada. No es monitorizable. Enjuagar con agua estéril tras el proceso. Guardar en recipientes metálicos esterilizados.</p>
+
+    <div class="mnemonic">
+      <div class="title">🧠 Concepto clave de esterilización</div>
+      La destrucción de microorganismos sigue una ley exponencial (NO lineal) → siempre existe una probabilidad finita de supervivencia<br>
+      Producto sanitario estéril = probabilidad de microorganismo viable ≤ 10⁻⁶
+    </div>
+
+    <h3>🧹 Desinfección del habitáculo tras servicio</h3>
+    <p>Toallas/bayetas usadas en la desinfección: lavar con agua y detergente → aclarar → sumergir en solución desinfectante de nivel <strong>intermedio o bajo</strong> unos minutos.</p>
+    <p>Verificar limpieza de: cajones, silla de transporte, lámpara luz fría, maletín rígido, cubos de desecho, dispensadores, bala de oxígeno, camilla (sábana cambiada).</p>
+  </div>
+</div>
+
+
+<!-- ======================== UD6 ======================== -->
+<div class="section s-ud6" id="sec-ud6">
+  <div class="section-header" onclick="toggle('sec-ud6')">
+    <h2>📝 UD6 — DOCUMENTACIÓN SANITARIA Y GARANTÍA DE CALIDAD</h2>
+    <span class="badge tag-blue">Historia clínica · Documentos · Calidad</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content">
+
+    <h3>📋 Documentos clínicos intrahospitalarios</h3>
+    <p>La <strong>Historia Clínica</strong> puede ser en papel o electrónica. Contiene:</p>
+    <table>
+      <tr><th>Documento</th><th>Contenido</th></tr>
+      <tr><td>Hoja de Autorización de Ingreso</td><td>Paciente o representante autoriza el ingreso</td></tr>
+      <tr><td>Hoja de Consentimiento Informado</td><td>Paciente informado del estado, tratamiento y autorizaciones para intervenciones</td></tr>
+      <tr><td>Hoja de Anamnesis</td><td>Motivo de consulta y datos de exploración</td></tr>
+      <tr><td>Hoja de Evolución</td><td>Datos del día a día y hallazgos</td></tr>
+      <tr><td>Hoja de Órdenes Médicas</td><td>Prescripciones médicas diarias</td></tr>
+      <tr><td>Hoja de Exploraciones Complementarias</td><td>Datos de pruebas exploratorias instrumentales</td></tr>
+      <tr><td>Hoja de Interconsulta</td><td>Datos de otro servicio del hospital</td></tr>
+      <tr><td>Hoja de Informe Quirúrgico y/o Parto</td><td>Datos sanitarios de la intervención o parto</td></tr>
+      <tr><td>Hoja de Anestesia</td><td>Actividad del anestesista durante su actuación</td></tr>
+    </table>
+
+    <h3>🚑 Documentación del transporte sanitario</h3>
+    <ul>
+      <li><strong>Hoja de asistencia:</strong> Documento principal del TES. Recoge datos del paciente, constantes, intervenciones, medicación administrada, hora y destino.</li>
+      <li><strong>Registro de desinfecciones</strong> del habitáculo</li>
+      <li><strong>Registro de revisiones</strong> del material</li>
+      <li><strong>Registro de solicitudes y prestaciones</strong></li>
+    </ul>
+
+    <h3>⚖️ Aspectos legales relevantes</h3>
+    <ul>
+      <li>La historia clínica es CONFIDENCIAL (protección de datos)</li>
+      <li>El TES puede actuar sin consentimiento en situaciones de urgencia vital</li>
+      <li>Siempre informar al paciente de las actuaciones</li>
+      <li>Cadena de custodia en situaciones de posible delito</li>
+    </ul>
+
+    <h3>✅ Garantía de calidad</h3>
+    <ul>
+      <li><strong>Ciclo de mejora continua:</strong> Planificar → Hacer → Verificar → Actuar (PDCA)</li>
+      <li><strong>Indicadores de calidad:</strong> Tiempo respuesta, satisfacción del paciente, incidentes, etc.</li>
+      <li><strong>Gestión de incidentes:</strong> Notificación y análisis de errores para mejorar</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ======================== EXTRA ======================== -->
+<div class="section s-extra" id="sec-extra">
+  <div class="section-header" onclick="toggle('sec-extra')">
+    <h2>🔬 EXTRA — DISPOSITIVOS SUPRAGLÓTICOS + ERRATAS CLAVE</h2>
+    <span class="badge tag-purple">Complementario · Entra en examen</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-content">
+
+    <h3>🫁 Dispositivos supraglóticos (vía aérea)</h3>
+    <p>Son dispositivos de manejo de la vía aérea que se colocan <strong>por encima de la glotis</strong> (sin necesidad de visualizar las cuerdas vocales), a diferencia de la intubación orotraqueal.</p>
+    <table>
+      <tr><th>Dispositivo</th><th>Tipo</th><th>Características</th></tr>
+      <tr><td><strong>Mascarilla laríngea (LMA)</strong></td><td>Supraglótico</td><td>Más usado. Sella la laringe. Varias tallas (1-5). No protege de aspiración.</td></tr>
+      <tr><td><strong>LMA Fastrach / LMA Supreme</strong></td><td>Supraglótico de 2ª gen.</td><td>Permite intubación a través. Mejor sellado. Más segura en no ayunos.</td></tr>
+      <tr><td><strong>Tubo laríngeo (King LT)</strong></td><td>Supraglótico</td><td>2 balones (faringe y esófago). Más fácil inserción. Útil en paros cardiacos.</td></tr>
+      <tr><td><strong>Combitubo (esofágico-traqueal)</strong></td><td>Supraglótico</td><td>Puede insertarse ciega. Funciona tanto en esófago como en tráquea. Dos luces.</td></tr>
+      <tr><td><strong>I-gel</strong></td><td>Supraglótico</td><td>Sin balón inflable. Fácil inserción. Material termoplástico. Muy usado en PCR.</td></tr>
+    </table>
+
+    <h3>⚠️ ERRATAS IMPORTANTES DEL PROFESOR (todas las UDs)</h3>
+    <div class="alert alert-red">
+      <strong>UD1:</strong> VIR NO es ambulancia (no transporta pacientes). SVA pediátrica NO existe como categoría legal. Ambulancias psiquiátricas = tipo A1 o B legalmente.
+    </div>
+    <div class="alert alert-red">
+      <strong>UD2:</strong> Flumazenilo = antagonista BZD (no sedante). Los nombres comerciales de fármacos no hay que conocerlos, solo el principio activo. La ambulancia necesita &gt;4000L O₂ con reserva mínima 2000L.
+    </div>
+    <div class="alert alert-red">
+      <strong>UD4:</strong> El chaleco con material es un EJEMPLO, no obligatorio. Ambú y laringoscopio van en el maletín, NO en el chaleco. El médico normalmente NO porta venoclisis.
+    </div>
+    <div class="alert alert-red">
+      <strong>UD5:</strong> No es necesario desinfectar antes de limpiar. Se rotula fecha de CADUCIDAD, no de esterilización. Autoclave 134°C = preferible si el material lo aguanta (deteriora menos).
+    </div>
+  </div>
+</div>
+
+
+<!-- TABLA RESUMEN FINAL -->
+<div style="margin: 20px; background: #0d1117; border: 1px solid #30363d; border-radius: 12px; padding: 20px;">
+  <h2 style="color: #58a6ff; margin-bottom: 14px; font-size: 1em;">⚡ RESUMEN ULTRA-RÁPIDO — REPASAR MAÑANA</h2>
+  <table>
+    <tr><th>Tema</th><th>Lo más probable en el test</th></tr>
+    <tr><td>Normativa</td><td>RD 836/2012 vigente. RD 619/1998 DEROGADO. Decreto 128/1996 Madrid (ITS)</td></tr>
+    <tr><td>Ambulancias</td><td>A1/A2 = no asistenciales · B = SVB (2 TES) · C = SVA (TES+Enfermero±Médico)</td></tr>
+    <tr><td>VIR</td><td>NO transporta pacientes. No es ambulancia legalmente.</td></tr>
+    <tr><td>Extintor</td><td>Equip. del VEHÍCULO, NO sanitario</td></tr>
+    <tr><td>Flumazenilo</td><td>Antagonista BZD, NO sedante</td></tr>
+    <tr><td>Coloides</td><td>Gelatina + Hidroxietilalmidón (el resto son cristaloides)</td></tr>
+    <tr><td>O₂ residual</td><td>Si no dice presión residual → 20 bares por defecto</td></tr>
+    <tr><td>Punto de pedido</td><td>Stock seguridad + consumo × días entrega</td></tr>
+    <tr><td>Diluciones</td><td>V1×C1 = V2×C2. Agua añadida = V2 − V1</td></tr>
+    <tr><td>Clorhexidina</td><td>Mejor antiséptico: amplio espectro, 6h residual, no absorción, no alergen.</td></tr>
+    <tr><td>Autoclave 134°C</td><td>~4 min meseta. Mejor que 121°C si el material lo aguanta</td></tr>
+    <tr><td>Esteriliz. química</td><td>Glutaraldehído 2%, 8-10 horas, NO monitorizable</td></tr>
+  </table>
+</div>
+
+<div style="text-align:center; padding: 20px; color: #6e7681; font-size: 0.8em;">
+  Generado el 21/05/2026 desde el temario oficial de Dotación Sanitaria 25/26 · Examen 22/05/2026
+</div>
+
+<script>
+  function toggle(id) {
+    const section = document.getElementById(id);
+    const content = section.querySelector('.section-content');
+    const header = section.querySelector('.section-header');
+    content.classList.toggle('open');
+    header.classList.toggle('open');
+  }
+  // Abrir solo los problemas y UD1 al inicio
+  document.querySelectorAll('.section-content').forEach(el => el.classList.remove('open'));
+  document.getElementById('sec-problemas').querySelector('.section-content').classList.add('open');
+  document.getElementById('sec-ud1').querySelector('.section-content').classList.add('open');
+</script>
+</body>
+</html>
