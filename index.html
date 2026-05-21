@@ -3,896 +3,1150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DOTACIÓN SANITARIA — Guía de estudio Examen 22 Mayo</title>
+<title>DOTACIÓN SANITARIA — Guía Completa + Test 180 preguntas</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e8e8e8; line-height: 1.6; }
-  
-  .header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 3px solid #e94560;
-  }
-  .header h1 { font-size: 1.8em; color: #e94560; letter-spacing: 2px; }
-  .header p { color: #a0a0c0; margin-top: 8px; font-size: 0.95em; }
-  
-  .exam-box {
-    background: #1a0a0a;
-    border: 2px solid #e94560;
-    border-radius: 12px;
-    margin: 20px;
-    padding: 20px;
-  }
-  .exam-box h2 { color: #e94560; font-size: 1.1em; margin-bottom: 12px; }
-  .exam-box .formula {
-    background: #0a0a1a;
-    border-left: 4px solid #4fc3f7;
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    font-family: monospace;
-    font-size: 1.1em;
-    margin: 10px 0;
-    color: #4fc3f7;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#0f0f0f;color:#e8e8e8;line-height:1.6}
+.header{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);padding:20px;text-align:center;border-bottom:3px solid #e94560}
+.header h1{font-size:1.6em;color:#e94560;letter-spacing:2px}
+.header p{color:#a0a0c0;margin-top:6px;font-size:0.85em}
+.tabs{display:flex;background:#161b22;border-bottom:2px solid #30363d;position:sticky;top:0;z-index:100}
+.tab{flex:1;padding:12px;text-align:center;cursor:pointer;font-size:0.9em;color:#8b949e;border-bottom:3px solid transparent;transition:.2s}
+.tab.active{color:#e94560;border-bottom-color:#e94560;background:#1a0a0a}
+.tab-content{display:none}
+.tab-content.active{display:block}
 
-  .schedule {
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    margin: 20px;
-    overflow: hidden;
-  }
-  .schedule h2 { background: #161b22; padding: 14px 20px; color: #58a6ff; font-size: 1em; border-bottom: 1px solid #30363d; }
-  .schedule-row {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #1c2128;
-    gap: 14px;
-  }
-  .schedule-row:last-child { border-bottom: none; }
-  .time-badge { background: #21262d; padding: 4px 10px; border-radius: 6px; font-size: 0.8em; color: #8b949e; white-space: nowrap; min-width: 110px; text-align: center; }
-  .priority-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .p-red { background: #e94560; }
-  .p-orange { background: #ff9800; }
-  .p-yellow { background: #ffc107; }
-  .ud-name { font-size: 0.9em; }
+/* RESUMEN */
+.section{margin:16px;border-radius:10px;overflow:hidden;border:1px solid #30363d}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;user-select:none}
+.sec-hdr h2{font-size:.95em;flex:1}
+.sec-body{padding:0 18px 18px;display:none}
+.sec-body.open{display:block}
+.toggle{font-size:1.1em;transition:.2s}
+.sec-hdr.open .toggle{transform:rotate(180deg)}
+.s1{border-color:#00c853}.s1 .sec-hdr{background:#001a0a}.s1 .sec-hdr h2{color:#00c853}
+.s2{border-color:#00b0ff}.s2 .sec-hdr{background:#001520}.s2 .sec-hdr h2{color:#00b0ff}
+.s3{border-color:#ff9800}.s3 .sec-hdr{background:#1a1000}.s3 .sec-hdr h2{color:#ff9800}
+.s4{border-color:#7c4dff}.s4 .sec-hdr{background:#0a0a1a}.s4 .sec-hdr h2{color:#7c4dff}
+.s5{border-color:#ff6d00}.s5 .sec-hdr{background:#1a0a00}.s5 .sec-hdr h2{color:#ff6d00}
+.s6{border-color:#00bfa5}.s6 .sec-hdr{background:#001a1a}.s6 .sec-hdr h2{color:#00bfa5}
+.sp{border-color:#e91e8c}.sp .sec-hdr{background:#1a0014}.sp .sec-hdr h2{color:#e91e8c}
+h3{color:#c9d1d9;margin:14px 0 6px;font-size:.9em;border-bottom:1px solid #21262d;padding-bottom:4px}
+h4{color:#8b949e;margin:10px 0 4px;font-size:.8em;text-transform:uppercase;letter-spacing:1px}
+p,li{font-size:.85em;margin:3px 0}
+ul{padding-left:18px;margin:4px 0}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.8em}
+th{background:#161b22;color:#8b949e;padding:7px 10px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:6px 10px;border-bottom:1px solid #1c2128;vertical-align:top}
+tr:hover td{background:#0d1117}
+.alert{border-radius:6px;padding:10px 14px;margin:8px 0;font-size:.83em}
+.ar{background:#1a0808;border:1px solid #e94560;color:#ff8080}
+.ab{background:#080d1a;border:1px solid #4fc3f7;color:#80d4ff}
+.ag{background:#081a0a;border:1px solid #00c853;color:#80ff9a}
+.ay{background:#1a1400;border:1px solid #ffc107;color:#ffe580}
+.fbox{background:#0d1117;border:1px solid #4fc3f7;border-left:4px solid #4fc3f7;padding:12px 16px;border-radius:0 8px 8px 0;font-family:monospace;font-size:.9em;margin:10px 0;color:#4fc3f7}
+.fbox .c{color:#8b949e;font-style:italic;font-family:sans-serif;font-size:.82em;margin-top:4px}
+.mnem{background:#1a1000;border:1px dashed #ffc107;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.83em}
+.mnem .t{color:#ffc107;font-weight:bold;font-size:.82em;margin-bottom:4px}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:.72em;margin:2px;font-weight:bold}
+.tr{background:#2d0a0a;color:#e94560;border:1px solid #e94560}
+.tg{background:#0a2d0a;color:#00c853;border:1px solid #00c853}
+.tb{background:#0a1a2d;color:#4fc3f7;border:1px solid #4fc3f7}
+.to{background:#2d1a00;color:#ff9800;border:1px solid #ff9800}
+.tp{background:#1a0a2d;color:#b39ddb;border:1px solid #b39ddb}
 
-  .section {
-    margin: 20px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #30363d;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 20px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .section-header h2 { font-size: 1em; flex: 1; }
-  .section-header .badge {
-    font-size: 0.75em;
-    padding: 3px 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-  .section-content { padding: 0 20px 20px; display: none; }
-  .section-content.open { display: block; }
-  
-  /* Color themes per section */
-  .s-problemas .section-header { background: #1a0014; border-bottom: 2px solid #e91e8c; }
-  .s-problemas .section-header h2 { color: #e91e8c; }
-  .s-problemas { border-color: #e91e8c; }
-  
-  .s-ud1 .section-header { background: #001a10; border-bottom: 2px solid #00c853; }
-  .s-ud1 .section-header h2 { color: #00c853; }
-  .s-ud1 { border-color: #00c853; }
+/* EXAM BOX */
+.ebox{background:#1a0a0a;border:2px solid #e94560;border-radius:10px;margin:16px;padding:16px}
+.ebox h2{color:#e94560;font-size:1em;margin-bottom:10px}
 
-  .s-ud2 .section-header { background: #001520; border-bottom: 2px solid #00b0ff; }
-  .s-ud2 .section-header h2 { color: #00b0ff; }
-  .s-ud2 { border-color: #00b0ff; }
+/* PROBLEMAS */
+.prob{background:#0a0d12;border:1px solid #30363d;border-radius:8px;padding:14px;margin:10px 0}
+.prob .enun{color:#c9d1d9;margin-bottom:10px;font-size:.85em}
+.paso{display:flex;gap:8px;margin:5px 0;align-items:flex-start}
+.num{background:#21262d;color:#58a6ff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72em;flex-shrink:0;margin-top:2px;font-weight:bold}
+.paso .tx{font-size:.85em;font-family:monospace}
+.res{background:#0a2010;border:1px solid #00c853;border-radius:5px;padding:7px 11px;margin-top:8px;font-weight:bold;color:#00c853;font-family:monospace;font-size:.85em}
 
-  .s-ud3 .section-header { background: #1a1000; border-bottom: 2px solid #ff9800; }
-  .s-ud3 .section-header h2 { color: #ff9800; }
-  .s-ud3 { border-color: #ff9800; }
+/* TEST */
+#test-tab{padding:16px}
+.test-ctrl{background:#161b22;border-radius:10px;padding:16px;margin-bottom:16px;border:1px solid #30363d}
+.test-ctrl h2{color:#58a6ff;font-size:1em;margin-bottom:12px}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.btn{padding:8px 16px;border:1px solid #30363d;border-radius:6px;background:#21262d;color:#c9d1d9;cursor:pointer;font-size:.82em;transition:.2s}
+.btn:hover{border-color:#58a6ff;color:#58a6ff}
+.btn.active{background:#0f3460;border-color:#58a6ff;color:#58a6ff}
+.btn.start{background:#0a2010;border-color:#00c853;color:#00c853;font-weight:bold;font-size:.9em;padding:10px 20px}
+.btn.start:hover{background:#00c853;color:#000}
+.btn.reset{background:#1a0808;border-color:#e94560;color:#e94560}
+.btn.reset:hover{background:#e94560;color:#fff}
 
-  .s-ud4 .section-header { background: #0a0a1a; border-bottom: 2px solid #7c4dff; }
-  .s-ud4 .section-header h2 { color: #7c4dff; }
-  .s-ud4 { border-color: #7c4dff; }
+#score-bar{background:#161b22;border-radius:8px;padding:12px 16px;margin-bottom:14px;border:1px solid #30363d;display:none;align-items:center;gap:16px;flex-wrap:wrap}
+.sc-item{text-align:center}
+.sc-num{font-size:1.4em;font-weight:bold}
+.sc-lbl{font-size:.72em;color:#8b949e}
+.sc-nota{font-size:1.8em;font-weight:bold;color:#00c853}
+.sc-nota.fail{color:#e94560}
+.sc-nota.mid{color:#ffc107}
 
-  .s-ud5 .section-header { background: #1a0a00; border-bottom: 2px solid #ff6d00; }
-  .s-ud5 .section-header h2 { color: #ff6d00; }
-  .s-ud5 { border-color: #ff6d00; }
+.qcard{background:#161b22;border-radius:10px;padding:16px;margin-bottom:12px;border:1px solid #30363d}
+.qcard .qnum{font-size:.75em;color:#58a6ff;margin-bottom:6px}
+.qcard .qtxt{font-size:.9em;color:#e8e8e8;margin-bottom:12px;line-height:1.5}
+.qcard .ud-badge{display:inline-block;font-size:.7em;padding:2px 7px;border-radius:4px;margin-bottom:8px;font-weight:bold}
+.ud1{background:#001a0a;color:#00c853;border:1px solid #00c853}
+.ud2{background:#001520;color:#00b0ff;border:1px solid #00b0ff}
+.ud3{background:#1a1000;color:#ff9800;border:1px solid #ff9800}
+.ud4{background:#0a0a1a;color:#b39ddb;border:1px solid #b39ddb}
+.ud5{background:#1a0a00;color:#ff6d00;border:1px solid #ff6d00}
+.ud6{background:#001a1a;color:#00bfa5;border:1px solid #00bfa5}
 
-  .s-ud6 .section-header { background: #001a1a; border-bottom: 2px solid #00bfa5; }
-  .s-ud6 .section-header h2 { color: #00bfa5; }
-  .s-ud6 { border-color: #00bfa5; }
+.opt{display:block;width:100%;text-align:left;padding:9px 13px;margin:5px 0;border:1px solid #30363d;border-radius:6px;background:#0d1117;color:#c9d1d9;cursor:pointer;font-size:.84em;transition:.2s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:#58a6ff;background:#0f1a2d}
+.opt.correct{border-color:#00c853;background:#0a2010;color:#80ff9a}
+.opt.wrong{border-color:#e94560;background:#1a0808;color:#ff8080}
+.opt.reveal{border-color:#00c853;background:#0a2010;color:#80ff9a}
+.opt:disabled{cursor:default}
+.explanation{background:#0a0d12;border-left:3px solid #4fc3f7;padding:10px 13px;margin-top:8px;border-radius:0 6px 6px 0;font-size:.82em;color:#80d4ff;line-height:1.5;display:none}
+.explanation.show{display:block}
+.exp-icon{display:inline-block;margin-right:6px}
 
-  .s-extra .section-header { background: #1a001a; border-bottom: 2px solid #ea80fc; }
-  .s-extra .section-header h2 { color: #ea80fc; }
-  .s-extra { border-color: #ea80fc; }
+#progress-bar{background:#21262d;height:6px;border-radius:3px;margin-bottom:12px;overflow:hidden}
+#progress-fill{height:100%;background:#00c853;border-radius:3px;transition:.3s}
 
-  h3 { color: #c9d1d9; margin: 16px 0 8px; font-size: 0.95em; border-bottom: 1px solid #21262d; padding-bottom: 6px; }
-  h4 { color: #8b949e; margin: 12px 0 6px; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; }
-  
-  .formula-box {
-    background: #0d1117;
-    border: 1px solid #4fc3f7;
-    border-left: 4px solid #4fc3f7;
-    padding: 14px 18px;
-    border-radius: 0 8px 8px 0;
-    font-family: monospace;
-    font-size: 0.95em;
-    margin: 12px 0;
-    color: #4fc3f7;
-  }
-  .formula-box .comment { color: #8b949e; font-style: italic; font-family: sans-serif; font-size: 0.85em; margin-top: 4px; }
+.result-screen{text-align:center;padding:30px 20px;background:#161b22;border-radius:10px;border:1px solid #30363d;margin-bottom:16px}
+.result-screen h2{font-size:1.5em;margin-bottom:6px}
+.result-screen p{color:#8b949e;font-size:.9em;margin-bottom:16px}
 
-  .alert {
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 10px 0;
-    font-size: 0.88em;
-  }
-  .alert-red { background: #1a0808; border: 1px solid #e94560; color: #ff8080; }
-  .alert-blue { background: #080d1a; border: 1px solid #4fc3f7; color: #80d4ff; }
-  .alert-green { background: #081a0a; border: 1px solid #00c853; color: #80ff9a; }
-  .alert-yellow { background: #1a1400; border: 1px solid #ffc107; color: #ffe580; }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 0.85em;
-  }
-  th { background: #161b22; color: #8b949e; padding: 8px 12px; text-align: left; border-bottom: 2px solid #30363d; }
-  td { padding: 7px 12px; border-bottom: 1px solid #1c2128; vertical-align: top; }
-  tr:hover td { background: #0d1117; }
-  
-  .tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.75em;
-    margin: 2px;
-    font-weight: bold;
-  }
-  .tag-red { background: #2d0a0a; color: #e94560; border: 1px solid #e94560; }
-  .tag-green { background: #0a2d0a; color: #00c853; border: 1px solid #00c853; }
-  .tag-blue { background: #0a1a2d; color: #4fc3f7; border: 1px solid #4fc3f7; }
-  .tag-orange { background: #2d1a00; color: #ff9800; border: 1px solid #ff9800; }
-  .tag-purple { background: #1a0a2d; color: #b39ddb; border: 1px solid #b39ddb; }
-
-  ul { padding-left: 20px; margin: 6px 0; }
-  li { margin: 3px 0; font-size: 0.88em; }
-  p { font-size: 0.88em; margin: 6px 0; }
-
-  .mnemonic {
-    background: #1a1000;
-    border: 1px dashed #ffc107;
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 10px 0;
-    font-size: 0.88em;
-  }
-  .mnemonic .title { color: #ffc107; font-weight: bold; font-size: 0.85em; margin-bottom: 6px; }
-
-  .problema-ejemplo {
-    background: #0a0d12;
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 16px;
-    margin: 12px 0;
-  }
-  .problema-ejemplo .enunciado { color: #c9d1d9; margin-bottom: 12px; font-size: 0.87em; }
-  .problema-ejemplo .paso { display: flex; gap: 10px; margin: 6px 0; align-items: flex-start; }
-  .problema-ejemplo .num { background: #21262d; color: #58a6ff; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; flex-shrink: 0; font-weight: bold; margin-top: 1px; }
-  .problema-ejemplo .texto { font-size: 0.87em; color: #e8e8e8; font-family: monospace; }
-  .problema-ejemplo .resultado { background: #0a2010; border: 1px solid #00c853; border-radius: 6px; padding: 8px 12px; margin-top: 10px; font-weight: bold; color: #00c853; font-family: monospace; font-size: 0.9em; }
-
-  .toggle-icon { font-size: 1.2em; transition: transform 0.2s; }
-  .open .toggle-icon { transform: rotate(180deg); }
-
-  @media (max-width: 600px) {
-    .schedule-row { flex-wrap: wrap; }
-    .time-badge { min-width: auto; }
-    table { font-size: 0.78em; }
-  }
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>📋 DOTACIÓN SANITARIA</h1>
-  <p>Guía de estudio intensivo · Examen 22 de Mayo · Preparada desde el temario oficial</p>
+  <h1>📋 DOTACIÓN SANITARIA — Guía + Test</h1>
+  <p>Examen 22 Mayo · 6 UDs · 180 preguntas de autoevaluación real · Con errores analizados</p>
 </div>
 
-<!-- EXAM INFO BOX -->
-<div class="exam-box">
-  <h2>⚠️ FORMATO DEL EXAMEN</h2>
+<div class="tabs">
+  <div class="tab active" onclick="showTab('resumen')">📚 RESUMEN</div>
+  <div class="tab" onclick="showTab('test')">🧪 TEST (180 preguntas)</div>
+</div>
+
+<!-- ==================== RESUMEN ==================== -->
+<div id="resumen-tab" class="tab-content active">
+
+<div class="ebox">
+  <h2>⚠️ FORMATO EXAMEN</h2>
   <table>
-    <tr><th>Parte</th><th>Contenido</th><th>Puntuación</th></tr>
+    <tr><th>Parte</th><th>Contenido</th><th>Corrección</th></tr>
     <tr><td>Parte 1</td><td>60 preguntas tipo test</td><td>Penaliza: errores÷3</td></tr>
-    <tr><td>Parte 2</td><td>2 problemas + reconocimiento de material</td><td>Justificar respuesta</td></tr>
+    <tr><td>Parte 2</td><td>2 problemas + reconocimiento material</td><td>Justificar respuesta</td></tr>
   </table>
-  <div class="formula">Nota = (Aciertos - Errores/3) / 60 × 10</div>
-  <div class="alert alert-red">🚨 ESTRATEGIA: Si no estás seguro, NO contestes. Cada 3 errores = 1 acierto perdido</div>
-  <div class="alert alert-blue">📝 Los 3 tipos de problema posibles: Cálculo de oxígeno · Control de almacén · Diluciones</div>
+  <div class="fbox">Nota = (Aciertos − Errores/3) / 60 × 10<div class="c">Estrategia: si dudas mucho, mejor no contestar. Cada 3 errores = −1 acierto neto</div></div>
+  <div class="alert ab">📝 3 tipos de problema: Cálculo O₂ · Control de almacén · Diluciones</div>
 </div>
 
-<!-- SCHEDULE -->
-<div class="schedule">
-  <h2>⏱️ PLAN DE ATAQUE HOY — 21 MAYO</h2>
-  <div class="schedule-row">
-    <div class="time-badge">15:00 – 16:00</div>
-    <div class="priority-dot p-red"></div>
-    <div class="ud-name"><strong>BLOQUE A:</strong> Problemas y fórmulas (oxígeno + almacén + diluciones) — Practícalos todos</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">16:00 – 17:00</div>
-    <div class="priority-dot p-red"></div>
-    <div class="ud-name"><strong>UD1:</strong> Tipos de transporte sanitario + normativa RD 836/2012</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">17:00 – 18:30</div>
-    <div class="priority-dot p-red"></div>
-    <div class="ud-name"><strong>UD2:</strong> Dotación sanitaria por tipo de vehículo (SVB/SVA/VIR/aéreo/marítimo)</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">18:30 – 19:15</div>
-    <div class="priority-dot p-orange"></div>
-    <div class="ud-name"><strong>UD3:</strong> Mantenimiento básico de la dotación</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">19:15 – 20:00</div>
-    <div class="priority-dot p-red"></div>
-    <div class="ud-name"><strong>UD4:</strong> Control de existencias y materiales (stock, almacén)</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">20:00 – 20:45</div>
-    <div class="priority-dot p-orange"></div>
-    <div class="ud-name"><strong>UD5:</strong> Limpieza, desinfección y esterilización</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">20:45 – 21:30</div>
-    <div class="priority-dot p-orange"></div>
-    <div class="ud-name"><strong>UD6:</strong> Documentación sanitaria y calidad</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">21:30 – 22:00</div>
-    <div class="priority-dot p-orange"></div>
-    <div class="ud-name"><strong>EXTRA:</strong> Dispositivos supraglóticos + Imágenes complementarias</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">22:00 – 22:30</div>
-    <div class="priority-dot p-red"></div>
-    <div class="ud-name"><strong>REPASO ERRATAS:</strong> Leer todas las correcciones del profesor (¡entran en examen!)</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">22:30 – 23:00</div>
-    <div class="priority-dot p-yellow"></div>
-    <div class="ud-name"><strong>Repaso express:</strong> Fórmulas + tablas clave de memoria</div>
-  </div>
-  <div class="schedule-row">
-    <div class="time-badge">6:10 – 7:30</div>
-    <div class="priority-dot p-red"></div>
-    <div class="ud-name"><strong>Mañana:</strong> Repaso de fórmulas, tabla ambulancias y 5 errores más probables</div>
-  </div>
-</div>
-
-
-<!-- ======================== BLOQUE A: PROBLEMAS ======================== -->
-<div class="section s-problemas" id="sec-problemas">
-  <div class="section-header" onclick="toggle('sec-problemas')">
-    <h2>🔢 BLOQUE A — PROBLEMAS Y FÓRMULAS (ESTUDIAR PRIMERO)</h2>
-    <span class="badge tag-red">CRÍTICO · Parte 2 del examen</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content open">
-    
-    <!-- PROBLEMA 1: OXÍGENO -->
-    <h3>🫧 PROBLEMA TIPO 1: CÁLCULO DE OXÍGENO</h3>
-    <div class="formula-box">
-      <strong>PASO 1:</strong> Volumen disponible = Capacidad × (Presión real − Presión residual)<br>
-      <strong>PASO 2:</strong> Tiempo (min) = Volumen disponible ÷ Flujo (L/min)<br>
-      <strong>PASO 3:</strong> Convertir minutos a horas:min (ej: 197 min → 3h 17min)
-      <div class="comment">⚠️ OJO: 0.28 horas NO son 28 minutos → 0.28 × 60 = 17 minutos</div>
-    </div>
-    <div class="alert alert-yellow">Si el enunciado NO da presión residual → usar 20 bares por defecto</div>
-
-    <div class="problema-ejemplo">
-      <div class="enunciado"><strong>Ejemplo oficial del examen:</strong> Botella 80L, Presión manómetro 55 bar, Presión residual 18 bar, Flujo 15 L/min. ¿Duración máxima del viaje?</div>
-      <div class="paso"><div class="num">1</div><div class="texto">Volumen = 80 × (55 − 18) = 80 × 37 = 2.960 L</div></div>
-      <div class="paso"><div class="num">2</div><div class="texto">Tiempo = 2.960 ÷ 15 = 197,3 min</div></div>
-      <div class="paso"><div class="num">3</div><div class="texto">197 min = 3h + (197 − 180) = 3h + 17min</div></div>
-      <div class="resultado">✅ RESPUESTA: 3 horas y 17 minutos</div>
-    </div>
-
-    <div class="problema-ejemplo">
-      <div class="enunciado"><strong>Práctica:</strong> Botella 3L, manómetro 200 bar, sin presión residual indicada, flujo 5 L/min</div>
-      <div class="paso"><div class="num">1</div><div class="texto">Volumen = 3 × (200 − 20) = 3 × 180 = 540 L</div></div>
-      <div class="paso"><div class="num">2</div><div class="texto">Tiempo = 540 ÷ 5 = 108 min = 1h 48min</div></div>
-      <div class="resultado">✅ RESPUESTA: 1 hora y 48 minutos</div>
-    </div>
-
-    <div class="problema-ejemplo">
-      <div class="enunciado"><strong>Práctica 2 (del temario UD2):</strong> Botella 3L, presión 200 bar, flujo 5 L/min → ¿cuánto tiempo?</div>
-      <div class="paso"><div class="num">1</div><div class="texto">Litros = 3 × 200 = 600 L (sin residual indicada en este ejemplo)</div></div>
-      <div class="paso"><div class="num">2</div><div class="texto">Tiempo = 600 ÷ 5 = 120 min = 2 horas</div></div>
-      <div class="resultado">✅ RESPUESTA: 120 minutos (2 horas)</div>
-    </div>
-
-    <!-- PROBLEMA 2: ALMACÉN -->
-    <h3>📦 PROBLEMA TIPO 2: CONTROL DE ALMACÉN</h3>
-    <div class="formula-box">
-      <strong>Stock de seguridad</strong> = Stock mínimo + % indicado sobre stock mínimo<br>
-      <strong>Punto de Pedido</strong> = Stock seguridad + (Consumo diario × Días de entrega)<br>
-      <strong>Unidades a pedir</strong> = Stock máximo − Stock de seguridad
-    </div>
-
-    <div class="problema-ejemplo">
-      <div class="enunciado"><strong>Ejemplo oficial:</strong> Stock mínimo 10 ud. Margen de seguridad 20% sobre stock mínimo. Almacén máx 144 ud. Tiempo entrega 5 días. Consumo 2 ud/día.</div>
-      <div class="paso"><div class="num">1</div><div class="texto">Stock seguridad = 10 + (20% × 10) = 10 + 2 = 12 unidades</div></div>
-      <div class="paso"><div class="num">2</div><div class="texto">Punto de Pedido = 12 + (2 × 5) = 12 + 10 = 22 unidades</div></div>
-      <div class="paso"><div class="num">3</div><div class="texto">Unidades a pedir = 144 − 12 = 132 unidades</div></div>
-      <div class="resultado">✅ Pedir cuando queden 22 ud · Pedir 132 ud para llenar el almacén</div>
-    </div>
-
-    <!-- PROBLEMA 3: DILUCIONES -->
-    <h3>🧪 PROBLEMA TIPO 3: DILUCIONES</h3>
-    <div class="formula-box">
-      <strong>V1 × C1 = V2 × C2</strong><br>
-      V1 = volumen del concentrado que necesitas | C1 = concentración del concentrado<br>
-      V2 = volumen final deseado | C2 = concentración final deseada<br>
-      <strong>Agua a añadir</strong> = V2 − V1
-    </div>
-
-    <div class="problema-ejemplo">
-      <div class="enunciado"><strong>Ejemplo oficial:</strong> Preparar 100 ml de alcohol 70º usando alcohol 96º y agua destilada.</div>
-      <div class="paso"><div class="num">1</div><div class="texto">V1 × 96 = 100 × 70</div></div>
-      <div class="paso"><div class="num">2</div><div class="texto">V1 = (100 × 70) ÷ 96 = 7000 ÷ 96 = 72,9 ≈ 73 ml de alcohol 96º</div></div>
-      <div class="paso"><div class="num">3</div><div class="texto">Agua destilada = 100 − 73 = 27 ml</div></div>
-      <div class="resultado">✅ Mezclar 73 ml de alcohol 96º + 27 ml de agua destilada</div>
-    </div>
-
-    <div class="problema-ejemplo">
-      <div class="enunciado"><strong>Práctica:</strong> Preparar 5 L de desinfectante al 3% con concentrado al 20%</div>
-      <div class="paso"><div class="num">1</div><div class="texto">V1 × 20 = 5000 × 3</div></div>
-      <div class="paso"><div class="num">2</div><div class="texto">V1 = 15000 ÷ 20 = 750 ml del concentrado</div></div>
-      <div class="paso"><div class="num">3</div><div class="texto">Agua = 5000 − 750 = 4250 ml</div></div>
-      <div class="resultado">✅ 750 ml de concentrado + 4250 ml de agua</div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ======================== UD1 ======================== -->
-<div class="section s-ud1" id="sec-ud1">
-  <div class="section-header" onclick="toggle('sec-ud1')">
-    <h2>🚑 UD1 — TIPOS DE TRANSPORTE SANITARIO</h2>
-    <span class="badge tag-green">RD 836/2012</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content open">
-
-    <h3>📜 Normativa clave</h3>
-    <div class="alert alert-blue">
-      <strong>RD 836/2012</strong> (25 de mayo) = Normativa VIGENTE · Establece características técnicas, equipamiento y dotación de personal de vehículos de transporte sanitario por carretera<br>
-      ⚠️ El RD 619/1998 está DEROGADO (pero puede aparecer en test para confundirte)
-    </div>
-    <div class="alert alert-yellow">
-      En la Comunidad de Madrid también aplica el <strong>Decreto 128/1996</strong> para inspecciones técnicas sanitarias (ITS)
-    </div>
-
-    <h3>🏷️ Clasificación por titularidad</h3>
+<!-- UD1 -->
+<div class="section s1" id="s1">
+  <div class="sec-hdr" onclick="tog('s1')"><h2>🚑 UD1 — TIPOS DE TRANSPORTE SANITARIO</h2><span class="tag tg">RD 836/2012</span><span class="toggle">▼</span></div>
+  <div class="sec-body open">
+    <h3>📜 Normativa</h3>
+    <div class="alert ab"><strong>RD 836/2012</strong> → establece características técnicas, equipamiento y dotación de personal de vehículos de transporte sanitario por carretera<br>
+    <strong>Art. 133 de la Ley 16/1987</strong> → DEFINE lo que es el transporte sanitario por carretera<br>
+    <strong>Decreto 128/1996 Madrid</strong> → regula ITS (Inspección Técnica Sanitaria) en la Comunidad de Madrid</div>
+    <div class="alert ar">⚠️ RD 619/1998 → DEROGADO por el 836/2012</div>
+    <h3>🗂️ Tipos de transporte por finalidad</h3>
     <table>
-      <tr><th>Tipo</th><th>Definición</th><th>Ejemplo</th></tr>
-      <tr><td><span class="tag tag-blue">PÚBLICO</span></td><td>Prestado por cuenta ajena con retribución. Empresas privadas con convenio con consejerías de sanidad</td><td>Ambulancias concertadas SUMMA</td></tr>
-      <tr><td><span class="tag tag-purple">PRIVADO</span></td><td>Prestado por entidades asistenciales o empresas privadas, sin retribución independiente</td><td>Mutuas, aseguradoras, ONG</td></tr>
-      <tr><td><span class="tag tag-orange">OFICIAL</span></td><td>Efectuado directamente por organismos públicos para sus finalidades</td><td>SAMUR-Protección Civil</td></tr>
+      <tr><th>Tipo</th><th>Definición</th></tr>
+      <tr><td><strong>Primario</strong></td><td>Desde el lugar de la emergencia hasta el hospital</td></tr>
+      <tr><td><strong>Secundario</strong></td><td>De un hospital a otro hospital</td></tr>
+      <tr><td><strong>Terciario</strong></td><td>Dentro del mismo hospital (traslado intrahospitalario)</td></tr>
+      <tr><td><strong>Programado</strong></td><td>Traslado planificado sin urgencia (ej: hemodiálisis)</td></tr>
+      <tr><td><strong>Urgencia</strong></td><td>Patología grave que requiere asistencia rápida pero no inmediata</td></tr>
+      <tr><td><strong>Emergencia</strong></td><td>Riesgo vital inmediato</td></tr>
     </table>
-
-    <h3>🚌 Clasificación de ambulancias (RD 836/2012)</h3>
+    <div class="alert ar">🎯 TEST FRECUENTE: Traslado MISMO hospital = Transporte TERCIARIO (no secundario)</div>
+    <h3>🏷️ Clasificación de pacientes</h3>
     <table>
-      <tr><th>Tipo</th><th>Nombre</th><th>Personal mínimo</th><th>Uso</th></tr>
-      <tr><td><span class="tag tag-blue">A1</span></td><td>No asistencial individual</td><td>Conductor (cert. profesionalidad transporte sanitario)</td><td>Traslado pacientes que no requieren asistencia sanitaria</td></tr>
-      <tr><td><span class="tag tag-blue">A2</span></td><td>No asistencial colectiva</td><td>Conductor (cert. profesionalidad transporte sanitario)</td><td>Traslado de varios pacientes</td></tr>
-      <tr><td><span class="tag tag-green">B</span></td><td>Asistencial SVB</td><td>Conductor TES + Ayudante TES</td><td>Soporte Vital Básico</td></tr>
-      <tr><td><span class="tag tag-red">C</span></td><td>Asistencial SVA</td><td>Conductor TES + Enfermero (± Médico)</td><td>Soporte Vital Avanzado / UVI móvil</td></tr>
+      <tr><th>Tipo</th><th>Definición</th></tr>
+      <tr><td><strong>Crítico</strong></td><td>Pronóstico impredecible. Inestable. Riesgo vital.</td></tr>
+      <tr><td><strong>Grave no crítico</strong></td><td>Estable con alguna disfunción orgánica importante</td></tr>
+      <tr><td><strong>Estable</strong></td><td>Sin riesgo vital, puede necesitar atención continuada</td></tr>
     </table>
-    <div class="mnemonic">
-      <div class="title">🧠 MNEMOTECNIA: "A-A-B-C = No-No-Básico-Crítico"</div>
-      A1/A2 = no asistenciales · B = básico (2 TES) · C = crítico (TES + Enfermero ± Médico)
-    </div>
-
-    <h3>🚁 Otros vehículos de transporte sanitario terrestre</h3>
-    <div class="alert alert-red">
-      <strong>VIR (Vehículo Intervención Rápida)</strong> = también llamado VAM (Vehículo de Apoyo Médico)<br>
-      ⚠️ NO es ambulancia (no transporta pacientes). Traslada sanitarios y material al lugar del incidente.
-    </div>
-    <ul>
-      <li><strong>VIR:</strong> Material avanzado, sin camilla de paciente. Triaje en múltiples víctimas.</li>
-      <li><strong>Urgencias todo terreno:</strong> Tracción total. Para zonas de difícil acceso. Transporta pacientes en camilla.</li>
-      <li><strong>Vehículos de rescate:</strong> Para primeras intervenciones. No transportan pacientes.</li>
-      <li><strong>Ambulancias psiquiátricas:</strong> Sin O₂. Medicación sedante. Legalmente tipo A1 o B.</li>
-      <li><strong>SVA pediátrico:</strong> NO es categoría legal. Se usan ambulancias B o C. Para neonatos → incubadora en tipo C.</li>
-    </ul>
-
+    <h3>🚌 Clasificación ambulancias (RD 836/2012)</h3>
+    <table>
+      <tr><th>Tipo</th><th>Nombre</th><th>Personal mínimo</th></tr>
+      <tr><td><span class="tag tb">A1</span></td><td>No asistencial individual</td><td>Conductor (cert. transporte sanitario)</td></tr>
+      <tr><td><span class="tag tb">A2</span></td><td>No asistencial colectiva</td><td>Conductor (cert. transporte sanitario)</td></tr>
+      <tr><td><span class="tag tg">B</span></td><td>Asistencial SVB</td><td>Conductor TES + Ayudante TES</td></tr>
+      <tr><td><span class="tag tr">C</span></td><td>Asistencial SVA</td><td>Conductor TES + Enfermero (± Médico)</td></tr>
+    </table>
+    <div class="alert ay">SVB (B) traslada enfermos ESTABLES que pueden necesitar atención continuada<br>
+    SVI = TES + DUE (diplomado/graduado enfermería) → categoría C según el RD</div>
+    <h3>📐 Dimensiones mínimas célula sanitaria</h3>
+    <table>
+      <tr><th>Tipo</th><th>Longitud</th><th>Anchura</th><th>Altura</th></tr>
+      <tr><td><span class="tag tg">SVB (B)</span> = <span class="tag tr">SVA (C)</span></td><td>≥ 2,60 m</td><td>≥ 1,50 m</td><td>≥ 1,80 m</td></tr>
+      <tr><td><span class="tag tb">No asistencial A1</span></td><td>≥ 2,00 m</td><td>≥ 1,30 m</td><td>—</td></tr>
+    </table>
+    <div class="alert ar">🎯 SVB y SVA tienen las MISMAS dimensiones (VERDADERO)<br>
+    Lunas del habitáculo: NO han de ser transparentes (son opacas → privacidad)<br>
+    Espacio mínimo cabecera portacamillas SVA: <strong>45 cm</strong><br>
+    Portacamillas con Trendelenburg: desplazamientos positivo + negativo + lateral (TODOS)</div>
+    <h3>🔴 Dotaciones especiales</h3>
+    <table>
+      <tr><th>Vehículo</th><th>Detalle clave</th></tr>
+      <tr><td>Ambulancia traslado individual</td><td>2 cilindros O₂ de <strong>800L cada uno</strong></td></tr>
+      <tr><td>SVB</td><td>2 cilindros O₂ con capacidad total <strong>2.000L</strong></td></tr>
+      <tr><td>Equipo O₂ adultos en SVA</td><td>Rotulado en color <strong>AZUL</strong></td></tr>
+      <tr><td>Respiración autónoma</td><td>Vehículos de <strong>apoyo logístico</strong> (no SVA)</td></tr>
+      <tr><td>Psiquiátricas: personal</td><td>Chalecos antibala + escudos de protección + cascos</td></tr>
+      <tr><td>VIR</td><td>NO transporta pacientes (lleva personal y material)</td></tr>
+    </table>
     <h3>✈️ Transporte según distancia</h3>
     <table>
       <tr><th>Distancia</th><th>Medio</th></tr>
-      <tr><td>&lt; 150 km</td><td>Ambulancia o helicóptero sanitario</td></tr>
-      <tr><td>150 – 300 km</td><td>Helicóptero sanitario</td></tr>
-      <tr><td>300 – 1.000 km</td><td>Avión sanitario</td></tr>
-      <tr><td>&gt; 1.000 km</td><td>Avión de línea regular adaptado</td></tr>
-      <tr><td>Casos especiales</td><td>Barco o ferrocarril</td></tr>
+      <tr><td>&lt;150 km</td><td>Ambulancia o helicóptero</td></tr>
+      <tr><td>150–300 km</td><td>Helicóptero sanitario</td></tr>
+      <tr><td>300–1.000 km</td><td>Avión sanitario</td></tr>
+      <tr><td>&gt;1.000 km</td><td>Avión línea regular adaptado</td></tr>
     </table>
-
-    <h3>📐 Dimensiones del habitáculo (anchos entre paredes)</h3>
-    <div class="alert alert-yellow">
-      Unidades NO asistenciales (A1/A2): mínimo <strong>1,30 metros</strong> de anchura (aunque en general suelen ser mayores)
-    </div>
+    <h3>📖 Historia</h3>
+    <p><strong>Jean-Dominique Larrey</strong> (cirujano napoleónico) = pionero de que los médicos se trasladaran en un vehículo con su instrumental al campo de batalla</p>
   </div>
 </div>
 
-
-<!-- ======================== UD2 ======================== -->
-<div class="section s-ud2" id="sec-ud2">
-  <div class="section-header" onclick="toggle('sec-ud2')">
-    <h2>🏥 UD2 — DOTACIÓN SANITARIA POR TIPO DE VEHÍCULO</h2>
-    <span class="badge tag-blue">Material SVB · SVA · VIR · Aéreo · Marítimo</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content">
-
-    <h3>📄 Documentación obligatoria en TODAS las ambulancias (RD 836/2012)</h3>
+<!-- UD2 -->
+<div class="section s2" id="s2">
+  <div class="sec-hdr" onclick="tog('s2')"><h2>🏥 UD2 — DOTACIÓN POR TIPO DE VEHÍCULO</h2><span class="tag tb">Material · O₂ · Fármacos</span><span class="toggle">▼</span></div>
+  <div class="sec-body">
+    <h3>📄 Documentación y equipamiento COMÚN a todas las ambulancias (RD 836/2012)</h3>
     <table>
-      <tr><th>Documentos obligatorios</th><th>Equipamiento del vehículo</th><th>Célula sanitaria</th></tr>
-      <tr>
-        <td>
-          • Registro desinfecciones del habitáculo y equipamiento<br>
-          • Libro de reclamaciones<br>
-          • Registro de solicitudes y prestaciones<br>
-          • Registro de revisiones del material
-        </td>
-        <td>
-          • Neumáticos de invierno (nov-mar) o cadenas<br>
-          • Herramientas para atención del vehículo<br>
-          • Señales triangulares de peligro<br>
-          • <strong>Extintor</strong> (equip. del VEHÍCULO, no sanitario)
-        </td>
-        <td>
-          • Armarios para material e instrumental<br>
-          • Cuña y botella irrompibles
-        </td>
-      </tr>
+      <tr><th>Documentos obligatorios</th><th>Equipamiento del VEHÍCULO</th><th>Célula sanitaria</th></tr>
+      <tr><td>Registro desinfecciones habitáculo<br>Libro de reclamaciones<br>Registro solicitudes y prestaciones<br>Registro revisiones del material</td><td>Extintor de incendios (NO es sanitario)<br>Neumáticos invierno o cadenas (nov–mar)<br>Herramientas para el vehículo<br>Señales triangulares de peligro</td><td>Armarios para material, instrumental y lencería<br>Cuña y botella irrompibles</td></tr>
     </table>
-    <div class="alert alert-red">⚠️ TEST TRAMPA: El extintor NO es equipamiento SANITARIO, es equipamiento del vehículo</div>
+    <div class="alert ar">⚠️ TEST TRAMPA: El extintor es equipamiento del VEHÍCULO, NO sanitario</div>
 
-    <h3>💊 Medicamentos clave (grupos más relevantes)</h3>
-    <table>
-      <tr><th>Grupo</th><th>Ejemplos clave</th></tr>
-      <tr><td>Analgésicos</td><td>Morfina, ketorolaco</td></tr>
-      <tr><td>Antianginosos</td><td><strong>Nitroglicerina</strong></td></tr>
-      <tr><td>Antiarrítmicos</td><td><strong>Amiodarona, Digoxina</strong></td></tr>
-      <tr><td>Anticolinérgicos</td><td><strong>Atropina</strong></td></tr>
-      <tr><td>Benzodiacepinas</td><td>Diacepam, Midazolam</td></tr>
-      <tr><td>Broncodilatadores</td><td><strong>Salbutamol, Bromuro de ipratropio</strong></td></tr>
-      <tr><td>Sedantes/Anestésicos</td><td>Propofol, Etomidato, Fentanilo</td></tr>
-      <tr><td>Antagonistas</td><td>Flumazenilo (antagonista BZD, NO sedante), Naloxona</td></tr>
-      <tr><td>Corticoides</td><td>Metilprednisolona, Hidrocortisona</td></tr>
-    </table>
-    <div class="alert alert-red">⚠️ TEST TRAMPA: <strong>FLUMAZENILO</strong> = antagonista de benzodiacepinas, NO es anestésico sedante</div>
-
-    <h3>🩸 Sueros (clasificación)</h3>
-    <table>
-      <tr><th>Tipo</th><th>Ejemplos</th><th>Uso principal</th></tr>
-      <tr><td><span class="tag tag-blue">CRISTALOIDES</span></td><td>Suero fisiológico 0,9% · Suero glucosado 5% · Ringer lactato · Manitol</td><td>Deshidratación, shock, quemados</td></tr>
-      <tr><td><span class="tag tag-orange">COLOIDES</span></td><td>Hidroxietilalmidón (Voluven®) · Gelatina (Gelafundina®)</td><td>Shock hemorrágico, sangrado activo</td></tr>
-    </table>
-    <div class="alert alert-yellow">Gelatina y Hidroxietilalmidón = COLOIDES (expansores plasmáticos). Los demás = cristaloides</div>
-
-    <h3>🫧 OXÍGENO MEDICINAL — Sistema y cálculo</h3>
-    <div class="formula-box">
-      Si no se indica presión residual → usar <strong>20 bares</strong><br>
-      Litros O₂ = Capacidad (L) × (Presión manómetro − Presión residual)<br>
-      Tiempo (min) = Litros O₂ ÷ Flujo (L/min)
+    <h3>🫧 Oxígeno medicinal — Sistema completo</h3>
+    <div class="fbox">
+      Volumen disponible = Capacidad (L) × (P<sub>real</sub> − P<sub>residual</sub>)<br>
+      Tiempo (min) = Volumen disponible ÷ Flujo (L/min)<br>
+      <span class="c">Si no indica P_residual → usar 20 bares por defecto. Franja roja (30–50 bar) = cambiar botella.</span>
     </div>
-    <p>Elementos del sistema: <strong>Central O₂ → Manorreductor → Manómetro → Caudalímetro → Humidificador → Sistema de administración</strong></p>
-    <p>La ambulancia debe tener capacidad &gt;4.000L de O₂ total, con reserva mínima de 2.000L</p>
-    <p>Botellas portátiles: 3-5L · Botellas fijas: 7-11L cada una</p>
-    <div class="alert alert-yellow">Manómetro en franja ROJA (30-50 bar) → cambiar botella por seguridad</div>
+    <p><strong>Circuito O₂:</strong> Botella → <strong>Manorreductor</strong> (reduce presión salida) → <strong>Manómetro</strong> (indica presión interna) → <strong>Caudalímetro</strong> (regula L/min administrados) → Humidificador → Mascarilla/gafas</p>
+    <div class="alert ar">⚠️ Red distribución O₂ interior = <strong>BAJA PRESIÓN</strong> (no alta). Sistema SVB: 3–4 tomas de pared. Capacidad total &gt;4.000L con reserva mínima 2.000L.</div>
+    <p><strong>Botella portátil mínima:</strong> 300L (VIR) · SVB lleva portátil + otra de repuesto · Total ≥4.000L entre todas las botellas</p>
+    <table>
+      <tr><th>Sistema admin. O₂</th><th>Flujo</th><th>Uso</th></tr>
+      <tr><td>Gafas/cánulas nasales</td><td>1–5 L/min</td><td>Bajo flujo. Paciente respira por nariz.</td></tr>
+      <tr><td>Mascarilla Venturi</td><td>Según dilutador (24–50%)</td><td>Alto flujo. Concentración controlada.</td></tr>
+      <tr><td>Mascarilla con reservorio</td><td>10–15 L/min</td><td>Máxima concentración O₂ (~95%)</td></tr>
+      <tr><td>Balón resucitador (Ambú)</td><td>15 L/min</td><td>Ventilación manual. Con/sin O₂.</td></tr>
+      <tr><td>Tienda de O₂</td><td>Variable</td><td>Solo en <strong>pediatría</strong></td></tr>
+    </table>
 
-    <h4>Sistemas de administración O₂</h4>
+    <h3>🏥 Dotación SVB — Aparatos electromédicos específicos</h3>
+    <table>
+      <tr><th>Aparato/Material</th><th>Especificaciones clave</th></tr>
+      <tr><td>Balón resucitador (Ambú)</td><td>Adulto + pediátrico. Mascarillas transparentes con reborde. Válvula de admisión O₂ + bolsa reservorio.</td></tr>
+      <tr><td>Aspirador eléctrico portátil</td><td>Batería autónoma + alimentación vehículo. Condiciones de aspiración en ≤4 seg. Vaso colector ≥500cc. Válvula antirretorno.</td></tr>
+      <tr><td>Esfigmomanómetro</td><td>Portátil, no invasivo. También puede ser digital.</td></tr>
+      <tr><td>O₂ medicinal</td><td>2 caudalímetros con humidificador. Flujo hasta 15 L/min. Rótulo en azul para adultos.</td></tr>
+      <tr><td>DESA</td><td>Desfibrilador externo semiautomático. Obligatorio en SVB. TES acreditados pueden usarlo.</td></tr>
+      <tr><td>Tabla para RCP</td><td>Superficie rígida para que el masaje cardíaco sea eficaz.</td></tr>
+      <tr><td>Silla de evacuación</td><td>Para traslados por escaleras.</td></tr>
+    </table>
+    <h4>Maletín respiratorio SVB incluye:</h4>
     <ul>
-      <li><strong>Bajo flujo:</strong> Cánulas/gafas nasales</li>
-      <li><strong>Alto flujo:</strong> Mascarilla Venturi · Mascarilla con reservorio</li>
+      <li>2 balones resucitadores (adulto + pediátrico) con mascarillas</li>
+      <li>Botella portátil O₂ ≥300L + otra de repuesto</li>
+      <li>Mascarillas Venturi (5 ud) · Gafas nasales (5 ud) · Mascarillas nebulización (2 ud)</li>
+      <li>Aspirador de secreciones <strong>manual</strong></li>
+      <li>Cánulas de Guedel/Mayo</li>
+      <li><strong>NO incluye:</strong> equipo de cricotirotomía (eso es SVA)</li>
     </ul>
-    <p>Saturación O₂ adecuada: ≥90% (bronquítico crónico: 85-90% es su habitual)</p>
+    <h4>Material de inmovilización SVB:</h4>
+    <ul>
+      <li>Collarines cervicales Philadelphia (2 cuerpos, <strong>5 medidas</strong>, adulto y pediátrico)</li>
+      <li>Férula de Kendrick (cérvico-torácica, para extricación de vehículos)</li>
+      <li>Férulas de inmovilización de MMSS e MMII: neumáticas <strong>tetracamerales transparentes</strong> + de vacío</li>
+      <li>Camilla de cuchara · Colchón de vacío · Tabla espinal · Inmovilizador de cabeza (Dama de Elche)</li>
+    </ul>
+    <div class="alert ay">🎯 TEST: Las férulas neumáticas son preferentemente <strong>tetracamerales y transparentes</strong></div>
+    <h4>Material de vía venosa SVB:</h4>
+    <ul>
+      <li>Sistemas completos para sueros (4 ud)</li>
+      <li>Agujas IV con catéter externo: 18G (3ud) y 24G (3ud)</li>
+      <li>2 llaves de tres vías</li>
+    </ul>
 
-    <h3>🚑 Dotación SVB (Ambulancia tipo B)</h3>
+    <h3>🏥 Dotación SVA/SVI — Adicional sobre SVB</h3>
+    <table>
+      <tr><th>Material adicional SVA</th><th>Detalle</th></tr>
+      <tr><td>Respirador</td><td>Volumétrico, transporte. Adultos y pediátricos. O₂ ajustable min. 60% y 100%. Con alarmas y control presión vía aérea. 2 circuitos reutilizables + 2 desechables.</td></tr>
+      <tr><td>Monitor-desfibrilador portátil</td><td>Eje 45°. 12V + batería 3h. Cardioscopio 3 canales, 12 derivaciones ECG. Descarga 10–360J. ≥10 descargas de 360J. Marcapasos transcutáneo integrado. Palas adulto+pediátricas.</td></tr>
+      <tr><td>Equipo de intubación</td><td>2 laringoscopios adulto (1 fibra óptica). Palas curvas nº5,4,3,2 + rectas nº1,0. Bombillas repuesto. 2 pinzas de Magill (adulto+pediátrica).</td></tr>
+      <tr><td>Pulsioxímetro fijo</td><td>Saturación O₂ + FC + pletismografía. Cables adulto y pediátrico.</td></tr>
+      <tr><td>Tomas 220V CA</td><td>Para monitores, bombas, incubadoras con motor en marcha.</td></tr>
+      <tr><td>Incubadora neonatal</td><td>Con O₂ propio, pulsioxímetro neonatal y bomba infusión.</td></tr>
+      <tr><td>Monitor TA digital</td><td>Porque el ruido de la ambulancia impide usar fonendoscopio.</td></tr>
+      <tr><td>Equipo de partos</td><td>Espéculo vaginal, sonda vesical, pinzas Kocher, tijeras, pinzas de cordón, sondas aspiración pediátricas, tallas, bolsa para placenta.</td></tr>
+      <tr><td>Equipo sondaje nasogástrico</td><td>Sondas de distintos tamaños, fonendo, guantes, jeringa 50cc, lubricante, bolsa, esparadrapo.</td></tr>
+      <tr><td>Equipo drenaje pleural</td><td>Pleurocath (un solo uso). Válvula Heimlich.</td></tr>
+      <tr><td>Material cirugía menor estéril</td><td>Bisturí, pinzas disección, mosquitos, tijeras, pinzas Kocher, portaagujas, material de sutura.</td></tr>
+    </table>
+
+    <h3>🚗 Dotación VIR completa</h3>
+    <div class="alert ar">VIR = Vehículo de Intervención Rápida = VAM (Vehículo de Apoyo Médico). NO transporta pacientes. Lleva sanitarios y material al lugar.</div>
     <ul>
-      <li>Balón resucitador (Ambú) adulto + pediátrico con mascarillas</li>
-      <li>Sistema oxigenoterapia: 2 caudalímetros con humidificador, botellas O₂ &gt;4000L</li>
-      <li>Fonendoscopio para adultos</li>
-      <li>Camilla de traslado + silla de transporte</li>
-      <li>Material fungible básico: gasas, vendas, apósitos, guantes</li>
-      <li>Monitor-desfibrilador portátil</li>
-      <li>Esfigmomanómetro · Pulsioxímetro · Glucómetro</li>
-      <li>Collarines cervicales de distintos tamaños</li>
-      <li>Férulas de inmovilización</li>
+      <li>Balones resucitación · Botellas O₂ de <strong>300L</strong> · Laringoscopios · Respirador portátil</li>
+      <li>Monitor desfibrilador con marcapasos externo · Pulsioxímetro · Glucómetro · Esfigmomanómetro</li>
+      <li>Maletín soporte respiratorio · Maletín soporte circulatorio · Sistemas drenaje torácico</li>
+      <li>Camilla de cuchara · Férula de Kendrick · Férulas de tracción · Collarines</li>
+      <li>Equipos NBQ (nuclear, biológico, químico) · Detector de gases tóxicos</li>
+      <li>Cascos de protección · Conos señalizadores · Megáfono · Extintor</li>
+      <li>Mochila pediátrica · Mochila equipo de escalada · Manta estéril para quemados</li>
     </ul>
 
-    <h3>🏥 Dotación SVA adicional (sobre SVB)</h3>
+    <h3>🚒 Ambulancias de traslado individual (A1) — Equipamiento sanitario mínimo</h3>
     <ul>
-      <li>Tomas de corriente 220V CA (para aparatos con motor en marcha)</li>
-      <li>Incubadora neonatal con O₂ y pulsioxímetro pediátrico</li>
-      <li>Monitor digital de TA (por ruidos en ambulancia)</li>
-      <li>Equipo de partos completo</li>
-      <li>Equipo de sondaje nasogástrico</li>
-      <li>Material estéril de pequeña cirugía (bisturí, pinzas, mosquitos, etc.)</li>
-      <li>Capnógrafo · Ventilador portátil · Bomba de perfusión</li>
-      <li>Equipo de drenaje pleural · Equipo de cricotirotomía</li>
+      <li>Maletín de primeros auxilios</li>
+      <li>Un cilindro O₂ ≥800L + otro de repuesto = <strong>2 cilindros de 800L cada uno</strong></li>
+      <li>Tabla de paradas · Mascarillas desechables · Bolsas para vómito · Cuña y botella irrompibles</li>
+      <li>Dispositivo soporte soluciones IV · Guantes desechables · Silla plegable · Recipiente objetos punzantes</li>
+      <li>DESA</li>
     </ul>
 
-    <h3>🚗 Dotación VIR</h3>
+    <h3>🚌 Traslado colectivo (A2) — adicional sobre A1</h3>
     <ul>
-      <li>Botellas O₂ de 300 litros · Balones resucitación</li>
-      <li>Monitor-desfibrilador con marcapasos externo</li>
-      <li>Maletín respiratorio + maletín circulatorio</li>
-      <li>Camilla de cuchara · Férula de Kendrick · Collarines</li>
-      <li>Equipos NBQ (Nuclear, Biológico, Químico)</li>
-      <li>Mochila pediátrica · Mochila escalada</li>
-      <li>Laringoscopios · Sistemas drenaje torácico</li>
-      <li>Detector de gases tóxicos · Cascos de protección · Conos señalizadores</li>
+      <li>Equipo de oxigenoterapia (mascarillas, bolsas, etc.)</li>
+      <li>Rampa de acceso de deslizamiento o mecanismo hidro-neumático</li>
+      <li>Lavabo con dispensador de jabón y toallas desechables</li>
     </ul>
-    <div class="alert alert-red">⚠️ VIR: NO transporta pacientes. Solo material y sanitarios. En situaciones especiales PUEDE realizar traslado si es necesario.</div>
+
+    <h3>🧠 Ambulancias psiquiátricas</h3>
+    <ul>
+      <li>Externamente iguales al resto. Interior acondicionado (sin elementos peligrosos, sujeciones).</li>
+      <li><strong>SIN botellas de O₂</strong> (riesgo de uso como arma). Dotación similar a SVB.</li>
+      <li><strong>Medicación específica:</strong> Haloperidol (neuroléptico) · Propofol · Etomidato · Flumazenilo · Diacepam/Midazolam (BZD) · Tiopental sódico (barbitúrico)</li>
+      <li>Personal: chalecos antibala + escudos de protección + cascos</li>
+      <li>Legalmente: tipo A1 o B según ITS</li>
+    </ul>
+
+    <h3>✈️ Transporte aéreo (helicóptero/avión)</h3>
+    <ul>
+      <li>Personal: piloto + mecánico + médico con experiencia en críticos + DUE</li>
+      <li>Camilla aérea certificada con sistema deslizamiento y cinturones</li>
+      <li>Instalación fija O₂ · Respirador · Ventilador manual · Aspiración eléctrica y portátil</li>
+      <li>Monitor transporte · Desfibrilador (palas adulto+pediátricas) · Electrocardiógrafo 12 derivaciones</li>
+      <li>Bomba de perfusión para 3 jeringas · Preinstalación para incubadora</li>
+      <li>Traslado en helicóptero: SOLO si las condiciones de seguridad son adecuadas</li>
+    </ul>
 
     <h3>🚢 Transporte marítimo</h3>
-    <p>España tiene 2 buques sanitarios. Zona hospitalaria incluye: sala de curas, quirófano, UCI, lab, radiología, sala de aislamiento, camarotes.</p>
-    <p>Servicios: consultas radio/videoconferencia, desplazamiento personal sanitario, hospitalizaciones, evacuaciones a tierra.</p>
+    <p>España tiene <strong>2 buques sanitarios</strong>. Zona hospitalaria incluye: sala de curas, radiología, quirófano, UCI, laboratorio, sala de aislamiento, camarotes para náufragos/enfermos (zonas separadas).</p>
+    <p>Servicios: consultas médicas (radio/videoconferencia/ambulatoria), desplazamiento de personal sanitario a otros barcos, hospitalizaciones, evacuaciones a tierra, apoyo logístico.</p>
 
-    <h3>🦟 Ambulancias psiquiátricas</h3>
-    <ul>
-      <li>Externamente iguales que el resto de ambulancias</li>
-      <li>Interior acondicionado (sin elementos peligrosos)</li>
-      <li><strong>Sin botellas de O₂</strong></li>
-      <li>Dotación similar a SVB en material</li>
-      <li>Medicación específica: Propofol, Etomidato, Flumazenilo, Benzodiacepinas (Diacepam/Midazolam), Haloperidol, Tiopental Sódico</li>
-      <li>Legalmente: Tipo A1 o B según su inspección técnica</li>
-    </ul>
-  </div>
-</div>
-
-
-<!-- ======================== UD3 ======================== -->
-<div class="section s-ud3" id="sec-ud3">
-  <div class="section-header" onclick="toggle('sec-ud3')">
-    <h2>🔧 UD3 — MANTENIMIENTO BÁSICO DE LA DOTACIÓN</h2>
-    <span class="badge tag-orange">Verificación · Revisión · Check diario</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content">
-
-    <h3>📋 Revisión al inicio de la jornada</h3>
-    <p>Antes de iniciar el servicio hay que revisar que el vehículo y el material están en condiciones óptimas. <strong>Nunca se sale de base sin verificar</strong>.</p>
-
-    <h4>Verificación del mobiliario</h4>
-    <ul>
-      <li>Cajones y contenido (orden y cantidad)</li>
-      <li>Silla de transporte · Lámpara de luz fría · Maletín rígido</li>
-      <li>Cubos de desecho · Dispensador de jabón y toallas de papel</li>
-      <li>Bala de oxígeno (presión y estado)</li>
-    </ul>
-
-    <h4>Verificación de la camilla</h4>
-    <ul>
-      <li>Sábana cambiada y limpia · Cinturones de sujeción operativos</li>
-      <li>Mecanismo de elevación/bloqueo correcto</li>
-    </ul>
-
-    <h4>Verificación del equipamiento electromédico</h4>
-    <ul>
-      <li>Monitor-desfibrilador: batería cargada, electrodos disponibles</li>
-      <li>Pulsioxímetro y glucómetro: funcionamiento y consumibles</li>
-      <li>Respirador portátil (si aplica)</li>
-      <li>Aspirador de secreciones: funcionamiento y nivel de vacío</li>
-    </ul>
-
-    <h3>🧪 Cálculo de O₂ al inicio de jornada</h3>
-    <div class="alert alert-blue">
-      La ambulancia debe tener &gt;4.000L. Para calcularlo: leer manómetro y multiplicar presión × capacidad de cada botella.
-      <br>⚠️ FALSO: Para calcularlo se divide presión / capacidad (es al revés: se MULTIPLICA)
-    </div>
-
-    <h3>🔄 Reposición de material</h3>
-    <p>Tras cada servicio reponer el material fungible utilizado. Verificar caducidades periódicamente. El material ha de estar sujeto (en armarios/cajones/anclado) — un frenazo lo convierte en proyectil.</p>
-
-    <h3>📝 Registros obligatorios</h3>
-    <ul>
-      <li>Registro de revisiones del material sanitario</li>
-      <li>Registro de desinfecciones del habitáculo y equipamiento</li>
-      <li>Registro de solicitudes y prestaciones de servicios</li>
-    </ul>
-  </div>
-</div>
-
-
-<!-- ======================== UD4 ======================== -->
-<div class="section s-ud4" id="sec-ud4">
-  <div class="section-header" onclick="toggle('sec-ud4')">
-    <h2>📦 UD4 — CONTROL DE EXISTENCIAS Y MATERIALES</h2>
-    <span class="badge tag-purple">Almacén · Stock · Pedidos · CRÍTICO por cálculos</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content">
-
-    <h3>📊 Conceptos de stock (ERRATAS UD4 — oficial profesor)</h3>
+    <h3>🆘 Catástrofes — PSA y material</h3>
     <table>
-      <tr><th>Concepto</th><th>Definición</th></tr>
-      <tr><td><strong>Stock mínimo</strong></td><td>Cantidad mínima que puede haber sin riesgo de agotamiento con consumo habitual</td></tr>
-      <tr><td><strong>Stock de seguridad</strong></td><td>Cantidad SUPERIOR al mínimo necesaria para cubrir incidencias puntuales</td></tr>
-      <tr><td><strong>Stock máximo</strong></td><td>Cantidad máxima que puede haber en el almacén</td></tr>
-      <tr><td><strong>Rotura de stock</strong></td><td>El distribuidor no tiene suficiente producto = demanda no satisfecha</td></tr>
-      <tr><td><strong>Punto de Pedido</strong></td><td>Nivel de stock que obliga a hacer un nuevo pedido para no agotarse</td></tr>
+      <tr><th>PSA (Puesto Sanitario Avanzado)</th><th>Composición</th></tr>
+      <tr><td>Funciones</td><td>Acogida de víctimas · Triage · Estabilización · Espera para evacuación. <strong>NO realiza mando sanitario</strong></td></tr>
+      <tr><td>Composición PSA</td><td>Vehículo furgón · Tienda 30–40 m² · Generador · Sistema iluminación · 2 botellas O₂ de 2.000L cada una · 5 contenedores material sanitario · Módulo transmisiones (antena 15m)</td></tr>
+      <tr><td>Contenedores colores</td><td>Azul=ventilatorio · Rojo=circulatorio · Amarillo=pediátrico · Verde=otros</td></tr>
+      <tr><td>Equipo atención catástrofe</td><td>Puede atender hasta <strong>25 víctimas</strong>. Contenedor vacío máx: <strong>7 Kg</strong>. Características: estancos, ignífugos, impermeables, reflectantes, apilables, antideslizantes, con asas escamoteables.</td></tr>
     </table>
 
-    <div class="formula-box">
-      <strong>Punto de Pedido</strong> = Stock de seguridad + (Consumo diario × Plazo de entrega en días)<br>
-      <strong>Unidades a pedir</strong> = Stock máximo − Stock de seguridad<br>
-      <strong>Stock de seguridad</strong> = Stock mínimo + % sobre stock mínimo (si así se indica)
-    </div>
+    <h3>💉 Catéteres IV por edad</h3>
+    <table>
+      <tr><th>Paciente</th><th>Nº catéter</th></tr>
+      <tr><td>Niño ~4 años</td><td><strong>22</strong> (más fino)</td></tr>
+      <tr><td>Adulto urgencia</td><td>14–16 (grueso, alto flujo)</td></tr>
+    </table>
+    <div class="alert ay">🔪 Hojas bisturí: nº 23 → mango nº <strong>4</strong> · Hojas 10–15 → mango nº <strong>3</strong></div>
 
-    <div class="mnemonic">
-      <div class="title">🧠 Regla del Punto de Pedido</div>
-      "¿Cuándo pedimos?" → Cuando el stock llegue al PUNTO DE PEDIDO<br>
-      "¿Cuánto pedimos?" → Hasta llenar el almacén = Máximo − Stock seguridad
-    </div>
+    <h3>💊 Farmacología</h3>
+    <table>
+      <tr><th>Grupo</th><th>Ejemplos</th><th>Clave examen</th></tr>
+      <tr><td>Antianginosos</td><td>Nitroglicerina</td><td></td></tr>
+      <tr><td>Antiarrítmicos</td><td>Amiodarona · Digoxina · Adenosina · Lidocaína</td><td></td></tr>
+      <tr><td>Anticolinérgicos</td><td>Atropina</td><td></td></tr>
+      <tr><td>Broncodilatadores</td><td>Salbutamol · Bromuro ipratropio · Aminofilina</td><td></td></tr>
+      <tr><td>Benzodiacepinas</td><td>Diacepam · Midazolam</td><td>Efectos sedantes e hipnóticos</td></tr>
+      <tr><td>Antagonista BZD</td><td><strong>Flumazenilo</strong></td><td>NO es sedante/anestésico</td></tr>
+      <tr><td>Diurético</td><td><strong>Seguril (furosemida)</strong></td><td>Diurético de asa</td></tr>
+      <tr><td>Analgésico opiáceo</td><td>Tramadol · Morfina · Buprenorfina · Fentanilo</td><td></td></tr>
+      <tr><td>Analgésico no opiáceo</td><td>Ketorolaco · Paracetamol · Ibuprofeno</td><td></td></tr>
+      <tr><td>Relajante muscular</td><td><strong>Succinil Colina</strong></td><td>2–8°C. También anestésico.</td></tr>
+      <tr><td>Vasopresores/cardiotónicos</td><td>Adrenalina · Dopamina · Noradrenalina · Dobutamina</td><td>Adrenalina → maletín CIRCULATORIO</td></tr>
+      <tr><td>Neurolépticos</td><td><strong>Haloperidol</strong></td><td>Esencial en psiquiátricas</td></tr>
+      <tr><td>Antídotos</td><td><strong>Cyanokit (hidroxicobalamina)</strong> para cianuro/humos incendio</td><td></td></tr>
+    </table>
+    <h3>🩸 Sueros</h3>
+    <table>
+      <tr><th>Tipo</th><th>Ejemplos</th><th>Indicación</th></tr>
+      <tr><td><strong>CRISTALOIDES</strong></td><td>Fisiológico 0,9% · Glucosado 5% · Ringer Lactato · Manitol</td><td>Ringer Lactato: shock hipovolémico, acidosis metabólica, quemados</td></tr>
+      <tr><td><strong>COLOIDES</strong></td><td>Hidroxietilalmidón (Voluven®) · Gelatina (Gelafundina®)</td><td>Expansores plasmáticos. Shock hemorrágico.</td></tr>
+    </table>
+    <h3>🩺 Material especial</h3>
+    <table>
+      <tr><th>Material</th><th>Uso específico</th></tr>
+      <tr><td>Sonda Levin</td><td>Sondaje nasogástrico y lavado de estómago</td></tr>
+      <tr><td>Sonda Foley</td><td>Sondaje VESICAL (no nasogástrica)</td></tr>
+      <tr><td>Pleurocath</td><td>Drenaje torácico de un solo uso</td></tr>
+      <tr><td>Válvula de Heimlich</td><td>Drenaje torácico unidireccional (equipo de punción pleural)</td></tr>
+      <tr><td>Cánula de Yankauer</td><td>Aspiración de secreciones orofaríngeas</td></tr>
+      <tr><td>Cánulas de Guedel/Mayo</td><td>Vía aérea orofaríngea, evita obstrucción por lengua</td></tr>
+      <tr><td>Capnógrafo</td><td>Mide CO₂ espirado (confirma intubación correcta)</td></tr>
+      <tr><td>Pletismografía</td><td>Control pulso arterial: detecta obstrucción arterial</td></tr>
+      <tr><td>Oximetría</td><td>Determinación del contenido de O₂</td></tr>
+    </table>
+    <h3>📡 Comunicaciones</h3>
+    <table>
+      <tr><th>Sistema</th><th>Funcionamiento</th></tr>
+      <tr><td>GPS</td><td>Recepción y procesamiento de información por satélite. Navegación.</td></tr>
+      <tr><td>Trunking</td><td>Red digital. Varios operadores pueden usarla simultáneamente.</td></tr>
+      <tr><td>Telefonía móvil</td><td>Comunicación convencional.</td></tr>
+      <tr><td>Radiotransmisión</td><td>Radio UHF/VHF.</td></tr>
+    </table>
+  </div>
+</div>
 
-    <h3>🎒 Material en el chaleco (nota de erratas del profesor)</h3>
-    <div class="alert alert-yellow">
-      La descripción del chaleco del temario es un <strong>EJEMPLO</strong>, no es una norma obligatoria.<br>
-      • El equipo de transmisión → lo lleva generalmente el TES (1 por equipo, no cada miembro)<br>
-      • Ambú, laringoscopio, tubos orotraqueales → van en el MALETÍN AZUL (respiratorio), no en el chaleco<br>
-      • El médico normalmente NO porta material de venoclisis (lo hace el enfermero)
-    </div>
-
-    <h3>📋 Tipos de inventario</h3>
+<!-- UD3 -->
+<div class="section s3" id="s3">
+  <div class="sec-hdr" onclick="tog('s3')"><h2>🔧 UD3 — MANTENIMIENTO BÁSICO DE LA DOTACIÓN</h2><span class="tag to">Revisión · Check diario</span><span class="toggle">▼</span></div>
+  <div class="sec-body">
+    <h3>⏰ Momentos del mantenimiento</h3>
+    <table>
+      <tr><th>Momento</th><th>Qué se hace</th></tr>
+      <tr><td>Inicio de jornada</td><td><strong>VERIFICAR</strong> existencias de material fungible</td></tr>
+      <tr><td>Tras cada servicio</td><td>Reponer lo usado, limpiar y desinfectar</td></tr>
+      <tr><td>Final de jornada</td><td>Mantenimiento de la <strong>medicación</strong></td></tr>
+    </table>
+    <div class="alert ar">⚠️ TEST TRAMPA: Al inicio de jornada se VERIFICA (no se repone lo del turno anterior automáticamente)</div>
+    <h3>🫧 Mantenimiento O₂</h3>
     <ul>
-      <li><strong>Inventario periódico:</strong> Revisión en periodos fijos (semanal/mensual)</li>
-      <li><strong>Inventario permanente:</strong> Actualización continua de existencias</li>
-      <li><strong>Inventario anual:</strong> Recuento total al cierre del ejercicio</li>
+      <li>Comprobar fugas · Comprobar cantidad de O₂ · Colocarse OPUESTO a la salida del gas</li>
+      <li><strong>NUNCA lubricar las válvulas</strong> → el O₂ reacciona con grasas (peligro de explosión)</li>
     </ul>
+    <h3>🩺 Mantenimiento por aparato</h3>
+    <table>
+      <tr><th>Aparato</th><th>Mantenimiento específico</th></tr>
+      <tr><td>Monitor desfibrilador</td><td>Autotest al menos 1 vez/día · Parches marcapasos disponibles · Preparado modo derivación palas</td></tr>
+      <tr><td>Respirador</td><td>Comprobar válvula espiratoria · Filtros: cambiar después de CADA actuación · Tubuladuras no aplastadas</td></tr>
+      <tr><td>Pulsioxímetro</td><td>Luz roja al hacer lectura + valor estable (no parpadea) + pila de repuesto → TODAS son ciertas</td></tr>
+      <tr><td>Aspirador</td><td>Comprobar que alcanza la presión de aspirado adecuada</td></tr>
+      <tr><td>Fonendoscopio</td><td>Desinfectar con <strong>hipoclorito sódico al 10%</strong></td></tr>
+      <tr><td>Otoscopio</td><td>Reponer los espéculos</td></tr>
+      <tr><td>Laringoscopio</td><td>Necesita <strong>pilas Y bombillas</strong> de recambio</td></tr>
+      <tr><td>Incubadora</td><td>Tiene sistema O₂ propio · Durante traslado usa el O₂ de la incubadora</td></tr>
+    </table>
+    <h3>🦴 Mantenimiento inmovilización</h3>
+    <ul>
+      <li><strong>Kendrick</strong> → cepillo con púas de plástico para limpieza</li>
+      <li><strong>Colchón neumático</strong> → vigilar que no se pinche</li>
+      <li><strong>Tabla espinal</strong> → se encera periódicamente</li>
+      <li>Tienda O₂ pediátrica → comprobar funcionamiento Y estanqueidad</li>
+    </ul>
+    <h3>📦 Material fungible</h3>
+    <ul>
+      <li>Las bolsas han de estar <strong>precintadas</strong></li>
+      <li>NO reutilizar aunque se desinfecte</li>
+    </ul>
+    <h3>⚠️ Accidentes con material biológico</h3>
+    <div class="alert ar">Cortarse con bisturí USADO → la respuesta correcta es NINGUNA de las opciones comunes (ni lavar fuerte, ni succionar, ni cubrir sin lavar) → seguir el <strong>protocolo de accidentes laborales</strong></div>
+    <div class="alert ay">Pinchazo con aguja NUEVA (sin usar) → tirarla al contenedor rígido y coger otra (no hay riesgo biológico)</div>
+    <h3>🗑️ Residuos sanitarios</h3>
+    <table>
+      <tr><th>Clase</th><th>Ejemplos</th><th>Eliminación</th></tr>
+      <tr><td>Clase I</td><td>Residuos asimilables a urbanos (papel, etc.)</td><td>Bolsa negra</td></tr>
+      <tr><td>Clase II</td><td>Residuos sanitarios no específicos (gasas, guantes)</td><td>Bolsa amarilla/roja</td></tr>
+      <tr><td>Clase III</td><td>Residuos específicos de riesgo: <strong>VIH, tuberculosis</strong>, hepatitis B</td><td>Bolsa/recipiente homologado con "RIESGO"</td></tr>
+    </table>
+    <h3>🦺 Maletines (adrenalina)</h3>
+    <p>La <strong>Adrenalina</strong> está en el maletín <strong>CIRCULATORIO</strong></p>
+    <p>La <strong>válvula de Heimlich</strong> → equipo de <strong>punción pleural</strong></p>
+  </div>
+</div>
+
+<!-- UD4 -->
+<div class="section s4" id="s4">
+  <div class="sec-hdr" onclick="tog('s4')"><h2>📦 UD4 — CONTROL DE EXISTENCIAS Y MATERIALES</h2><span class="tag tp">Almacén · Stock · Pedidos</span><span class="toggle">▼</span></div>
+  <div class="sec-body">
+    <h3>📊 Conceptos de stock (del temario oficial)</h3>
+    <table>
+      <tr><th>Concepto</th><th>Definición exacta</th></tr>
+      <tr><td><strong>Stock mínimo</strong></td><td>Cantidad mínima de una referencia que puede haber en el almacén SIN riesgo de agotarse, mientras el consumo sea el habitual</td></tr>
+      <tr><td><strong>Stock de seguridad</strong></td><td>Cantidad SUPERIOR al mínimo necesaria para cubrir no solo las necesidades habituales sino también incidencias puntuales</td></tr>
+      <tr><td><strong>Stock máximo</strong></td><td>Cantidad máxima de una referencia que puede haber en el almacén</td></tr>
+      <tr><td><strong>Punto de pedido</strong></td><td>Nivel de stock que, teniendo en cuenta necesidades y tiempo de entrega, obliga a realizar un nuevo pedido para evitar el agotamiento</td></tr>
+      <tr><td><strong>Rotura de stock</strong></td><td>La empresa distribuidora no tiene cantidad suficiente del producto = demanda no satisfecha</td></tr>
+    </table>
+    <div class="fbox">
+      <strong>Punto de pedido</strong> = Stock de seguridad + Unidades gastadas en el plazo de entrega<br>
+      <strong>Unidades a pedir</strong> = Stock máximo − Stock de seguridad<br>
+      <span class="c">Las unidades que se piden = las que se gastan desde el punto de pedido hasta el día de entrega</span>
+    </div>
+    <div class="alert ay">Stock MÍNIMO ≠ Stock de SEGURIDAD. El de seguridad es SIEMPRE MAYOR que el mínimo.</div>
+
+    <h3>🔢 Decálogo Prehospitalario — Las 10 fases</h3>
+    <table>
+      <tr><th>Fase</th><th>Nombre</th><th>Contenido</th></tr>
+      <tr><td>1</td><td>Alerta</td><td>Aviso del incidente</td></tr>
+      <tr><td>2</td><td>Alarma</td><td>Movilización de recursos</td></tr>
+      <tr><td>3</td><td>Aproximación</td><td>Desplazamiento al lugar</td></tr>
+      <tr><td>4</td><td>Aislamiento y control</td><td>Seguridad de la zona</td></tr>
+      <tr><td>5</td><td>Triaje</td><td>Clasificación de víctimas</td></tr>
+      <tr><td>6</td><td>SVB y SVA</td><td>Aplicación de soporte vital</td></tr>
+      <tr><td>7</td><td>Estabilización</td><td>Preparar para el traslado</td></tr>
+      <tr><td>8</td><td>Transporte</td><td>Traslado al hospital</td></tr>
+      <tr><td>9</td><td>Transferencia</td><td>Entrega al hospital</td></tr>
+      <tr><td>10</td><td><strong>Reactivación</strong></td><td>Control existencias + limpieza + reposición + combustible. <strong>Aquí se hace el control de material</strong></td></tr>
+    </table>
+    <div class="alert ar">🎯 Control de existencias de material en vehículos = fase 10 = <strong>REACTIVACIÓN</strong></div>
+
+    <h3>🎒 Check-lists por categoría</h3>
+    <table>
+      <tr><th>Check-list</th><th>Incluye</th><th>NO incluye</th></tr>
+      <tr><td><strong>CURAS</strong></td><td>Povidona yodada · Mangos bisturí nº3 y nº4 (2 juegos c/u) · Hidroxicobalamina (temp. ambiente) · Pinzas de Kocher</td><td></td></tr>
+      <tr><td><strong>FUNGIBLE</strong></td><td>Gasas · Guantes · Conexiones aspiración · <strong>Sondas Foley</strong></td><td>Fonendoscopio, pinzas Magill (no son fungibles)</td></tr>
+      <tr><td><strong>VÍA AÉREA</strong></td><td>Cánulas orofaríngeas · Laringoscopio (soporte ventilatorio)</td><td>Bombas de infusión (van en circulatorio)</td></tr>
+      <tr><td><strong>CIRCULATORIO</strong></td><td>Adrenalina · Bombas de infusión · Manguito infusión rápida</td><td></td></tr>
+      <tr><td><strong>OXIGENOTERAPIA</strong></td><td>Bombonas O₂ · Caudalímetros · Humidificadores · Mascarillas</td><td>Pinzas de Kocher (van en curas)</td></tr>
+    </table>
+    <div class="alert ar">⚠️ CONFUSIONES FRECUENTES:<br>
+    Sonda Foley → FUNGIBLE (no maletín circulatorio)<br>
+    Pinzas de Kocher → CURAS (no oxigenoterapia)<br>
+    Válvula Heimlich → VÍA AÉREA / punción pleural (no curas)<br>
+    Adrenalina → maletín CIRCULATORIO (no primeros auxilios)</div>
+
+    <h3>🧤 Material de protección</h3>
+    <table>
+      <tr><th>Material</th><th>Composición</th><th>Por qué</th></tr>
+      <tr><td>Guantes sin alergia</td><td><strong>Vinilo o Nitrilo</strong></td><td>El látex puede provocar alergia al sanitario y al paciente</td></tr>
+      <tr><td>Trajes NBQ civiles</td><td><strong>Propileno</strong></td><td>Resistente a agentes químicos y biológicos</td></tr>
+    </table>
+
+    <h3>💊 Medicamentos con conservación especial</h3>
+    <table>
+      <tr><th>Medicamento</th><th>Conservación</th><th>Uso</th></tr>
+      <tr><td><strong>Succinil Colina</strong></td><td>2–8°C (cadena de frío)</td><td>Relajante muscular + anestésico</td></tr>
+      <tr><td><strong>Cyanokit 2,5g</strong> (hidroxicobalamina)</td><td>Temperatura ambiente</td><td>Intoxicación por cianuro / inhalación de humos en incendio</td></tr>
+      <tr><td>Productos <strong>termolábiles</strong></td><td>Entre T_max y T_min del fabricante (ni frío extremo ni calor)</td><td></td></tr>
+      <tr><td>Productos <strong>fotosensibles</strong></td><td>Protegidos de la luz</td><td></td></tr>
+      <tr><td>Productos <strong>higroscópicos</strong></td><td>Protegidos de la humedad</td><td></td></tr>
+    </table>
+
+    <h3>📋 Gestión del almacén — Normas y responsabilidades</h3>
+    <table>
+      <tr><th>Concepto</th><th>Norma/Dato</th></tr>
+      <tr><td>Bombonas O₂ almacenadas</td><td><strong>Verticales</strong> y sujetas (caída → grifo dañado → fuga)</td></tr>
+      <tr><td>Cintas de triage</td><td>En el chaleco del <strong>MÉDICO</strong></td></tr>
+      <tr><td>Artículos y stock ambulancia</td><td>Los decide la <strong>EMPRESA</strong> (cumpliendo requisitos legales mínimos)</td></tr>
+      <tr><td>Garantizar abastecimiento</td><td>Función del <strong>responsable del almacén</strong></td></tr>
+      <tr><td>Laringoscopio</td><td>Material de soporte <strong>VENTILATORIO</strong></td></tr>
+      <tr><td>Trazabilidad</td><td>Seguimiento completo del recorrido de un medicamento desde su origen hasta el paciente</td></tr>
+      <tr><td>Inventario</td><td>Lista de materiales que posee la empresa + comprobación real de existencias teóricas</td></tr>
+      <tr><td>Ficha técnica</td><td>Apartado de la base informática que describe cada producto</td></tr>
+      <tr><td>Cuándo controlar existencias</td><td>Al inicio de jornada + después de cada servicio + en el inventario = <strong>TODAS</strong></td></tr>
+    </table>
 
     <h3>🏷️ Clasificación ABC de materiales</h3>
+    <table>
+      <tr><th>Clase</th><th>Cantidad de artículos</th><th>Valor económico</th></tr>
+      <tr><td>A</td><td>Pocos artículos (~20%)</td><td>Alto valor (~80% del total)</td></tr>
+      <tr><td>B</td><td>Artículos intermedios</td><td>Valor intermedio</td></tr>
+      <tr><td>C</td><td>Muchos artículos (~80%)</td><td>Bajo valor individual (~20% del total)</td></tr>
+    </table>
+
+    <h3>📦 Control de material fungible — métodos válidos</h3>
     <ul>
-      <li><strong>Clase A:</strong> Pocos artículos, alto valor económico (~80% del valor, 20% artículos)</li>
-      <li><strong>Clase B:</strong> Artículos intermedios</li>
-      <li><strong>Clase C:</strong> Muchos artículos, bajo valor individual (~80% artículos, 20% valor)</li>
+      <li>Por <strong>ubicación física</strong> en la ambulancia (cajón por cajón)</li>
+      <li>Por <strong>lista alfabética</strong> del material</li>
+      <li>Según su <strong>funcionalidad</strong> (agrupando por uso)</li>
+      <li>→ Todas las formas son válidas</li>
     </ul>
+
+    <h3>⚠️ Erratas UD4 del profesor</h3>
+    <div class="alert ar">
+      El contenido del chaleco descrito en el temario es un EJEMPLO, no una norma obligatoria:<br>
+      • El equipo de transmisión lo lleva uno del equipo (generalmente el TES), NO uno por persona<br>
+      • Ambú, laringoscopio y tubos orotraqueales van en el MALETÍN AZUL (respiratorio), NO en el chaleco<br>
+      • El médico normalmente NO porta material de venoclisis (lo hace el enfermero)
+    </div>
   </div>
 </div>
 
-
-<!-- ======================== UD5 ======================== -->
-<div class="section s-ud5" id="sec-ud5">
-  <div class="section-header" onclick="toggle('sec-ud5')">
-    <h2>🧹 UD5 — LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN</h2>
-    <span class="badge tag-orange">Niveles · Productos · Métodos</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content">
-
-    <h3>🔢 Jerarquía de procesos (de menor a mayor eliminación)</h3>
+<!-- UD5 -->
+<div class="section s5" id="s5">
+  <div class="sec-hdr" onclick="tog('s5')"><h2>🧹 UD5 — LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN</h2><span class="tag to">Niveles · Productos · Métodos</span><span class="toggle">▼</span></div>
+  <div class="sec-body">
+    <h3>🔢 Jerarquía: Limpiar → Desinfectar → Esterilizar</h3>
+    <div class="alert ag">PRIMERO limpiar SIEMPRE. NO hace falta desinfectar antes de limpiar. Agua FRÍA en el primer frotado (el agua caliente adhiere la materia orgánica)</div>
+    <div class="alert ay">Cubeta de ultrasonidos = para <strong>LIMPIAR</strong> instrumental (no desinfectar)</div>
+    <h3>🗂️ Clasificación del material</h3>
     <table>
-      <tr><th>Proceso</th><th>Qué elimina</th><th>Cómo</th></tr>
-      <tr><td><strong>LIMPIEZA</strong></td><td>Suciedad física, materia orgánica</td><td>Agua + detergente. Siempre PRIMERO antes de desinfectar</td></tr>
-      <tr><td><strong>DESINFECCIÓN</strong></td><td>Mayoría de microorganismos patógenos (NO esporas)</td><td>Productos químicos (nivel bajo, medio o alto)</td></tr>
-      <tr><td><strong>ESTERILIZACIÓN</strong></td><td>TODOS los microorganismos incluidas esporas</td><td>Calor húmedo (autoclave), calor seco, esterilización química</td></tr>
+      <tr><th>Tipo</th><th>Definición</th><th>Proceso requerido</th></tr>
+      <tr><td><strong>CRÍTICO</strong></td><td>Contacto con tejidos estériles del organismo</td><td>Esterilización</td></tr>
+      <tr><td><strong>SEMICRÍTICO</strong></td><td>Contacto con mucosas o piel no intacta</td><td>Desinfección de alto nivel</td></tr>
+      <tr><td><strong>NO CRÍTICO</strong></td><td>Contacto con piel sana</td><td>Desinfección nivel bajo</td></tr>
     </table>
-    <div class="alert alert-green">✅ PRIMERO limpiar → LUEGO desinfectar. NO hace falta desinfectar antes de limpiar.</div>
-
+    <div class="alert ar">🎯 Balón resucitador = material <strong>SEMICRÍTICO</strong> (no crítico)<br>
+    Pulsioxímetro = material <strong>NO CRÍTICO</strong> (solo toca piel sana)<br>
+    Equipo de cirugía = <strong>CRÍTICO</strong> → necesita esterilización<br>
+    Monitor ECG, fonendoscopio = NO crítico</div>
     <h3>📊 Niveles de desinfección</h3>
     <table>
-      <tr><th>Nivel</th><th>Elimina</th><th>No elimina</th><th>Uso</th></tr>
-      <tr><td><span class="tag tag-blue">BAJO</span></td><td>Bacterias vegetativas, algunos virus y hongos</td><td>Micobacterias, esporas</td><td>Superficies de bajo riesgo</td></tr>
-      <tr><td><span class="tag tag-orange">INTERMEDIO</span></td><td>Bacterias + micobacterias + virus + hongos</td><td>Esporas</td><td>Material semicrítico</td></tr>
-      <tr><td><span class="tag tag-red">ALTO</span></td><td>Todo excepto grandes cantidades de esporas</td><td>Grandes cantidades de esporas</td><td>Material semicrítico de alto riesgo</td></tr>
+      <tr><th>Nivel</th><th>Elimina</th><th>NO elimina</th></tr>
+      <tr><td>BAJO</td><td>Bacterias vegetativas, algunos virus/hongos</td><td>Micobacterias, esporas</td></tr>
+      <tr><td>INTERMEDIO</td><td>Todo anterior + micobacterias + virus + hongos</td><td>Esporas</td></tr>
+      <tr><td>ALTO</td><td>Casi todo (incluso micobacterias)</td><td>Grandes cantidades de esporas</td></tr>
     </table>
-
+    <div class="alert ay">Desinfectante que NO elimina micobacterias = nivel <strong>BAJO</strong><br>
+    Desinfección medio-bajo nivel → material <strong>NO CRÍTICO</strong></div>
     <h3>🧴 Desinfectantes principales</h3>
     <table>
-      <tr><th>Producto</th><th>Nivel</th><th>Concentración</th><th>Características clave</th></tr>
-      <tr>
-        <td><strong>Glutaraldehído</strong><br>(Instrunet®, Esporicida/30®)</td>
-        <td><span class="tag tag-red">ALTO</span></td>
-        <td>2% (usual)</td>
-        <td>Bactericida muy activo · No deteriora metales/gomas/material cortante · Es esterilizante químico · 8-10h para esterilizar</td>
-      </tr>
-      <tr>
-        <td><strong>Hipoclorito sódico</strong><br>(Lejía)</td>
-        <td>Bajo-Intermedio</td>
-        <td>Variable</td>
-        <td>Barato y eficaz · Corrosivo con metales · Se inactiva con materia orgánica</td>
-      </tr>
-      <tr>
-        <td><strong>Alcohol isopropílico/etílico</strong></td>
-        <td>Intermedio</td>
-        <td>70-90%</td>
-        <td>Solo sobre piel sana · No uso en mucosas · Rápido</td>
-      </tr>
-      <tr>
-        <td><strong>Clorhexidina</strong></td>
-        <td>Antiséptico</td>
-        <td>Var.</td>
-        <td>Amplio espectro · No irritante · No se absorbe · Actividad residual hasta 6h · No se inactiva con materia orgánica</td>
-      </tr>
-      <tr>
-        <td><strong>Povidona yodada (Betadine®)</strong></td>
-        <td>Antiséptico</td>
-        <td>10%</td>
-        <td>Color marrón-naranja · Activa frente a esporas · Actividad residual 4h · Se absorbe sistémicamente (evitar en alérgicos a yodo)</td>
-      </tr>
+      <tr><th>Producto</th><th>Nombre químico / marca</th><th>Nivel</th><th>Notas</th></tr>
+      <tr><td>Glutaraldehído</td><td>Instrunet®, Esporicida/30®</td><td>ALTO</td><td>2% usual · 8-10h para esterilizar · NO deteriora metales ni gomas</td></tr>
+      <tr><td>Hipoclorito sódico</td><td><strong>Lejía</strong></td><td>Bajo-Intermedio</td><td><strong>NO usar en metales</strong> (corroe/oxida). Paredes/suelo: 0,5%</td></tr>
+      <tr><td>Agua oxigenada</td><td><strong>Peróxido de hidrógeno</strong></td><td>Intermedio</td><td></td></tr>
+      <tr><td>Alcohol</td><td>Etílico o isopropílico</td><td>Intermedio</td><td>Solo piel sana</td></tr>
+      <tr><td>Clorhexidina</td><td>—</td><td>Antiséptico</td><td>Actividad residual 6h. No se absorbe. No alergénica.</td></tr>
+      <tr><td>Povidona yodada</td><td>Betadine®</td><td>Antiséptico</td><td>Actividad residual 4h. Se absorbe (cuidado en alérgicos yodo)</td></tr>
     </table>
-
-    <div class="alert alert-blue">
-      🏆 La <strong>clorhexidina</strong> ha relegado a la povidona yodada en la práctica clínica por sus ventajas (no se absorbe, no alergénica, 6h de actividad residual)
-    </div>
-
     <h3>♻️ Esterilización</h3>
-    <h4>Esterilización física — Autoclave (vapor a presión)</h4>
     <table>
-      <tr><th>Ciclo</th><th>Temperatura</th><th>Tiempo de meseta</th></tr>
-      <tr><td>Ciclo estándar</td><td>121°C</td><td>~20 minutos</td></tr>
-      <tr><td>Ciclo rápido</td><td>134°C</td><td>~4 minutos</td></tr>
+      <tr><th>Método</th><th>Temperatura</th><th>Tiempo meseta</th><th>Notas</th></tr>
+      <tr><td>Autoclave 121°C</td><td>121°C</td><td>~20 min</td><td></td></tr>
+      <tr><td>Autoclave 134°C</td><td>134°C</td><td>~4 min</td><td>Preferible si material aguanta (deteriora menos)</td></tr>
+      <tr><td>Esterilización química</td><td>Ambiente</td><td>8-10 horas</td><td>Glutaraldehído 2%. NO monitorizable. Para material que no aguanta calor.</td></tr>
     </table>
-    <div class="alert alert-green">Si el material aguanta 134°C → usar ese ciclo (deteriora menos que el de 121°C)</div>
-    <p>Se rotula la <strong>fecha de caducidad</strong> (NO la fecha de esterilización) en el paquete antes del ciclo.</p>
-    <p>Miniclaves (pequeños) = tienen recipiente con agua destilada. Los grandes están conectados a red de ósmosis.</p>
-
-    <h4>Esterilización química (frío)</h4>
-    <p>Inmersión en glutaraldehído al 2% durante <strong>8-10 horas</strong>. Para material que NO soporta temperatura elevada. No es monitorizable. Enjuagar con agua estéril tras el proceso. Guardar en recipientes metálicos esterilizados.</p>
-
-    <div class="mnemonic">
-      <div class="title">🧠 Concepto clave de esterilización</div>
-      La destrucción de microorganismos sigue una ley exponencial (NO lineal) → siempre existe una probabilidad finita de supervivencia<br>
-      Producto sanitario estéril = probabilidad de microorganismo viable ≤ 10⁻⁶
+    <p>Se rotula la <strong>fecha de CADUCIDAD</strong> (no de esterilización) antes del ciclo</p>
+    <h3>🧮 Cálculos de dilución</h3>
+    <div class="fbox">
+      V1 × C1 = V2 × C2<br>
+      <span class="c">Hipoclorito 10% en 250cc de agua → 25cc de antiséptico<br>
+      Lejía 0,5% en 2L de agua → 10cc de lejía<br>
+      Hipoclorito 10% en 500cc de agua → 50cc</span>
     </div>
-
-    <h3>🧹 Desinfección del habitáculo tras servicio</h3>
-    <p>Toallas/bayetas usadas en la desinfección: lavar con agua y detergente → aclarar → sumergir en solución desinfectante de nivel <strong>intermedio o bajo</strong> unos minutos.</p>
-    <p>Verificar limpieza de: cajones, silla de transporte, lámpara luz fría, maletín rígido, cubos de desecho, dispensadores, bala de oxígeno, camilla (sábana cambiada).</p>
+    <h3>🦠 Transmisión y residuos</h3>
+    <ul>
+      <li>Transmisión indirecta = separación en tiempo Y espacio entre fuente y sano</li>
+      <li>Vía parenteral = corte o pinchazo con material contaminado</li>
+      <li>CC.AA. clasifican residuos en <strong>4 a 7 grupos</strong></li>
+      <li>Tratamiento residuos más usado en España = <strong>Autoclave</strong></li>
+      <li>Limpieza correctiva = cuando hay sospechas fundadas de contaminación</li>
+    </ul>
+    <h3>💉 Vacunación personal sanitario</h3>
+    <p>Vacunas obligadas: <strong>Hepatitis B</strong> (muy eficaz) y <strong>gripe estacional</strong></p>
+    <p>Método para tratar residuos más usado en España: <strong>Autoclave</strong></p>
   </div>
 </div>
 
+<!-- UD6 -->
+<div class="section s6" id="s6">
+  <div class="sec-hdr" onclick="tog('s6')"><h2>📝 UD6 — DOCUMENTACIÓN SANITARIA Y CALIDAD</h2><span class="tag" style="background:#001a1a;color:#00bfa5;border:1px solid #00bfa5">Historia clínica · Calidad · Legal</span><span class="toggle">▼</span></div>
+  <div class="sec-body">
+    <div class="alert ar">⚠️ CLAVE: El informe de asistencia prehospitalaria NO tiene un formato único establecido por el RD 836/2012. Cada institución tiene el suyo. Es documento legal, puede ser en papel o digital.</div>
 
-<!-- ======================== UD6 ======================== -->
-<div class="section s-ud6" id="sec-ud6">
-  <div class="section-header" onclick="toggle('sec-ud6')">
-    <h2>📝 UD6 — DOCUMENTACIÓN SANITARIA Y GARANTÍA DE CALIDAD</h2>
-    <span class="badge tag-blue">Historia clínica · Documentos · Calidad</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content">
+    <h3>📋 Documentación obligatoria del vehículo</h3>
+    <table>
+      <tr><th>Documento</th><th>Qué contiene</th><th>Quién lo emite</th></tr>
+      <tr><td><strong>Permiso de circulación</strong></td><td>Identifica al vehículo: matrícula, bastidor, fecha matriculación, nombre del propietario</td><td>Jefatura de Tráfico</td></tr>
+      <tr><td><strong>Tarjeta ITV</strong></td><td>Especifica dimensiones del vehículo, potencia del motor, transformaciones realizadas</td><td>Estación ITV</td></tr>
+      <tr><td>Seguro RC</td><td>Certificado del seguro de responsabilidad civil</td><td>Aseguradora</td></tr>
+      <tr><td><strong>Hoja de reclamaciones</strong></td><td>Documentación preceptiva. Debe estar a disposición de los <strong>USUARIOS</strong></td><td>Obligatorio en ambulancias</td></tr>
+      <tr><td>Tarjeta de transporte sanitario</td><td>Habilitación administrativa para el servicio de transporte sanitario</td><td>Autoridad autonómica</td></tr>
+    </table>
 
-    <h3>📋 Documentos clínicos intrahospitalarios</h3>
-    <p>La <strong>Historia Clínica</strong> puede ser en papel o electrónica. Contiene:</p>
+    <h3>📄 Documentos prehospitalarios</h3>
+    <table>
+      <tr><th>Documento</th><th>Descripción</th></tr>
+      <tr><td><strong>Informe de asistencia prehospitalaria</strong></td><td>Principal documento del TES. Legal. En papel o digital. Datos del paciente, constantes, intervenciones, medicación, destino. Cada institución tiene su propio formato.</td></tr>
+      <tr><td><strong>Registro de solicitudes</strong></td><td>Toda llamada entrante se registra AQUÍ. NO en el informe de asistencia. Incluye código de referencia.</td></tr>
+      <tr><td><strong>Formularios de control de material</strong></td><td>Check-lists para el seguimiento del material en el vehículo y el almacén</td></tr>
+      <tr><td><strong>Formularios de revisión de material</strong></td><td>Evidencia documental del correcto funcionamiento de los aparatos electromédicos</td></tr>
+      <tr><td><strong>Documentos de solicitud de traslado</strong></td><td>Solicitudes de traslado de instituciones o vía telefónica</td></tr>
+      <tr><td><strong>Órdenes de traslado</strong></td><td>Se activan cuando se moviliza un vehículo de transporte sanitario</td></tr>
+    </table>
+    <div class="alert ar">🎯 TEST: Toda llamada entrante → <strong>REGISTRO DE SOLICITUDES</strong> (no informe de asistencia, no libro de reclamaciones)</div>
+
+    <h3>🏥 Historia clínica hospitalaria — documentos</h3>
     <table>
       <tr><th>Documento</th><th>Contenido</th></tr>
       <tr><td>Hoja de Autorización de Ingreso</td><td>Paciente o representante autoriza el ingreso</td></tr>
-      <tr><td>Hoja de Consentimiento Informado</td><td>Paciente informado del estado, tratamiento y autorizaciones para intervenciones</td></tr>
-      <tr><td>Hoja de Anamnesis</td><td>Motivo de consulta y datos de exploración</td></tr>
-      <tr><td>Hoja de Evolución</td><td>Datos del día a día y hallazgos</td></tr>
+      <tr><td>Hoja de Consentimiento Informado</td><td>Paciente informado del estado, tratamiento, posibilidades. Autoriza intervenciones.</td></tr>
+      <tr><td>Hoja de Anamnesis</td><td>Motivo de consulta y datos de exploración inicial</td></tr>
+      <tr><td>Hoja de Evolución</td><td>Datos del día a día y diferentes hallazgos</td></tr>
       <tr><td>Hoja de Órdenes Médicas</td><td>Prescripciones médicas diarias</td></tr>
       <tr><td>Hoja de Exploraciones Complementarias</td><td>Datos de pruebas exploratorias instrumentales</td></tr>
-      <tr><td>Hoja de Interconsulta</td><td>Datos de otro servicio del hospital</td></tr>
-      <tr><td>Hoja de Informe Quirúrgico y/o Parto</td><td>Datos sanitarios de la intervención o parto</td></tr>
+      <tr><td>Hoja de <strong>Interconsulta</strong></td><td>Datos recogidos en otro servicio del hospital o en otro hospital distinto</td></tr>
+      <tr><td>Hoja de Informe Quirúrgico/Parto</td><td>Datos sanitarios del acto quirúrgico o del parto</td></tr>
+      <tr><td>Hoja de <strong>Informe clínico de Alta</strong></td><td><strong>Resumen de TODA la actividad asistencial hospitalaria del paciente</strong></td></tr>
       <tr><td>Hoja de Anestesia</td><td>Actividad del anestesista durante su actuación</td></tr>
     </table>
 
-    <h3>🚑 Documentación del transporte sanitario</h3>
-    <ul>
-      <li><strong>Hoja de asistencia:</strong> Documento principal del TES. Recoge datos del paciente, constantes, intervenciones, medicación administrada, hora y destino.</li>
-      <li><strong>Registro de desinfecciones</strong> del habitáculo</li>
-      <li><strong>Registro de revisiones</strong> del material</li>
-      <li><strong>Registro de solicitudes y prestaciones</strong></li>
-    </ul>
-
-    <h3>⚖️ Aspectos legales relevantes</h3>
-    <ul>
-      <li>La historia clínica es CONFIDENCIAL (protección de datos)</li>
-      <li>El TES puede actuar sin consentimiento en situaciones de urgencia vital</li>
-      <li>Siempre informar al paciente de las actuaciones</li>
-      <li>Cadena de custodia en situaciones de posible delito</li>
-    </ul>
-
-    <h3>✅ Garantía de calidad</h3>
-    <ul>
-      <li><strong>Ciclo de mejora continua:</strong> Planificar → Hacer → Verificar → Actuar (PDCA)</li>
-      <li><strong>Indicadores de calidad:</strong> Tiempo respuesta, satisfacción del paciente, incidentes, etc.</li>
-      <li><strong>Gestión de incidentes:</strong> Notificación y análisis de errores para mejorar</li>
-    </ul>
-  </div>
-</div>
-
-
-<!-- ======================== EXTRA ======================== -->
-<div class="section s-extra" id="sec-extra">
-  <div class="section-header" onclick="toggle('sec-extra')">
-    <h2>🔬 EXTRA — DISPOSITIVOS SUPRAGLÓTICOS + ERRATAS CLAVE</h2>
-    <span class="badge tag-purple">Complementario · Entra en examen</span>
-    <span class="toggle-icon">▼</span>
-  </div>
-  <div class="section-content">
-
-    <h3>🫁 Dispositivos supraglóticos (vía aérea)</h3>
-    <p>Son dispositivos de manejo de la vía aérea que se colocan <strong>por encima de la glotis</strong> (sin necesidad de visualizar las cuerdas vocales), a diferencia de la intubación orotraqueal.</p>
+    <h3>📊 Escala de Valoración para Transporte Secundario</h3>
     <table>
-      <tr><th>Dispositivo</th><th>Tipo</th><th>Características</th></tr>
-      <tr><td><strong>Mascarilla laríngea (LMA)</strong></td><td>Supraglótico</td><td>Más usado. Sella la laringe. Varias tallas (1-5). No protege de aspiración.</td></tr>
-      <tr><td><strong>LMA Fastrach / LMA Supreme</strong></td><td>Supraglótico de 2ª gen.</td><td>Permite intubación a través. Mejor sellado. Más segura en no ayunos.</td></tr>
-      <tr><td><strong>Tubo laríngeo (King LT)</strong></td><td>Supraglótico</td><td>2 balones (faringe y esófago). Más fácil inserción. Útil en paros cardiacos.</td></tr>
-      <tr><td><strong>Combitubo (esofágico-traqueal)</strong></td><td>Supraglótico</td><td>Puede insertarse ciega. Funciona tanto en esófago como en tráquea. Dos luces.</td></tr>
-      <tr><td><strong>I-gel</strong></td><td>Supraglótico</td><td>Sin balón inflable. Fácil inserción. Material termoplástico. Muy usado en PCR.</td></tr>
+      <tr><th>Puntuación</th><th>Estado</th><th>Recurso</th></tr>
+      <tr><td><strong>0</strong></td><td>Normal, compensado</td><td>TES puede gestionar</td></tr>
+      <tr><td>Baja</td><td>Estable, bajo riesgo</td><td>SVB puede ser suficiente</td></tr>
+      <tr><td>Alta</td><td>Inestable, alto riesgo</td><td>Requiere presencia de <strong>médico</strong></td></tr>
     </table>
+    <div class="alert ay">A MÁS puntuación → PEOR estado → necesita MÉDICO</div>
 
-    <h3>⚠️ ERRATAS IMPORTANTES DEL PROFESOR (todas las UDs)</h3>
-    <div class="alert alert-red">
-      <strong>UD1:</strong> VIR NO es ambulancia (no transporta pacientes). SVA pediátrica NO existe como categoría legal. Ambulancias psiquiátricas = tipo A1 o B legalmente.
-    </div>
-    <div class="alert alert-red">
-      <strong>UD2:</strong> Flumazenilo = antagonista BZD (no sedante). Los nombres comerciales de fármacos no hay que conocerlos, solo el principio activo. La ambulancia necesita &gt;4000L O₂ con reserva mínima 2000L.
-    </div>
-    <div class="alert alert-red">
-      <strong>UD4:</strong> El chaleco con material es un EJEMPLO, no obligatorio. Ambú y laringoscopio van en el maletín, NO en el chaleco. El médico normalmente NO porta venoclisis.
-    </div>
-    <div class="alert alert-red">
-      <strong>UD5:</strong> No es necesario desinfectar antes de limpiar. Se rotula fecha de CADUCIDAD, no de esterilización. Autoclave 134°C = preferible si el material lo aguanta (deteriora menos).
-    </div>
+    <h3>🌟 Traslado intercentros — documentación imprescindible</h3>
+    <div class="alert ag">En traslados secundarios con personal de enfermería son imprescindibles TODAS:<br>
+    ✅ Consentimiento informado firmado<br>
+    ✅ Historia clínica del paciente<br>
+    ✅ Documento de Órdenes Médicas (para continuar el tratamiento)</div>
+
+    <h3>🔄 Transferencia hospitalaria</h3>
+    <div class="alert ag">En la transferencia hospitalaria TODAS son correctas:<br>
+    ✅ Dejar copia del Informe de Actuación<br>
+    ✅ La dotación es responsable hasta que se haya formalizado el ingreso<br>
+    ✅ Entregar todos los objetos personales del paciente</div>
+
+    <h3>✅ Calidad asistencial — conceptos completos</h3>
+    <table>
+      <tr><th>Concepto</th><th>Definición</th></tr>
+      <tr><td><strong>EFQM</strong></td><td>European Foundation for Quality Management = modelo europeo de excelencia en gestión de calidad</td></tr>
+      <tr><td><strong>Ciclo de Deming (PDCA)</strong></td><td>1=Planear · 2=Hacer · 3=<strong>Verificar</strong> · 4=Actuar</td></tr>
+      <tr><td><strong>Certificación</strong></td><td>Reconocimiento ESCRITO por empresa independiente acreditada de que se cumple un nivel de calidad según normas determinadas</td></tr>
+      <tr><td><strong>Auditoría</strong></td><td>Examen por personal auditor: valora funcionamiento, sistema de gestión, cumplimiento de objetivos e identifica aspectos de mejora</td></tr>
+      <tr><td><strong>Control de calidad</strong></td><td>Técnicas que verifican que el servicio se ajusta a protocolos a través de registros documentales</td></tr>
+      <tr><td><strong>Identificar</strong></td><td>Determinar las necesidades y expectativas de los pacientes (primer paso del ciclo)</td></tr>
+      <tr><td><strong>Satisfacer</strong></td><td>Cumplir las necesidades identificadas</td></tr>
+      <tr><td><strong>Mejorar</strong></td><td>Superar las expectativas → mejora continua</td></tr>
+      <tr><td><strong>Indicador Centinela</strong></td><td>Mide un proceso GRAVE y a menudo EVITABLE. Su sola aparición justifica investigación.</td></tr>
+      <tr><td><strong>Indicador de tasa/proporción</strong></td><td>Suceso que excede umbrales predeterminados → requiere valoración posterior si hay tendencia</td></tr>
+      <tr><td><strong>Trazabilidad (calidad)</strong></td><td>Procedimientos desde la fase de ALERTA hasta la REACTIVACIÓN del decálogo prehospitalario</td></tr>
+      <tr><td><strong>Anamnesis</strong></td><td>Preguntas al paciente/familia sobre antecedentes de interés, enfermedad actual y situación que provoca el traslado</td></tr>
+      <tr><td><strong>Filiación</strong></td><td>Datos de identificación del paciente (nombre, DNI, etc.)</td></tr>
+      <tr><td><strong>Código CIE</strong></td><td>Clasificación Internacional de Enfermedades → codifica diagnósticos de enfermedades y problemas de salud</td></tr>
+    </table>
+    <div class="alert ay">La calidad trata de <strong>APRENDER PARA PREVENIR</strong> errores (no buscar culpables ni actuar solo después del error)<br>
+    La calidad NO tiene como objetivo: experimentar con pacientes nuevas técnicas</div>
+
+    <h3>⚖️ Aspectos legales — protocolo exacto</h3>
+    <table>
+      <tr><th>Situación</th><th>Acción / Norma</th></tr>
+      <tr><td>Paciente se niega al traslado (SVB)</td><td>LO PRIMERO: comunicarlo al <strong>centro de coordinación</strong>. Luego hacer informe firmado por el paciente.</td></tr>
+      <tr><td>Menor de edad niega traslado</td><td>Decisión del <strong>padre, madre o tutor legal</strong></td></tr>
+      <tr><td>Ingreso psiquiátrico involuntario</td><td>Informar al <strong>juzgado de guardia antes de 24 horas</strong></td></tr>
+      <tr><td>Violación del secreto profesional</td><td>Sancionado por el <strong>Código Penal</strong></td></tr>
+      <tr><td>Enfermo terminal/agónico</td><td>Si no puede decidir → los familiares RESPETANDO los deseos del paciente. El paciente SÍ puede rechazar tratamientos que prolonguen su vida.</td></tr>
+      <tr><td>Hoja de reclamaciones</td><td>Debe estar a disposición de los <strong>USUARIOS</strong> (no del personal)</td></tr>
+    </table>
   </div>
 </div>
 
-
-<!-- TABLA RESUMEN FINAL -->
-<div style="margin: 20px; background: #0d1117; border: 1px solid #30363d; border-radius: 12px; padding: 20px;">
-  <h2 style="color: #58a6ff; margin-bottom: 14px; font-size: 1em;">⚡ RESUMEN ULTRA-RÁPIDO — REPASAR MAÑANA</h2>
-  <table>
-    <tr><th>Tema</th><th>Lo más probable en el test</th></tr>
-    <tr><td>Normativa</td><td>RD 836/2012 vigente. RD 619/1998 DEROGADO. Decreto 128/1996 Madrid (ITS)</td></tr>
-    <tr><td>Ambulancias</td><td>A1/A2 = no asistenciales · B = SVB (2 TES) · C = SVA (TES+Enfermero±Médico)</td></tr>
-    <tr><td>VIR</td><td>NO transporta pacientes. No es ambulancia legalmente.</td></tr>
-    <tr><td>Extintor</td><td>Equip. del VEHÍCULO, NO sanitario</td></tr>
-    <tr><td>Flumazenilo</td><td>Antagonista BZD, NO sedante</td></tr>
-    <tr><td>Coloides</td><td>Gelatina + Hidroxietilalmidón (el resto son cristaloides)</td></tr>
-    <tr><td>O₂ residual</td><td>Si no dice presión residual → 20 bares por defecto</td></tr>
-    <tr><td>Punto de pedido</td><td>Stock seguridad + consumo × días entrega</td></tr>
-    <tr><td>Diluciones</td><td>V1×C1 = V2×C2. Agua añadida = V2 − V1</td></tr>
-    <tr><td>Clorhexidina</td><td>Mejor antiséptico: amplio espectro, 6h residual, no absorción, no alergen.</td></tr>
-    <tr><td>Autoclave 134°C</td><td>~4 min meseta. Mejor que 121°C si el material lo aguanta</td></tr>
-    <tr><td>Esteriliz. química</td><td>Glutaraldehído 2%, 8-10 horas, NO monitorizable</td></tr>
-  </table>
+<!-- Problemas -->
+<div class="section sp" id="sp">
+  <div class="sec-hdr" onclick="tog('sp')"><h2>🔢 PROBLEMAS — Fórmulas y ejemplos resueltos</h2><span class="tag tr">CRÍTICO — Parte 2 del examen</span><span class="toggle">▼</span></div>
+  <div class="sec-body open">
+    <h3>🫧 Problema 1: Cálculo de oxígeno</h3>
+    <div class="fbox">PASO 1: Volumen = Capacidad × (P<sub>real</sub> − P<sub>residual</sub>)<br>
+PASO 2: Tiempo (min) = Volumen ÷ Flujo<br>
+PASO 3: Convertir min a h:min (0,28h ≠ 28 min → 0,28 × 60 = 17 min)
+<div class="c">Si no indica presión residual → usar 20 bares</div></div>
+    <div class="prob">
+      <div class="enun"><strong>Ejemplo oficial examen:</strong> Botella 80L, presión 55 bar, presión residual 18 bar, flujo 15 L/min</div>
+      <div class="paso"><div class="num">1</div><div class="tx">Volumen = 80 × (55−18) = 80 × 37 = 2.960 L</div></div>
+      <div class="paso"><div class="num">2</div><div class="tx">Tiempo = 2.960 ÷ 15 = 197,3 min</div></div>
+      <div class="paso"><div class="num">3</div><div class="tx">197 min = 3h + 17min (0,28h × 60 = 17min)</div></div>
+      <div class="res">✅ 3 horas y 17 minutos</div>
+    </div>
+    <div class="prob">
+      <div class="enun"><strong>Ejemplo UD2:</strong> Botella 11L, presión 200 bar (sin residual indicada), flujo 3 L/min</div>
+      <div class="paso"><div class="num">1</div><div class="tx">Volumen = 11 × (200−20) = 11 × 180 = 1.980 L</div></div>
+      <div class="paso"><div class="num">2</div><div class="tx">Tiempo = 1.980 ÷ 3 = 660 min ≈ 11 horas</div></div>
+      <div class="res">✅ ~660 minutos (el test decía 733 si se usa 11×200=2200÷3=733 sin restar residual)</div>
+    </div>
+    <h3>📦 Problema 2: Control de almacén</h3>
+    <div class="fbox">Stock seguridad = Stock mínimo + % sobre stock mínimo<br>
+Punto de pedido = Stock seguridad + (Consumo diario × Días entrega)<br>
+Unidades a pedir = Stock máximo − Stock seguridad</div>
+    <h3>🧪 Problema 3: Diluciones</h3>
+    <div class="fbox">V1 × C1 = V2 × C2<br>
+Agua a añadir = V2 − V1
+<div class="c">Lejía 0,5% en 2L (2000cc): V1 = (2000 × 0,5)/100 = 10cc · Hipoclorito 10% en 250cc: V1 = (250 × 10)/100 = 25cc</div></div>
+  </div>
 </div>
 
-<div style="text-align:center; padding: 20px; color: #6e7681; font-size: 0.8em;">
-  Generado el 21/05/2026 desde el temario oficial de Dotación Sanitaria 25/26 · Examen 22/05/2026
+</div><!-- end resumen tab -->
+
+
+<!-- ==================== TEST ==================== -->
+<div id="test-tab" class="tab-content">
+<div id="test-tab-inner" style="padding:16px">
+
+<div class="test-ctrl">
+  <h2>🧪 Test de preparación — 180 preguntas de los 6 tests reales</h2>
+  <p style="font-size:.82em;color:#8b949e;margin-bottom:12px">Basado en tus autoevaluaciones reales. Las preguntas se mezclan aleatoriamente cada vez.</p>
+  <h4>Filtrar por UD</h4>
+  <div class="filter-row" id="ud-filters">
+    <button class="btn active" onclick="toggleUD(this,0)">Todas</button>
+    <button class="btn" onclick="toggleUD(this,1)">UD1</button>
+    <button class="btn" onclick="toggleUD(this,2)">UD2</button>
+    <button class="btn" onclick="toggleUD(this,3)">UD3</button>
+    <button class="btn" onclick="toggleUD(this,4)">UD4</button>
+    <button class="btn" onclick="toggleUD(this,5)">UD5</button>
+    <button class="btn" onclick="toggleUD(this,6)">UD6</button>
+  </div>
+  <h4>Número de preguntas</h4>
+  <div class="btn-row" id="num-btns">
+    <button class="btn" onclick="setNum(this,10)">10</button>
+    <button class="btn" onclick="setNum(this,20)">20</button>
+    <button class="btn active" onclick="setNum(this,30)">30 (modo examen)</button>
+    <button class="btn" onclick="setNum(this,60)">60</button>
+    <button class="btn" onclick="setNum(this,999)">Todas</button>
+  </div>
+  <div class="btn-row" style="margin-top:12px">
+    <button class="btn start" onclick="startTest()">▶ COMENZAR TEST</button>
+    <button class="btn reset" onclick="resetTest()" id="reset-btn" style="display:none">↺ Nuevo test</button>
+  </div>
 </div>
+
+<div id="score-bar">
+  <div class="sc-item"><div class="sc-num" id="sc-total" style="color:#58a6ff">0</div><div class="sc-lbl">Total</div></div>
+  <div class="sc-item"><div class="sc-num" id="sc-ok" style="color:#00c853">0</div><div class="sc-lbl">Correctas</div></div>
+  <div class="sc-item"><div class="sc-num" id="sc-err" style="color:#e94560">0</div><div class="sc-lbl">Errores</div></div>
+  <div class="sc-item"><div class="sc-num" id="sc-skip" style="color:#8b949e">0</div><div class="sc-lbl">Sin resp.</div></div>
+  <div class="sc-item"><div class="sc-nota" id="sc-nota">—</div><div class="sc-lbl">Nota (fórmula)</div></div>
+</div>
+
+<div id="progress-bar" style="display:none"><div id="progress-fill" style="width:0%"></div></div>
+
+<div id="quiz-container"></div>
+
+</div>
+</div><!-- end test tab -->
 
 <script>
-  function toggle(id) {
-    const section = document.getElementById(id);
-    const content = section.querySelector('.section-content');
-    const header = section.querySelector('.section-header');
-    content.classList.toggle('open');
-    header.classList.toggle('open');
+// ======= TABS =======
+function showTab(t){
+  document.querySelectorAll('.tab,.tab-content').forEach(el=>el.classList.remove('active'));
+  document.querySelector(`.tab[onclick="showTab('${t}')"]`).classList.add('active');
+  document.getElementById(t+'-tab').classList.add('active');
+}
+
+// ======= RESUMEN TOGGLE =======
+function tog(id){
+  const s=document.getElementById(id);
+  const b=s.querySelector('.sec-body');
+  const h=s.querySelector('.sec-hdr');
+  b.classList.toggle('open');
+  h.classList.toggle('open');
+}
+
+// ======= QUESTION BANK =======
+// Format: {ud, q, o:[4 options], c: correct index (0-based), e: explanation}
+const Q=[
+// ===== DS01 - UD1 =====
+{ud:1,q:"Las unidades de soporte vital intermedio tienen una dotación de personal de:",o:["Un técnico de transporte sanitario y un diplomado de enfermería","Un médico, un diplomado de enfermería y un técnico","Un médico, un diplomado de enfermería, un piloto y un copiloto","Dos técnicos de transporte sanitario"],c:0,e:"Las unidades de SVI (tipo C en RD 836/2012) llevan: un TES conductor + un DUE (graduado en enfermería). No llevan médico por defecto, aunque puede añadirse si lo requiere la atención."},
+{ud:1,q:"Una de las siguientes características del habitáculo de las ambulancias de SVA NO es correcta:",o:["Anchura de 1,30 metros","Iluminación independiente de la cabina del conductor","Longitud de 2,60 metros","Barras de sujeción en el techo para los sanitarios"],c:0,e:"La anchura mínima del habitáculo de SVA (y SVB) es 1,50 m medida entre paredes a 40 cm del suelo. Los 1,30 m corresponden a las unidades NO asistenciales (A1). Las medidas de SVB y SVA son iguales."},
+{ud:1,q:"Los vehículos de transporte sanitario colectivo deben tener:",o:["Un equipo electrógeno","Un equipo de oxigenoterapia","Todas son correctas","La dotación básica de liberación de accidentados"],c:1,e:"Los vehículos de transporte sanitario colectivo (A2) deben llevar equipo de oxigenoterapia. No necesitan electrógeno ni dotación de liberación de accidentados."},
+{ud:1,q:"Los vehículos de traslado colectivo, será correcto:",o:["Deben tener una puerta lateral en el lado izquierdo","Deben tener una rampa de acceso de deslizamiento o mecanismo hidro-neumático","Deben tener una puerta trasera con apertura máxima de 180º","En casos excepcionales se podrá situar un paciente en la cabina del conductor"],c:1,e:"Los vehículos de traslado colectivo requieren rampa de acceso de deslizamiento o mecanismo hidro-neumático para facilitar el acceso de los pacientes. La puerta trasera debe abrir al menos 270°, y nunca se coloca un paciente en la cabina del conductor."},
+{ud:1,q:"En las ambulancias de Soporte Vital Avanzado, el equipo de oxigenoterapia para adultos ha de estar rotulado en color:",o:["Azul","Rojo","Amarillo","Verde"],c:0,e:"El equipo de O₂ para adultos en SVA se rotula en color AZUL. El rojo es para material circulatorio, amarillo para pediátrico y verde para otros."},
+{ud:1,q:"El traslado de enfermos que se realiza en el mismo hospital recibe el nombre de:",o:["Transporte secundario","Transporte terciario","Transporte primario","Transporte programado"],c:1,e:"Terciario = dentro del mismo hospital (intrahospitalario). Secundario = entre dos hospitales. Primario = desde lugar de emergencia al hospital. Este dato es muy frecuente en test."},
+{ud:1,q:"El juicio que forma el médico a partir de los síntomas sobre el desarrollo previsible de una enfermedad recibe el nombre de:",o:["Rehabilitación","Desencarcelación","Secuelas","Pronóstico"],c:3,e:"El pronóstico es la predicción médica sobre la evolución previsible de una enfermedad o lesión. Las secuelas son las consecuencias permanentes. El diagnóstico identifica la enfermedad."},
+{ud:1,q:"El traslado de enfermos que se realiza entre dos hospitales recibe el nombre de:",o:["Transporte secundario","Transporte terciario","Transporte primario","Transporte demorable"],c:0,e:"Secundario = entre dos hospitales diferentes. Terciario = dentro del mismo hospital. Primario = desde la emergencia al primer centro sanitario."},
+{ud:1,q:"El pronóstico impredecible de la evolución de la patología o lesión que presenta se da en pacientes:",o:["Críticos","Estables","Graves no críticos","Con secuelas"],c:0,e:"Los pacientes CRÍTICOS son aquellos con riesgo vital inmediato y pronóstico impredecible. Los graves no críticos son estables con alguna disfunción orgánica importante."},
+{ud:1,q:"En las unidades de soporte vital intermedio hay:",o:["Solo TES ayudante","Solo conductor","Todas son ciertas (TES ayudante + conductor + DUE)","Solo DUE"],c:2,e:"Las unidades SVI tienen: TES conductor, TES ayudante Y DUE (diplomado en enfermería). Todos esos elementos están presentes, por eso 'todas son ciertas'."},
+{ud:1,q:"El Real Decreto 836/2012, de 25 de mayo:",o:["Clasifica los distintos tipos de vehículos de transporte sanitario","Determina el color de las ambulancias","Define lo que es el transporte sanitario por carretera","Establece las características técnicas, el equipamiento sanitario y la dotación de personal de los vehículos de transporte sanitario por carretera"],c:3,e:"El RD 836/2012 establece características técnicas, equipamiento Y dotación de personal. La definición de transporte sanitario la da el art. 133 de la Ley 16/1987."},
+{ud:1,q:"El artículo 133 de la Ley 16/1987, de 30 de junio:",o:["Define lo que es el transporte sanitario por carretera","Clasifica los distintos tipos de vehículos de transporte sanitario","Establece las características técnicas, el equipamiento sanitario y la dotación de personal","Determina el color de las ambulancias"],c:0,e:"El art. 133 de la Ley 16/1987 de Ordenación de los Transportes Terrestres DEFINE lo que es el transporte sanitario por carretera. El RD 836/2012 regula las condiciones técnicas."},
+{ud:1,q:"La ambulancia que lleva a un paciente a hacer una hemodiálisis realiza un:",o:["Transporte programado","Transporte de emergencia","Transporte secundario","Transporte de urgencia"],c:0,e:"La hemodiálisis es un tratamiento periódico planificado: el traslado es PROGRAMADO. No hay urgencia ni emergencia, y no es entre hospitales (secundario)."},
+{ud:1,q:"El espacio mínimo que debe haber en la cabecera del portacamillas en las unidades de SVA es de:",o:["35 centímetros","45 centímetros","30 centímetros","40 centímetros"],c:1,e:"El espacio mínimo en la cabecera del portacamillas en SVA es de 45 cm, para permitir el acceso del sanitario a la cabeza del paciente durante la asistencia."},
+{ud:1,q:"Los vehículos de intervención inmediata o rápida (VIR):",o:["No llevan ningún paciente","Llevan un paciente","Pueden llevar a un paciente y a su acompañante","Pueden llevar a 6 pacientes"],c:0,e:"El VIR (Vehículo de Intervención Rápida, también llamado VAM) NO transporta pacientes. Traslada personal sanitario y material avanzado al lugar del incidente. En situaciones especiales puede realizar el traslado si es necesario."},
+{ud:1,q:"El transporte primario es:",o:["El que se realiza para el primer tratamiento de rehabilitación","El que se lleva a cabo desde el lugar de la emergencia hasta el hospital","El que se realiza al trasladar al paciente dentro del mismo hospital","El que se realiza de un Centro de Atención Primaria al hospital"],c:1,e:"Primario = desde el lugar de la emergencia/accidente hasta el primer centro sanitario receptor. Es el típico servicio de urgencias/emergencias extrahospitalarias."},
+{ud:1,q:"El portacamillas con Trendelenburg debe poder realizar:",o:["Solo desplazamiento negativo","Solo desplazamiento positivo","Solo desplazamientos laterales","Todas son ciertas (positivo, negativo y lateral)"],c:3,e:"El portacamillas con Trendelenburg debe ser capaz de realizar desplazamientos positivo (cabeza arriba), negativo (cabeza abajo) y laterales. Por eso 'todas son ciertas'."},
+{ud:1,q:"Las ambulancias de Soporte Vital Avanzado deben tener:",o:["Un respirador que permita función de 5 a 20 ciclos por minuto","Todas son ciertas","Dos caudalímetros que permitan un flujo de 5 litros por minuto","Un monitor-desfibrilador portátil"],c:3,e:"El monitor-desfibrilador portátil es obligatorio en SVA. Los caudalímetros han de permitir flujo de hasta 15 L/min (no 5). La opción 'todas' es incorrecta porque el flujo de los caudalímetros es diferente."},
+{ud:1,q:"Los vehículos asistenciales que llevan equipos de respiración autónoma son:",o:["Las unidades de soporte vital básico","Las unidades de soporte vital avanzado","Los vehículos de urgencia todoterreno","Las unidades de apoyo logístico"],c:3,e:"Los equipos de respiración autónoma (equipos ERAR, equipos de protección de atmósferas) los llevan las unidades de APOYO LOGÍSTICO, no las ambulancias asistenciales estándar."},
+{ud:1,q:"Los vehículos de transporte sanitario que trasladan a enfermos estables que no presentan riesgo vital durante el transporte pero que pueden necesitar atención continuada son:",o:["Los de soporte vital avanzado","Los de soporte vital básico","Todas las ambulancias de transporte individual","Los de transporte sanitario de emergencias"],c:1,e:"Las ambulancias de SVB trasladan pacientes estables sin riesgo vital que pueden necesitar atención continuada. Las de SVA son para pacientes en estado crítico que requieren cuidados intensivos."},
+{ud:1,q:"El personal sanitario de las ambulancias psiquiátricas debe llevar:",o:["Todas son ciertas","Chalecos antibala","Escudos de protección","Cascos"],c:0,e:"El personal de ambulancias psiquiátricas debe llevar: chalecos antibala + escudos de protección + cascos. Todo el equipo de protección, porque pueden encontrarse pacientes agitados o violentos."},
+{ud:1,q:"Los pacientes graves no críticos:",o:["Son pacientes estables con alguna disfunción orgánica importante","Están estables sin riesgo vital pero pueden presentar complicaciones","Son inestables","Necesitan cuidados intensivos de un médico"],c:0,e:"Los graves NO críticos son pacientes estables que presentan alguna disfunción orgánica importante (no son críticos pero tampoco están completamente bien). Los críticos son los inestables con pronóstico impredecible."},
+{ud:1,q:"Las ambulancias de traslado individual, será cierto:",o:["No es necesario que tengan maletín de primeros auxilios","Han de llevar dos cilindros de oxígeno de 800 litros cada uno","Solo necesitan un aparato de ventilación manual para adultos","No es necesario que lleven tabla de paradas"],c:1,e:"Las ambulancias de traslado individual (A1) deben llevar 2 cilindros de O₂ de 800 L cada uno. También deben tener maletín de primeros auxilios y tabla de paradas."},
+{ud:1,q:"En las unidades de Soporte Vital Intermedio, no hay:",o:["TES conductor","Solo hay dos TES","Médico","DUE"],c:2,e:"Las unidades SVI tienen TES + DUE, pero NO tienen médico de forma habitual (a diferencia de las SVA que pueden llevar médico cuando la situación lo requiere)."},
+{ud:1,q:"Jean-Dominique Larrey fue el pionero de:",o:["Que las ambulancias llevaran camillas en su interior","Que los médicos se trasladaran en un vehículo con su instrumental al campo de batalla","Que las ambulancias se pusieran al servicio de la población civil","La introducción de las ambulancias en el campo de batalla"],c:1,e:"Jean-Dominique Larrey, cirujano de Napoleón, fue pionero de que los médicos se desplazaran en vehículos con su instrumental hasta el campo de batalla para atender a los heridos in situ. Sus 'ambulancias volantes' fueron revolucionarias."},
+{ud:1,q:"Las ambulancias de traslado son:",o:["Las unidades de soporte vital básico","Las unidades no asistenciales","Todas las ambulancias de transporte sanitario","Las unidades de transporte colectivo"],c:1,e:"Las ambulancias de TRASLADO son las UNIDADES NO ASISTENCIALES (A1 y A2). Las de SVB son asistenciales. No confundir: 'de traslado' ≠ 'que trasladan pacientes' (todas lo hacen, pero la denominación 'de traslado' es exclusiva de las no asistenciales)."},
+{ud:1,q:"Las ambulancias de Soporte Vital Básico deben tener:",o:["Dos camillas de pala desmontables","Todas son ciertas","Un máximo de dos tomas rápidas de oxígeno","Dos cilindros de oxígeno con una capacidad total de 2000 litros"],c:3,e:"Las ambulancias SVB deben tener 2 cilindros de O₂ con una capacidad TOTAL de 2.000 litros (no 2.000 cada uno). Las tomas rápidas de O₂ deben ser entre 3 y 4."},
+{ud:1,q:"El habitáculo sanitario de las Unidades de Soporte Vital Básico, será cierto:",o:["Deben tener instalación eléctrica para alimentar una incubadora","Las tomas eléctricas deben estar protegidas con diferencial automático y magnetotérmicos","Todas son ciertas","Deben tener una toma externa de energía"],c:2,e:"El habitáculo SVB debe tener: instalación eléctrica para incubadora + tomas protegidas con diferencial y magnetotérmico + toma externa de energía. Todo correcto, por eso 'todas son ciertas'."},
+{ud:1,q:"Con respecto al habitáculo de las ambulancias de traslado individual de enfermos, será cierto:",o:["Todas son ciertas","Debe llevar tomas de corriente de 220 V","Deberá tener una longitud de 2 metros","Deberá tener una anchura de 1,50 metros"],c:2,e:"La longitud mínima del habitáculo de traslado individual es de 2 metros. La anchura mínima es de 1,30 m (no 1,50 m). No necesariamente lleva tomas de 220V."},
+{ud:1,q:"Una de las siguientes afirmaciones respecto el habitáculo sanitario es INCORRECTA:",o:["Los revestimientos interiores han de ser lisos","La ventilación ha de ser independiente de la cabina del conductor","El suelo ha de ser antideslizante","Las lunas han de ser transparentes para poder ver correctamente al paciente"],c:3,e:"Las lunas del habitáculo sanitario han de ser OPACAS (no transparentes) para garantizar la privacidad del paciente. Los revestimientos lisos, ventilación independiente y suelo antideslizante son CORRECTOS."},
+
+// ===== DS02 - UD2 =====
+{ud:2,q:"Una de las siguientes funciones NO se realiza en el Puesto Sanitario Avanzado (PSA):",o:["Acogida de víctimas","Triage","Mando sanitario","Espera para evacuación"],c:2,e:"El PSA realiza: acogida de víctimas, triage, estabilización médica y espera para evacuación. El MANDO SANITARIO no es función del PSA."},
+{ud:2,q:"Una de las siguientes afirmaciones, respecto las ambulancias de SVB, NO es correcta:",o:["Los caudalímetros han de permitir un flujo de oxígeno de 15 litros por minuto","La red de distribución de oxígeno en las ambulancias ha de ser de alta presión","La capacidad de las botellas de oxígeno será como mínimo de 4000 litros","Las mascarillas del balón resucitador han de ser transparentes"],c:1,e:"La red de distribución de O₂ en ambulancias ha de ser de BAJA PRESIÓN (no alta). La alta presión está en las botellas, pero la red interior trabaja a baja presión por seguridad."},
+{ud:2,q:"Si has de preparar material para realizar una venoclisis a un niño de 4 años, prepararás un catéter intravenoso del número:",o:["18","20","22","16"],c:2,e:"Para niños pequeños (~4 años) se usa el catéter nº 22 (más fino). Los números mayores como 14-16 son para adultos en urgencias que necesitan canalizar grandes vías."},
+{ud:2,q:"La nitroglicerina pertenece al grupo terapéutico de los:",o:["Antagonistas de los opiáceos","Sedantes","Antianginosos","Anestésicos"],c:2,e:"La nitroglicerina es un ANTIANGINOSO (vasodilatador que reduce el trabajo cardíaco). Se usa en angina de pecho e infarto. No confundir con analgésicos ni sedantes."},
+{ud:2,q:"¿Qué cantidad de oxígeno tenemos disponible en una botella de oxígeno con una capacidad de 3 litros y el manómetro marca 200 bares?",o:["600 litros","60 litros","66 litros","660 litros"],c:0,e:"Sin presión residual indicada: 3 × 200 = 600 litros. Nota: en el ejemplo del test no se menciona presión residual, así que se multiplica directamente. Con presión residual de 20 bar: 3 × (200-20) = 540L."},
+{ud:2,q:"Con respecto al DESA, será correcto:",o:["Lo pueden utilizar los TES acreditados","Todas son correctas","Actualmente lo llevan las ambulancias de SVB","Han demostrado una buena eficacia"],c:1,e:"Todas son correctas: los TES acreditados pueden usarlo, las SVB lo llevan, y han demostrado excelente eficacia en RCP. El DESA (Desfibrilador Externo Semi-Automático) es parte estándar de la dotación SVB."},
+{ud:2,q:"¿Cuál es el peso máximo de un contenedor de material sanitario vacío en caso de una catástrofe?",o:["8 Kg","5 Kg","7 Kg","6 Kg"],c:2,e:"El peso máximo del contenedor vacío de mayor capacidad no excederá los 7 Kg (para que pueda ser manejado por una sola persona y transportado en helicóptero)."},
+{ud:2,q:"En las ambulancias psiquiátricas, cuál de los siguientes medicamentos no puede faltar:",o:["Haloperidol","Nitroglicerina","Clorhexidina","Salbutamol"],c:0,e:"El Haloperidol es un neuroléptico (antipsicótico) esencial en ambulancias psiquiátricas para tratar estados de agitación y psicosis agudas. La nitroglicerina es para angina, la clorhexidina es antiséptico."},
+{ud:2,q:"Para realizar un lavado de estómago necesitas una:",o:["Cánula de Yankauer","Sonda de aspiración","Sonda Levin","Sonda Foley"],c:2,e:"La sonda Levin es una sonda nasogástrica que se usa para lavado de estómago (y para alimentación enteral). La sonda Foley es vesical. La cánula de Yankauer es para aspirar secreciones orales."},
+{ud:2,q:"Una hoja de bisturí del número 23:",o:["Todas las respuestas anteriores son ciertas","Puede ir con un mango de bisturí del número 3","Puede ir con un mango de bisturí de un solo uso","Puede ir con un mango de bisturí del número 4"],c:3,e:"Las hojas de bisturí de números grandes (20-25) van con el mango nº 4. Las hojas pequeñas (10-15) van con el mango nº 3. El mango de un solo uso puede usarse con cualquiera."},
+{ud:2,q:"De las afirmaciones relacionadas con el oxígeno medicinal, marca la correcta:",o:["La oxigenoterapia se puede emplear en situaciones de hipoxia aguda","La presión del oxígeno dentro de las botellas se mide en bares","El tratamiento con O₂ se realiza a personas con EPOC","Todas las afirmaciones anteriores son correctas"],c:3,e:"Todas son correctas: la oxigenoterapia se usa en hipoxia aguda, la presión se mide en bares, y también se usa en EPOC (aunque con cautela para no anular el estímulo hipóxico)."},
+{ud:2,q:"Una tienda de oxígeno es un equipamiento que se utiliza en:",o:["El caso de que no se disponga de balón resucitador","Los vehículos de intervención rápida","Las tiendas de campaña en caso de catástrofe","Las ambulancias pediátricas"],c:3,e:"La tienda de oxígeno es un sistema de administración de O₂ específico para pediatría. Consiste en una carpa que rodea la cabeza del niño o lo envuelve completamente, permitiendo administrar O₂ sin necesidad de mascarilla."},
+{ud:2,q:"Estamos administrando 3 L/min de O₂ con mascarilla Venturi. Botella de 11 litros, manómetro marca 200 bares. ¿Cuánto tiempo podremos suministrar oxígeno?",o:["54 minutos","733 minutos","90 minutos","343 minutos"],c:1,e:"11 × 200 = 2.200 L (sin restar residual en este ejemplo del test). 2200 ÷ 3 = 733 minutos. Nota: si se aplicara la fórmula completa con P_residual=20: 11×(200-20)=1980÷3=660 min. El test usa la fórmula simplificada sin residual."},
+{ud:2,q:"El Pleurocath es:",o:["Un equipo electromédico para aspirar secreciones","Un equipo de un solo uso para drenaje torácico","Un medicamento broncodilatador","Un equipo para la medida del CO₂ espirado"],c:1,e:"El Pleurocath es un equipo desechable (un solo uso) para drenaje torácico pleural. Se usa para evacuar aire o líquido acumulado en la cavidad pleural."},
+{ud:2,q:"Respecto al suero Ringer Lactato, será cierto:",o:["Todas son ciertas","Está indicado en el shock hipovolémico","Está indicado en la acidosis metabólica","Es un cristaloide"],c:0,e:"Todas son ciertas: el Ringer Lactato es un cristaloide isotónico indicado en shock hipovolémico, acidosis metabólica, quemados y deshidratación. Es uno de los sueros más completos."},
+{ud:2,q:"La prueba de control del pulso arterial para saber si hay o no obstrucción arterial recibe el nombre de:",o:["Oximetría","Pletismografía","Electrocardiografía","Cricotirotomía"],c:1,e:"La pletismografía es la técnica que mide los cambios de volumen en los vasos para detectar obstrucción arterial. La oximetría mide la saturación de O₂. No confundir."},
+{ud:2,q:"Los buques sanitarios prestan los siguientes servicios:",o:["Todas son ciertas","Hospitalizaciones en el propio buque","Pequeñas intervenciones quirúrgicas","Suministro de combustible a otras embarcaciones"],c:0,e:"Los buques sanitarios españoles prestan: consultas radio/videoconferencia, atención ambulatoria, hospitalizaciones, intervenciones quirúrgicas, evacuaciones. TODO excepto el suministro de combustible (eso no es sanitario)."},
+{ud:2,q:"Uno de los siguientes medicamentos es un diurético:",o:["Haloperidol","Salbutamol","Seguril","Adrenalina"],c:2,e:"Seguril (furosemida) es un diurético de asa muy potente. Haloperidol es antipsicótico. Salbutamol es broncodilatador. Adrenalina es vasopresora/broncodilatadora."},
+{ud:2,q:"Para el traslado de un paciente situado a 200 km del centro hospitalario, escogeremos como medio de transporte sanitario:",o:["Los VIR","El avión sanitario","El helicóptero sanitario","Las ambulancias de SVA"],c:2,e:"Entre 150 y 300 km → helicóptero sanitario. Menos de 150 km → ambulancia o helicóptero. Más de 300 km → avión sanitario. Los VIR no transportan pacientes."},
+{ud:2,q:"El manorreductor es:",o:["El sistema que disminuye la presión del O₂ que sale de la botella","El indicador de la presión del O₂ dentro de las botellas","El sistema que regula el volumen de O₂ que hemos de administrar","El sistema que nos indica la cantidad de O₂ que reduce el manómetro"],c:0,e:"El manorreductor (o válvula reductora) reduce la presión del O₂ a la salida de la botella para que sea segura para el paciente. El manómetro indica la presión. El caudalímetro regula el volumen."},
+{ud:2,q:"La determinación del contenido de oxígeno recibe el nombre de:",o:["Pletismografía","Anafilaxia","Toracostomía","Oximetría"],c:3,e:"La oximetría (pulsioximetría) determina el contenido de O₂ en la sangre (saturación de oxihemoglobina). La pletismografía mide cambios de volumen vascular."},
+{ud:2,q:"La férula denominada de Kendrick sirve habitualmente para la inmovilización:",o:["Cérvico-torácica","Miembros superiores","Miembros inferiores","Exclusivamente de la cabeza"],c:0,e:"La férula de Kendrick (KED) se usa para la inmovilización cérvico-torácica, principalmente en la extricación de víctimas atrapadas en vehículos. Inmoviliza cuello, cabeza y tronco."},
+{ud:2,q:"El equipo de intubación consta de:",o:["Laringoscopios","Todos pertenecen al equipo de intubación (laringoscopios, capnógrafo, pulsioxímetro)","Capnógrafo","Pulsioxímetro"],c:0,e:"El equipo de intubación incluye laringoscopios (con palas de varios tamaños), tubos endotraqueales, pinzas de Magill, etc. El capnógrafo y el pulsioxímetro son equipos de monitorización, no de intubación en sí."},
+{ud:2,q:"Las agujas intradérmicas:",o:["Todas las respuestas anteriores son correctas","Es una dotación de todo tipo de ambulancias","Sirven para cargar medicación","Se consideran material fungible"],c:3,e:"Las agujas intradérmicas son material FUNGIBLE (de un solo uso). No todas las ambulancias las llevan (las A1 no las necesitan). Sirven para inyecciones intradérmicas, no para cargar medicación (eso lo hacen las agujas de carga)."},
+{ud:2,q:"El sistema Trunking:",o:["Pertenece a la telefonía digital","Lo pueden hacer servir varios operadores a la vez","Todas las demás respuestas son correctas","Es el código para la comunicación con la central de coordinación"],c:1,e:"El sistema Trunking es una red de radiocomunicación digital que permite que varios operadores (servicios de emergencias) lo usen simultáneamente compartiendo las frecuencias disponibles."},
+{ud:2,q:"La comunicación que se establece en los vehículos sanitarios basada en recepción y procesamiento de información recibida por satélite utiliza el sistema:",o:["GPS","De telefonía móvil","De radiotransmisión","Trunking"],c:0,e:"El GPS (Sistema de Posicionamiento Global) funciona recibiendo y procesando señales de satélites para determinar la posición. Es el sistema de localización y navegación estándar en vehículos sanitarios."},
+{ud:2,q:"Uno de los siguientes elementos sanitarios NO debe estar en el maletín respiratorio de las ambulancias de SVB:",o:["Equipo de cricotirotomía","Una botella portátil de O₂ de 400 litros","Un aspirador de secreciones manual","Balón resucitador para adultos y otro pediátrico"],c:0,e:"El equipo de cricotirotomía NO está en el maletín respiratorio de SVB (es material de SVA para manejo avanzado de vía aérea). El SVB sí lleva balón resucitador, botella portátil O₂ y aspirador manual."},
+{ud:2,q:"Para realizar una inmovilización cérvico-torácica en una extricación utilizaremos:",o:["Una férula Kendrick","Un collarín cervical Philadelphia","Una Levin","Una 'Dama de Elche'"],c:0,e:"La férula de Kendrick (KED) es específica para la extricación e inmovilización cérvico-torácica. El collarín Philadelphia inmoviliza solo el cuello. La 'Dama de Elche' es para tracción de miembros inferiores."},
+{ud:2,q:"¿El Tramadol a qué grupo terapéutico pertenece?",o:["Anestésico","Sedante","Analgésico no opiáceo","Analgésico opiáceo"],c:3,e:"El Tramadol es un analgésico OPIÁCEO de acción central (aunque con mecanismo mixto). Se clasifica entre los opioides. No es sedante ni anestésico por sí mismo."},
+{ud:2,q:"En la clasificación del material sanitario, el color azul indica que pertenece al sistema:",o:["Digestivo","Circulatorio","Respiratorio","Renal"],c:2,e:"En la codificación por colores de material sanitario (contenedores de catástrofe y maletines): Azul = sistema RESPIRATORIO/ventilatorio. Rojo = circulatorio. Amarillo = pediátrico. Verde = otros."},
+
+// ===== DS03 - UD3 =====
+{ud:3,q:"Si atendemos a un paciente con tuberculosis, ¿qué tipo de residuo genera y cómo se elimina?",o:["Clase III y bolsa o recipiente homologado con la palabra RIESGO","Clase I y bolsa de color negro","Todas son incorrectas","Clase II y bolsa o recipiente homologado con la palabra RIESGO"],c:0,e:"La tuberculosis es una enfermedad infecciosa de alto riesgo. Los residuos generados son Clase III (residuos sanitarios específicos de riesgo) y se eliminan en bolsa/recipiente homologado con la etiqueta 'RIESGO'."},
+{ud:3,q:"Lo que NO haremos cuando realicemos el mantenimiento del equipo de oxigenoterapia es:",o:["Comprobar la existencia de fugas","Lubricar las válvulas para su correcto funcionamiento","Colocarnos en situación opuesta a la salida del gas","Comprobar la cantidad de oxígeno de que disponemos"],c:1,e:"NUNCA se deben lubricar las válvulas de O₂. El oxígeno reacciona violentamente con las grasas y aceites, pudiendo provocar una explosión o ignición. Esta es una norma de seguridad crítica."},
+{ud:3,q:"Con respecto a los respiradores y su mantenimiento, será correcto:",o:["Las tubuladuras deben estar bien acodadas y fisuradas","Los filtros solo se ponen en circunstancias muy especiales","Debes comprobar que la válvula espiratoria funciona","La válvula espiratoria no se mueve al espirar"],c:2,e:"Hay que comprobar que la válvula espiratoria funciona correctamente (se abre al espirar y cierra al inspirar). Las tubuladuras NO deben estar acodadas ni fisuradas. Los filtros se cambian después de CADA actuación."},
+{ud:3,q:"En la comprobación del funcionamiento del aspirador, deberás hacer lo siguiente:",o:["Comprobar si alcanza una determinada presión de aspirado","La batería no es necesario que esté cargada, basta enchufar el aparato","Debes tenerlo desenchufado","No es necesario encenderlo"],c:0,e:"El aspirador debe alcanzar una presión de vacío suficiente para poder aspirar secreciones eficazmente. Hay que encenderlo, comprobar la presión de aspirado y verificar que la batería está cargada."},
+{ud:3,q:"Durante el mantenimiento del material de movilización-inmovilización, utilizaremos un cepillo con púas de plástico con la férula:",o:["De tracción","Neumática","De Kramer","De Kendrick"],c:3,e:"La férula de Kendrick tiene costuras y ranuras donde se acumula la suciedad. Se limpia con un cepillo con púas de plástico (no metálico para no dañar el material). La neumática solo necesita agua y jabón."},
+{ud:3,q:"Son medidas de autoprotección:",o:["El uso de gafas protectoras","El uso de mascarillas","El uso de guantes","Todas las citadas son normas de autoprotección"],c:3,e:"Todas son EPIs (Equipos de Protección Individual) y constituyen medidas de autoprotección: gafas protectoras (salpicaduras), mascarillas (aerosoles, patógenos respiratorios) y guantes (contacto con fluidos biológicos)."},
+{ud:3,q:"¿En qué maletín debe estar contenida la Adrenalina?",o:["De primeros auxilios","Quirúrgico","Circulatorio","Pediátrico"],c:2,e:"La Adrenalina (epinefrina) es un fármaco vasoactivo cardiotónico, por lo que pertenece al maletín CIRCULATORIO. Se usa en parada cardíaca (RCP) y anafilaxia grave."},
+{ud:3,q:"Al inicio de nuestra jornada laboral haremos el mantenimiento de material de la ambulancia y entre otras cosas:",o:["Repondremos el material que se ha gastado en el turno anterior","Verificaremos que tenemos suficientes existencias de material fungible","Repondremos la lencería y echaremos a lavar las sábanas sucias","Todas las respuestas anteriores son acciones que se hacen al inicio de la jornada laboral"],c:1,e:"Al INICIO de la jornada se VERIFICA el estado y existencias del material fungible. La reposición del material del turno anterior la hace el turno que termina (tras el servicio), no el que empieza."},
+{ud:3,q:"Con respecto al mantenimiento de la tienda de oxígeno pediátrica, dirás que es correcto:",o:["Deberás comprobar su funcionamiento","Las respuestas a y b son correctas","Deberás comprobar su estanqueidad","La tienda de oxígeno pediátrica no es necesaria"],c:1,e:"En el mantenimiento de la tienda de O₂ pediátrica hay que: comprobar su funcionamiento (circulación del O₂) Y comprobar su estanqueidad (que no haya fugas). Ambas acciones son correctas."},
+{ud:3,q:"Con respecto al pulsioxímetro, para hacer la comprobación del funcionamiento, deberás:",o:["Todas son ciertas","Comprobar que emite una luz roja cuando hace la lectura","Comprobar que dispones de pila o batería de repuesto","Ver que refleja un valor y no parpadea"],c:0,e:"La comprobación del pulsioxímetro incluye todas: que emite luz roja (LED infrarrojo para medir saturación), que hay pila/batería de repuesto Y que refleja un valor estable (sin parpadeo = señal correcta)."},
+{ud:3,q:"En el mantenimiento del otoscopio:",o:["Lo limpiaremos con hipoclorito al 10%","No reencapsularemos nunca y lo desecharemos al contenedor rígido","Repondremos los espéculos","Revisaremos la fecha de caducidad"],c:2,e:"El otoscopio es un instrumento de exploración del oído. En su mantenimiento se reponen los espéculos (los conos desechables que se introducen en el oído). No se desecha el otoscopio en sí."},
+{ud:3,q:"Los registros del mantenimiento de la dotación sanitaria de la ambulancia:",o:["Se hacen cuando realizamos la limpieza a fondo","Son una evidencia documental","Los realiza el personal responsable para comprobar el mantenimiento","Son las hojas de pedidos cuando falta material"],c:1,e:"Los registros de mantenimiento son una EVIDENCIA DOCUMENTAL que certifica que se ha realizado el mantenimiento de forma correcta y en los momentos establecidos. Tienen valor legal y de control de calidad."},
+{ud:3,q:"En el mantenimiento del material fungible tendremos presente que:",o:["Las bolsas estén precintadas","Lo tiraremos siempre a la papelera cuando lo hayamos usado","Todas las respuestas son correctas","Si lo desinfectamos lo podemos volver a utilizar"],c:0,e:"El material fungible DEBE estar con las bolsas precintadas (garantía de esterilidad). NO se puede reutilizar aunque se desinfecte (es de un solo uso por definición). Los residuos van al contenedor adecuado, no a la papelera."},
+{ud:3,q:"La sonda Foley, ¿a qué equipo pertenece?",o:["De sondaje vesical","De punción pleural","De sondaje nasogástrico","Hemostasia"],c:0,e:"La sonda Foley es una sonda de doble lumen con balón hinchable que se usa para el SONDAJE VESICAL (cateterismo uretral). La sonda Levin/nasogástrica es para el sondaje nasogástrico."},
+{ud:3,q:"Con respecto al mantenimiento del monitor desfibrilador:",o:["Debe existir un juego de parches para el marcapasos","Todas son ciertas","Hay que realizar el autotest al menos una vez al día","Se deja preparado para que cuando se enciende lo haga en el modo derivación palas"],c:1,e:"El mantenimiento del monitor-desfibrilador incluye TODAS: parches del marcapasos disponibles, autotest diario (al menos 1 vez/día) y que al encenderse quede en modo derivación palas (listo para usar)."},
+{ud:3,q:"Cuando realicemos el mantenimiento del fonendoscopio:",o:["Lo desinfectaremos con hipoclorito sódico al 10%","Lo haremos siempre conjuntamente con el esfigmomanómetro","Le limpiaremos la campana y los auriculares con alcohol","Comprobaremos que hayan pilas de recambio"],c:0,e:"El fonendoscopio se desinfecta con hipoclorito sódico al 10% (lejía). No tiene pilas. No es necesario hacerlo conjuntamente con el esfigmomanómetro. El alcohol puede deteriorar el diafragma."},
+{ud:3,q:"El oftalmoscopio es:",o:["Un material de exploración para explorar el oído","Un material fungible que tendremos que reponer después de su uso","Un material de inmovilización para la extricación rápida","Un material de exploración que sirve para observar el fondo del ojo"],c:3,e:"El oftalmoscopio es un instrumento de exploración médica que permite observar el fondo del ojo (retina, nervio óptico, etc.). El instrumento para el oído es el OTOSCOPIO."},
+{ud:3,q:"La válvula unidireccional tipo Heimlich, ¿en qué equipo debe estar?",o:["De punción pleural","De material de cura","De sondaje vesical","De partos"],c:0,e:"La válvula de Heimlich es una válvula unidireccional que permite la salida de aire del espacio pleural pero no la entrada. Pertenece al equipo de PUNCIÓN PLEURAL (drenaje torácico)."},
+{ud:3,q:"Vamos a limpiar una camilla manchada. Utilizaremos hipoclorito sódico al 10%. En un recipiente pondremos 500 ml de agua, ¿qué cantidad de hipoclorito añadiremos para obtener la concentración deseada?",o:["10 ml","100 ml","50 ml","5 ml"],c:2,e:"V1×C1 = V2×C2 → V1×100% = 500×10% → V1 = 50 ml de hipoclorito sódico puro para obtener 500 ml al 10%."},
+{ud:3,q:"Uno de los siguientes elementos NO pertenece al equipo respiratorio y de intubación:",o:["Tubos endotraqueales","Sonda nasogástrica","Cánulas de Guedel","Pinzas Magill"],c:1,e:"La sonda nasogástrica (Levin) pertenece al equipo de sondaje DIGESTIVO, no al respiratorio. Los tubos endotraqueales, cánulas de Guedel y pinzas Magill sí pertenecen al equipo respiratorio/intubación."},
+{ud:3,q:"Si nos cortamos con un bisturí que el cirujano ha utilizado para hacer una pequeña intervención en un paciente:",o:["Nos lavaremos bien la zona con abundante agua y jabón y nos frotaremos fuerte","Cubriremos la herida con una gasa sin lavar el corte","Ninguna de las afirmaciones anteriores son ciertas","Succionaremos la zona del corte para extraer la sangre"],c:2,e:"NINGUNA es correcta. No se debe fregar fuerte (dispersa el inóculo), no succionar (introduce microorganismos), no cubrir sin lavar. El protocolo correcto: dejar sangrar, lavar con agua y jabón SIN restregar, desinfectar y seguir el protocolo de accidente biológico de la empresa."},
+{ud:3,q:"Respecto a los filtros bacterianos en los respiradores y su mantenimiento será correcto:",o:["Los filtros se cambian cada 15 días","Todas las respuestas son falsas","Los filtros se cambian después de cada actuación","Los filtros no se ponen siempre, solo en circunstancias especiales"],c:2,e:"Los filtros bacterianos de los respiradores se cambian después de CADA actuación (servicio). Esto previene la contaminación cruzada entre pacientes."},
+{ud:3,q:"Para un buen mantenimiento del material de movilización-inmovilización, vigilaremos que no se pinche:",o:["El colchón neumático","La Dama de Elche","La férula de Kendrick","La camilla de cuchara"],c:0,e:"El colchón de vacío/neumático puede perder estanqueidad y desinflarse. Hay que verificar regularmente que no tiene pinchazos. El resto de materiales (Kendrick, camilla de cuchara) son rígidos y no se pueden 'pinchar'."},
+{ud:3,q:"Puede favorecer que tengamos un accidente laboral:",o:["La utilización incorrecta del cinturón de seguridad en los pacientes","Las respuestas b y c son correctas (uniforme descosido y pilas linterna)","Tener el uniforme descosido","No tener las pilas de recambio de la linterna de exploración"],c:2,e:"Tener el uniforme descosido (botones, cremalleras rotas, cordones sueltos) puede provocar tropiezos o enganches. Es un riesgo real de accidente laboral. La incorrecta sujeción del paciente afecta al paciente, no al sanitario directamente."},
+{ud:3,q:"Si nos pinchamos accidentalmente con una aguja que acabamos de sacar de su envase para poner medicación en un suero:",o:["Seguiremos el protocolo de accidentes laborales","Todas las respuestas anteriores son correctas","La tiraremos al contenedor rígido y cogeremos otra","Avisaremos a los responsables de Salud Laboral de la empresa"],c:2,e:"Si el pinchazo es con una aguja NUEVA (sin usar), sin contacto previo con paciente, no hay riesgo biológico. Simplemente se tira al contenedor rígido y se coge otra. No es necesario protocolo de accidente biológico."},
+{ud:3,q:"El mantenimiento de la medicación del vehículo sanitario debe realizarse:",o:["Una vez cada dos días","Una vez terminada la jornada laboral","Una vez al día","Una vez cada dos jornadas laborales"],c:1,e:"El mantenimiento de la medicación (revisar caducidades, temperatura de conservación, cantidades) se realiza al finalizar la jornada laboral, preparando la ambulancia para el siguiente turno."},
+{ud:3,q:"El material que enceraremos periódicamente cuando hagamos el mantenimiento es:",o:["La tabla espinal","La férula de Kendrick","La camilla de cuchara","El colchón de vacío"],c:0,e:"La TABLA ESPINAL (tabla de paradas o espinal) se encera periódicamente para facilitar el deslizamiento del paciente y proteger la superficie. El encerado también facilita la limpieza posterior."},
+{ud:3,q:"¿Cuál de los siguientes pertenece a la clase III de residuos sanitarios?",o:["Restos humanos procedentes de abortos","Residuos citotóxicos","Gasas manchadas con sangre de un paciente no infeccioso","Residuos de pacientes con VIH"],c:3,e:"Los residuos de pacientes con VIH son Clase III (sanitarios específicos de riesgo biológico). Los restos humanos de abortos son Clase IV (residuos especiales). Los citotóxicos son Clase IV también. Las gasas de pacientes no infecciosos son Clase II."},
+{ud:3,q:"Los aparatos que necesitan pilas y que en su mantenimiento también tendremos bombillas de recambio son:",o:["Las respuestas a y b son correctas (laringoscopio y focos ambulancia)","El laringoscopio","Los focos de la ambulancia","El esfigmomanómetro"],c:1,e:"El LARINGOSCOPIO necesita pilas (para encender la hoja) Y bombillas de recambio (las bombillas de las hojas se funden). El esfigmomanómetro no tiene pilas ni bombillas. Los focos de la ambulancia no son equipamiento sanitario."},
+{ud:3,q:"Con respecto a las incubadoras:",o:["Tienen un respirador","Durante el traslado en ambulancia se utilizará el oxígeno de la incubadora","Las respuestas b y c son correctas (O₂ de la incubadora + sistema O₂ propio)","Tienen un sistema de administración de oxígeno"],c:2,e:"Las incubadoras tienen sistema propio de administración de O₂ Y durante el traslado en ambulancia se usa el O₂ de la propia incubadora (no el circuito de O₂ de la ambulancia). Ambas afirmaciones son correctas."},
+
+// ===== DS04 - UD4 =====
+{ud:4,q:"Encontraremos la sonda Foley dentro del check-list de control de:",o:["Maletín de vía circulatoria","Maletín de vía respiratoria","Material fungible","Material de curas"],c:2,e:"La sonda Foley (catéter vesical de doble lumen) es material fungible desechable de un solo uso. NO pertenece al maletín circulatorio ni respiratorio."},
+{ud:4,q:"Entendemos por trazabilidad:",o:["El seguimiento de todo el recorrido que hace un medicamento hasta que llega al paciente","Los diferentes componentes del medicamento","Todas son correctas","Su composición química"],c:0,e:"La trazabilidad es el seguimiento completo del recorrido de un medicamento o producto desde su origen hasta que llega al paciente final. Permite identificar en qué punto se produjo cualquier problema."},
+{ud:4,q:"Con respecto al check-list de curas, será correcto:",o:["Debe haber Povidona yodada","Debe haber mangos de bisturí nº3 y nº4 (dos juegos de cada uno)","Todas son correctas","La Hidroxicobalamina se debe mantener a temperatura ambiente"],c:2,e:"Todas son correctas: el check-list de curas incluye povidona yodada, mangos de bisturí 3 y 4 (2 juegos de cada uno), e hidroxicobalamina (antídoto del cianuro) que se conserva a temperatura ambiente."},
+{ud:4,q:"Para evitar los problemas alérgicos, son aconsejables los guantes de:",o:["Látex","Vinilo","De vinilo o de nitrilo","Nitrilo"],c:2,e:"Los guantes de látex pueden provocar alergias (tanto al sanitario como al paciente). Para evitarlo se usan guantes de VINILO o NITRILO, que no contienen látex y son hipoalergénicos."},
+{ud:4,q:"Un producto que debe estar protegido de la luz es:",o:["Termolábil","Ninguna respuesta es correcta","Higroscópico","Fotosensible"],c:3,e:"Fotosensible = producto que se altera con la luz (de ahí foto-sensible). Termolábil = sensible a la temperatura. Higroscópico = absorbe humedad del ambiente."},
+{ud:4,q:"¿Qué nombre recibe el stock que obliga a realizar un nuevo pedido para evitar que el artículo se agote?",o:["Stock de pedido","Punto de pedido","Stock de seguridad","Stock mínimo"],c:1,e:"El PUNTO DE PEDIDO es el nivel de existencias que indica que hay que hacer un nuevo pedido. Es diferente del stock mínimo (que es la cantidad mínima tolerable) y del stock de seguridad (colchón ante imprevistos)."},
+{ud:4,q:"En caso de accidente NBQ, los trajes de uso civil están hechos de un material tipo:",o:["Látex","Propileno","Vinilo","Nitrilo"],c:1,e:"Los trajes de protección NBQ (Nuclear, Biológico, Químico) de uso civil están fabricados en PROPILENO, que ofrece resistencia a agentes químicos y biológicos."},
+{ud:4,q:"El control de las existencias de material en los vehículos asistenciales corresponde en el Decálogo prehospitalario a la fase de:",o:["Alerta","Reactivación","Aislamiento y control","Alarma"],c:1,e:"En el Decálogo Prehospitalario, el control y reposición de existencias de material pertenece a la fase de REACTIVACIÓN (cuando la ambulancia vuelve a estar lista para el siguiente servicio)."},
+{ud:4,q:"Cada apartado de la base informática que describe un producto recibe el nombre de:",o:["Ficha técnica","Albarán","Inventario","Base de datos"],c:0,e:"La FICHA TÉCNICA es el apartado de la base informática que recoge todas las características de un producto: nombre, descripción, proveedor, precio, stock mínimo y máximo, etc."},
+{ud:4,q:"En el control de material de vía aérea encontraremos:",o:["Bombas de infusión","Cánulas orofaríngeas","Cánulas orofaríngeas y bombonas de oxígeno","Bombonas de oxígeno"],c:1,e:"El material de vía aérea incluye las cánulas orofaríngeas (de Guedel/Mayo). Las bombas de infusión son del área circulatoria. Las bombonas de O₂ son del sistema de oxigenoterapia (categoría propia)."},
+{ud:4,q:"La válvula de Heimlich:",o:["No es ningún material, es una maniobra de primeros auxilios","Se conecta al tubo de aspiración y se repone después de su uso","Es material de vía aérea","Es material de oxigenoterapia"],c:2,e:"La válvula de Heimlich es un dispositivo físico (no una maniobra) que pertenece al material de VÍA AÉREA/drenaje pleural. Permite la salida unidireccional de aire del tórax. La maniobra de Heimlich es diferente (desobstrucción de vía aérea)."},
+{ud:4,q:"La cantidad mínima de una referencia que puede haber en el almacén sin correr el riesgo de que se agote, mientras el consumo sea el habitual es el stock:",o:["Mínimo","Básico","De reposición","De seguridad"],c:0,e:"El STOCK MÍNIMO es la cantidad mínima tolerable con consumo habitual. El stock de seguridad es la cantidad adicional para cubrir imprevistos (siempre es mayor que el mínimo)."},
+{ud:4,q:"Controlaremos en el check-list de material fungible:",o:["Contenedor objetos punzantes, manta, linterna y vendas","Gasas, fonendoscopio, pinzas de Magill y hojas de bisturí","Guantes, sondas de aspiración, portaagujas y set de sutura","Gasas, guantes, conexiones para aspiración y sondas Foley"],c:3,e:"El check-list de material FUNGIBLE incluye: gasas, guantes, conexiones de aspiración y sondas Foley. El fonendoscopio y las pinzas de Magill no son fungibles. El portaagujas y el set de sutura pertenecen a curas/cirugía."},
+{ud:4,q:"El Cyanokit 2,5g es útil en el tratamiento de:",o:["Disminución de la presión arterial","Hemorragias","Es un potente antialérgico","Inhalación de humos por incendio"],c:3,e:"El Cyanokit contiene hidroxicobalamina, antídoto específico de la intoxicación por cianuro. Se usa cuando hay sospecha de intoxicación por inhalación de humos en incendios (los humos de materiales sintéticos contienen cianuro)."},
+{ud:4,q:"¿Cuál de estos elementos no debe ser revisado en la ambulancia?",o:["El correcto almacenamiento del hospital de campaña","Mapas, callejeros y funcionamiento del GPS","Nivel del depósito de combustible","Las luces y los rotativos de la ambulancia"],c:0,e:"El hospital de campaña no forma parte del equipamiento estándar de una ambulancia. Es material de catástrofes que se gestiona de forma separada. Mapas/GPS, combustible y luces/rotativos sí son revisiones habituales."},
+{ud:4,q:"Las medidas de prevención para evitar posibles contusiones en el almacén son:",o:["Colocar los elementos en el almacén de forma correcta","Levantar pesos con una mecánica corporal correcta","Utilizar un calzado adecuado","Todas las respuestas son correctas"],c:3,e:"Todas son medidas preventivas de contusiones en el almacén: colocación correcta del material (evita caídas), mecánica corporal correcta (evita lesiones de espalda) y calzado adecuado (protege los pies)."},
+{ud:4,q:"Garantizar el abastecimiento de material de las ambulancias es función de:",o:["La persona responsable del almacén","El jefe del equipo asistencial de las ambulancias","El técnico de emergencias sanitarias","El gerente de la empresa"],c:0,e:"La responsabilidad de garantizar el abastecimiento de material recae en la PERSONA RESPONSABLE DEL ALMACÉN. El TES tiene obligación de notificar las necesidades, pero la gestión y reposición es del responsable del almacén."},
+{ud:4,q:"Controlaremos las existencias de material de la ambulancia:",o:["Todas las respuestas anteriores son ciertas","Al inicio de la jornada","Cuando hacemos inventario","Después de realizar un servicio"],c:0,e:"El control de existencias se realiza en TODOS los momentos: al inicio de la jornada (verificación general), después de cada servicio (reponer lo usado) y cuando se hace inventario (recuento sistemático)."},
+{ud:4,q:"Respecto a la Succinil Colina:",o:["Es un relajante muscular","Es un anestésico","Se conserva entre 2 y 8 grados centígrados","Todas son correctas"],c:3,e:"Todas son correctas: la Succinil Colina (succinilcolina o suxametonio) es un relajante muscular despolarizante de acción ultra-rápida, usado como auxiliar en la anestesia, y debe conservarse entre 2-8°C (cadena de frío)."},
+{ud:4,q:"Las cintas de clasificación para el triage, estarán en el chaleco:",o:["Del DUE","Del Médico","Del Técnico","En todos los chalecos"],c:1,e:"Las cintas de triage (verde, amarillo, rojo, negro) están en el chaleco del MÉDICO, que es quien dirige el triage médico en situaciones de múltiples víctimas y clasifica a los pacientes."},
+{ud:4,q:"El inventario lo ha de realizar:",o:["El técnico en emergencias sanitarias","El encargado del almacén","Todas las respuestas son correctas","El personal responsable de cada sección o vehículo sanitario"],c:2,e:"Todas son correctas: el inventario puede ser realizado por el TES (de su vehículo), el encargado del almacén (del almacén central) o el personal responsable de cada sección. Todos tienen responsabilidad sobre sus materiales."},
+{ud:4,q:"¿Cómo se deben conservar los productos termosensibles?",o:["En condiciones estables de temperatura, siempre por debajo de la mínima del fabricante","En condiciones estables de temperatura, entre la máxima y la mínima establecida por el fabricante","A la temperatura exacta que consta en su etiqueta","A temperatura inferior a los 4°C"],c:1,e:"Los productos termosensibles deben conservarse en condiciones ESTABLES DE TEMPERATURA, dentro del rango establecido por el fabricante (entre la máxima y mínima). Temperaturas extremas (demasiado frías o calientes) pueden degradarlos."},
+{ud:4,q:"En el almacén, como medida de prevención, las bombonas de oxígeno deberán permanecer:",o:["Horizontales y a dos metros de la pared","Horizontales","Verticales","A dos metros de la pared"],c:2,e:"Las bombonas de O₂ en el almacén deben mantenerse en posición VERTICAL y sujetas/encadenadas para evitar caídas. Si se almacenan horizontalmente, el grifo puede dañarse y el gas escapar de forma incontrolada."},
+{ud:4,q:"El laringoscopio, lo incluirías en el material de soporte:",o:["De diagnóstico","Circulatorio","Ventilatorio","Cardíaco"],c:2,e:"El laringoscopio es material de soporte VENTILATORIO: se usa para visualizar las cuerdas vocales y facilitar la intubación orotraqueal, que es un procedimiento de manejo avanzado de la vía aérea."},
+{ud:4,q:"Si una bombona de oxígeno tiene una capacidad de 3 litros y marca 150 de presión, la cantidad de oxígeno que contiene es de:",o:["450 litros","50 bares","50 litros","450 bares"],c:0,e:"3 litros × 150 bares = 450 litros de O₂. La unidad es litros (de gas a presión atmosférica), no bares. Fórmula simplificada sin presión residual."},
+{ud:4,q:"Las pinzas de Kocher, las incluirías en el check-list de:",o:["Fungible","Oxigenoterapia","Curas","Medicación"],c:2,e:"Las pinzas de Kocher son un instrumento quirúrgico (pinzas hemostáticas dentadas) que pertenecen al check-list de CURAS/material quirúrgico. No son fungibles (se reutilizan tras esterilización)."},
+{ud:4,q:"El control del material fungible se puede realizar:",o:["Todas las respuestas son correctas","Por ubicación física en la ambulancia","Por una lista de material por orden alfabético","Según su funcionalidad"],c:0,e:"El control del material fungible puede hacerse de múltiples maneras: por ubicación física (cajón por cajón), por lista alfabética o por funcionalidad (agrupando por tipo de uso). Todas son válidas según la organización."},
+{ud:4,q:"Los artículos que habrá en una ambulancia y el stock de cada uno de ellos los decide:",o:["Las autoridades sanitarias de la comunidad autónoma","El personal de la ambulancia","El personal médico de la empresa","La empresa, teniendo en cuenta los requisitos que legalmente debe cumplir"],c:3,e:"Es la EMPRESA la que decide los artículos y stocks, pero siempre cumpliendo los requisitos mínimos establecidos legalmente (RD 836/2012 y normativa autonómica). La CC.AA. establece mínimos, pero la empresa puede ampliarlos."},
+{ud:4,q:"Para hacer el cálculo del control de la cantidad de oxígeno disponible en la ambulancia tendremos en cuenta:",o:["Los litros del humidificador y lo que marca el manómetro","Los litros de la bombona y lo que marca el caudalímetro","Los litros por minuto y lo que marca el caudalímetro","Los litros de la bombona y lo que marca el manómetro"],c:3,e:"Para calcular el O₂ disponible: multiplicar la CAPACIDAD DE LA BOMBONA (litros) por la PRESIÓN que marca el MANÓMETRO (bares). El caudalímetro indica el flujo de administración actual."},
+{ud:4,q:"El inventario es:",o:["La comprobación real de las existencias teóricas","La lista de materiales que posee la empresa y la comprobación real de las existencias teóricas","El control diario de las existencias del material","La lista de materiales que posee la empresa"],c:1,e:"El inventario incluye DOS partes: la LISTA de los materiales que debería haber (existencias teóricas) Y la COMPROBACIÓN real de lo que hay físicamente. La diferencia entre ambos indica pérdidas, mermas o errores."},
+
+// ===== DS05 - UD5 =====
+{ud:5,q:"¿Para qué se utiliza la cubeta de ultrasonidos?",o:["Para esterilizar el instrumental de forma rápida","Para limpiar instrumental","Para evitar la contaminación por microorganismos","Para desinfectar objetos"],c:1,e:"La cubeta de ultrasonidos se usa para LIMPIAR instrumental (eliminación de la suciedad adherida por vibración ultrasónica). NO desinfecta ni esteriliza. Es el primer paso antes de desinfectar."},
+{ud:5,q:"Entre los desinfectantes químicos más utilizados están:",o:["El alcohol","Todas las respuestas son correctas (alcohol, glutaraldehído, cloro)","El glutaraldehído","El cloro y los compuestos de cloro"],c:1,e:"Los desinfectantes químicos más utilizados son: alcohol (etílico/isopropílico), glutaraldehído y compuestos de cloro (hipoclorito sódico). Todos están ampliamente en uso, por eso 'todas son correctas'."},
+{ud:5,q:"El método que permite desinfectar, desparasitar y desinsectar por medio de humo, gas o vapores el interior de la ambulancia es conocido como:",o:["Inmersión","Pulverización","Loción","Fumigación"],c:3,e:"La FUMIGACIÓN utiliza humo, gas o vapores para desinfectar, desparasitar y desinsectar espacios cerrados como el interior de la ambulancia. La pulverización usa líquidos a presión."},
+{ud:5,q:"La concentración más habitual del glutaraldehído para la desinfección de materiales es del:",o:["5%","0,2%","2%","10%"],c:2,e:"La concentración estándar de glutaraldehído para desinfección de alto nivel es al 2%. Para esterilización química (8-10 horas) también se usa al 2%. Concentraciones más altas no mejoran proporcionalmente la eficacia."},
+{ud:5,q:"Respecto a las vacunas, será cierto:",o:["La de la Tuberculosis es muy eficaz","La de la gripe estacional no es eficaz","La de la Hepatitis B es muy eficaz","La del Tétanos es totalmente ineficaz"],c:2,e:"La vacuna de la Hepatitis B es muy eficaz (>95% de protección). La del BCG (tuberculosis) tiene eficacia moderada y variable. La del tétanos es muy eficaz. La de la gripe es eficaz (aunque varía cada temporada)."},
+{ud:5,q:"El nombre químico del agua oxigenada es:",o:["Peróxido de hidrógeno","Hipoclorito sódico","Glutaraldehído","Alcohol etílico"],c:0,e:"El agua oxigenada es PERÓXIDO DE HIDRÓGENO (H₂O₂). El hipoclorito sódico es la lejía. Son compuestos diferentes con propiedades distintas."},
+{ud:5,q:"La esterilización se llevará a cabo en material:",o:["Fungible","No crítico","Semicrítico","Crítico"],c:3,e:"La ESTERILIZACIÓN es obligatoria para el material CRÍTICO (el que entra en contacto con tejidos estériles del organismo: instrumental quirúrgico, catéteres, etc.). El semicrítico requiere desinfección de alto nivel."},
+{ud:5,q:"Cuando el espectro de actuación de un desinfectante no elimina micobacterias se considera que es:",o:["De nivel intermedio","De bajo nivel","Semicrítico","Crítico"],c:1,e:"Un desinfectante de BAJO NIVEL NO elimina micobacterias (como el Mycobacterium tuberculosis). Los de nivel intermedio sí eliminan micobacterias. Los semicrítico y crítico son clasificaciones del material, no del desinfectante."},
+{ud:5,q:"Una acción es INCORRECTA según el protocolo de manipulación de residuos:",o:["Las bolsas no se deben llenar en exceso","Todos los contenedores son de un solo uso","Las bolsas se trasladarán abiertas para facilitar ver el contenido","Las bolsas se depositan en el suelo para evitar caídas"],c:2,e:"Las bolsas de residuos se deben trasladar CERRADAS (no abiertas). Abrirlas supondría riesgo de exposición a agentes patógenos y mal olor. Las demás afirmaciones son correctas."},
+{ud:5,q:"Un balón resucitador manual se considera material:",o:["No crítico","Semicrítico","Fungible","Crítico"],c:1,e:"El balón resucitador (Ambú) contacta con las mucosas (mascarilla facial, boca). Por eso es material SEMICRÍTICO: requiere desinfección de alto nivel, no esterilización completa (a diferencia del material crítico que entra en tejidos estériles)."},
+{ud:5,q:"¿Cuál de estas enfermedades requiere que el personal sanitario esté protegido de manera preventiva?",o:["Hepatitis B","Hepatitis B y gripe estacional","Gripe estacional","Varicela"],c:1,e:"El personal sanitario debe estar vacunado preventivamente frente a: Hepatitis B (riesgo por exposición a sangre) Y gripe estacional (por contacto con pacientes de riesgo). Ambas vacunas son recomendadas/obligatorias según protocolos."},
+{ud:5,q:"¿De los siguientes elementos, cuál necesita ser esterilizado?",o:["Monitor de ECG","Fonendoscopio","Equipo de cirugía","Cánulas de Guedel"],c:2,e:"El EQUIPO DE CIRUGÍA es material CRÍTICO (contacta con tejidos estériles durante intervenciones) y requiere esterilización. El monitor ECG y el fonendoscopio son no críticos. Las cánulas de Guedel son semicríticas (tocan mucosa oral)."},
+{ud:5,q:"Los agentes químicos que se utilizan para la desinfección de instrumental, material y superficies reciben el nombre de:",o:["Desinfectantes","Críticos","Antisépticos","Semicríticos"],c:0,e:"Los DESINFECTANTES son agentes químicos para desinfectar objetos inanimados (instrumental, superficies). Los ANTISÉPTICOS se usan sobre tejidos vivos (piel, mucosas). Crítico y semicrítico son clasificaciones del material."},
+{ud:5,q:"Cuando hay separación en el tiempo y el espacio entre la fuente de infección y el individuo sano, hablamos de:",o:["Transmisión por gotitas de Pflügge","Transmisión directa","Transmisión indirecta","Transmisión por contacto físico"],c:2,e:"La TRANSMISIÓN INDIRECTA ocurre cuando hay separación en tiempo y/o espacio entre la fuente de infección y el nuevo huésped (por ejemplo, a través de objetos contaminados, agua, alimentos). La directa requiere contacto inmediato."},
+{ud:5,q:"Las Comunidades Autónomas clasifican los residuos en diferentes grupos que van de:",o:["4 a 7 grupos","3 a 5 grupos","2 a 4 grupos","3 a 6 grupos"],c:0,e:"Según la legislación española, las CC.AA. pueden clasificar los residuos sanitarios en entre 4 y 7 grupos (varía según la comunidad). No hay una clasificación única nacional, sino que cada comunidad adapta la clasificación."},
+{ud:5,q:"El nombre químico de la lejía es:",o:["Hipoclorito sódico","Peróxido de hidrógeno","Alcohol etílico","Glutaraldehído"],c:0,e:"La lejía es HIPOCLORITO SÓDICO (NaClO). El peróxido de hidrógeno es el agua oxigenada (H₂O₂). Son compuestos diferentes con usos similares pero propiedades distintas."},
+{ud:5,q:"No se recomienda hacer el primer frotado del lavado con agua caliente porque:",o:["Hace que la materia orgánica presente se adhiera más","El agua fría dispersa mejor las partículas presentes","Hace que la grasa presente se adhiera más","No vale la pena malgastar agua caliente en ese momento"],c:0,e:"El agua caliente coagula las proteínas de la materia orgánica (sangre, secreciones), ADHIRIÉNDOLA al material. El primer lavado debe hacerse con agua FRÍA para retirar la materia orgánica sin fijarla."},
+{ud:5,q:"¿Cuál de estos procedimientos elimina toda forma de resistencia, como pueden ser las esporas?",o:["Ninguna respuesta es correcta","Limpieza","Esterilización","Desinfección"],c:2,e:"Solo la ESTERILIZACIÓN elimina TODAS las formas de vida, incluyendo las esporas bacterianas (las más resistentes). La desinfección no garantiza la eliminación total de esporas. La limpieza solo elimina suciedad."},
+{ud:5,q:"De los siguientes métodos para el tratamiento de residuos, en España el más utilizado es:",o:["Químicos","Radiaciones de electrones","Biológicos","Autoclave"],c:3,e:"En España, el método más utilizado para el tratamiento de residuos sanitarios es el AUTOCLAVE (esterilización por calor húmedo a presión). Es eficaz, económico y respetuoso con el medio ambiente."},
+{ud:5,q:"Un pulsioxímetro es un material clasificado a efectos de desinfección como material:",o:["De nivel intermedio","No crítico","De bajo nivel","Semicrítico"],c:1,e:"El pulsioxímetro solo contacta con la PIEL SANA (dedo o lóbulo de oreja) → material NO CRÍTICO. Requiere desinfección de bajo nivel. 'Nivel intermedio/bajo' son características de desinfectantes, no de materiales."},
+{ud:5,q:"La sangre y derivados pertenecen al grupo de residuos:",o:["Sanitarios no específicos","Singulares","Asimilables a urbanos","Sanitarios específicos de riesgo"],c:3,e:"La sangre y derivados son RESIDUOS SANITARIOS ESPECÍFICOS DE RIESGO (Clase III), ya que pueden contener agentes infecciosos (VIH, hepatitis B/C, etc.). Requieren gestión especial."},
+{ud:5,q:"Después de lavar con agua y jabón, desinfectaremos con hipoclorito sódico al 10%. En un recipiente pondremos 250 cc de agua. ¿Qué cantidad de antiséptico pondremos?",o:["2,5 cc","50 cc","25 cc","10 cc"],c:2,e:"V1×C1 = V2×C2 → V1×100% = 250×10% → V1 = 25 cc de hipoclorito sódico al 100% para obtener 250 cc de solución al 10%."},
+{ud:5,q:"¿Qué desinfectante no se debe utilizar sobre superficies metálicas porque las corroe y puede oxidarlas?",o:["Alcohol de 70°","Agua oxigenada","Lejía","Glutaraldehído"],c:2,e:"La LEJÍA (hipoclorito sódico) es muy corrosiva con los metales y puede oxidarlos. Por eso no debe usarse en instrumental metálico ni superficies metálicas. El glutaraldehído, en cambio, no deteriora los metales."},
+{ud:5,q:"Una desinfección de medio-bajo nivel se llevará a cabo en:",o:["Material no crítico","Material fungible","Material crítico","Material semicrítico"],c:0,e:"La desinfección de nivel bajo (o medio-bajo) es suficiente para el material NO CRÍTICO (el que solo contacta con piel sana: pulsioxímetro, brazalete del tensiómetro, etc.)."},
+{ud:5,q:"Cuando preparemos una solución desinfectante, haremos la solución con agua:",o:["Templada","Es indiferente la temperatura del agua","Fría","Caliente"],c:2,e:"Las soluciones desinfectantes se preparan con agua FRÍA. El agua caliente puede inactivar algunos desinfectantes (como el hipoclorito sódico) y acelerar su degradación."},
+{ud:5,q:"Para fregar el suelo de la ambulancia, utilizaremos lejía al 0,5%. Si en el cubo ponemos 2 litros de agua, ¿cuánta lejía pondremos?",o:["10 cc","100 cc","1 cc","0,1 cc"],c:0,e:"V1×100% = 2000cc×0,5% → V1 = 10 cc de lejía (considerando lejía al 100%). Es la concentración estándar para fregar suelos de ambulancias."},
+{ud:5,q:"¿Cómo se produce la entrada de microorganismos en otro ser vivo por vía parenteral?",o:["Por contacto con mucosas externas","A través del aparato digestivo","Por un corte o pinchazo con material contaminado","Por inhalación de microorganismos suspendidos en el aire"],c:2,e:"La vía PARENTERAL implica la rotura de la barrera cutánea: corte, pinchazo o herida con material contaminado. Es la principal vía de transmisión de VHB, VHC y VIH en el entorno sanitario."},
+{ud:5,q:"¿Cuáles son los procedimientos de limpieza correctivos?",o:["Los que se realizan cuando hay sospechas fundadas de que ha habido una contaminación","Los que se realizan sistemáticamente después de cada servicio","Los que se realizan sistemáticamente después de cada turno","Los que se realizan de antemano con la frecuencia prevista"],c:0,e:"Los procedimientos CORRECTIVOS son los que se realizan cuando hay sospechas o evidencias de contaminación. Los PREVENTIVOS/SISTEMÁTICOS son los protocolizados después de cada servicio o turno."},
+{ud:5,q:"El material crítico es:",o:["El que está en contacto con la piel","El que está en contacto con tejidos estériles del organismo","El que está en contacto con heridas","El que se utiliza en un paciente crítico"],c:1,e:"Material CRÍTICO = el que entra en contacto con TEJIDOS ESTÉRILES del organismo (cavidades normalmente estériles: vasos, cavidad abdominal, tejido óseo). Requiere esterilización. No confundir con 'material para pacientes críticos'."},
+{ud:5,q:"Para limpiar las paredes y el suelo de la ambulancia utilizaremos agua caliente y desinfectante (hipoclorito sódico). ¿A qué concentración se usa normalmente?",o:["Al 0,1%","Al 0,5%","Al 10%","Al 50%"],c:1,e:"La concentración de hipoclorito sódico para la limpieza de paredes y suelo de ambulancias es del 0,5%. El 10% se usa para desinfección de superficies muy contaminadas (salpicaduras de sangre, etc.)."},
+
+// ===== DS06 - UD6 =====
+{ud:6,q:"En cuanto al informe de asistencia prehospitalaria, indica la INCORRECTA:",o:["Es un documento de carácter legal","Se puede formalizar en formato digital","Se puede formalizar en papel","Todas las instituciones tienen el mismo formato establecido por el RD 836/2012"],c:3,e:"El RD 836/2012 NO establece un formato único de informe de asistencia. Cada institución sanitaria tiene su propio modelo. Lo que sí es cierto es que es un documento legal y puede ser en papel o digital."},
+{ud:6,q:"El documento emitido por la Jefatura de Tráfico que identifica al vehículo por su matrícula, número de bastidor, fecha de matriculación y nombre del propietario es:",o:["El certificado del Seguro de Responsabilidad Civil","El permiso de circulación","La Tarjeta de Inspección Técnica de vehículos","El impuesto de vehículos de tracción mecánica"],c:1,e:"El PERMISO DE CIRCULACIÓN es el documento emitido por la Jefatura de Tráfico que identifica el vehículo (matrícula, bastidor, propietario). La Tarjeta ITV especifica características técnicas (dimensiones, motor). Son documentos distintos."},
+{ud:6,q:"Con respecto a la Escala de Valoración para el Transporte Secundario:",o:["A más puntuación en la escala mejor estado del paciente","A más puntuación en la escala será suficiente una ambulancia de SVB","A más puntuación bastará con la presencia en la ambulancia del TES","A más puntuación se necesita la presencia del médico"],c:3,e:"En la Escala de Valoración para Transporte Secundario: A MAYOR puntuación → PEOR estado del paciente → se necesita médico. A menor puntuación, el paciente está más estable y puede ir con SVB o solo con TES."},
+{ud:6,q:"En calidad, el reconocimiento escrito por parte de una empresa independiente y acreditada de que un servicio cumple con cierto nivel de calidad en función de unas normas determinadas recibe el nombre de:",o:["Auditoría","Certificación","Evaluación y mejora continua","EFQM"],c:1,e:"La CERTIFICACIÓN es el reconocimiento formal por una empresa certificadora independiente de que una organización cumple con estándares de calidad (como ISO 9001). La auditoría es el proceso de evaluación previo, no el reconocimiento."},
+{ud:6,q:"En el traslado intercentros, es imprescindible tener:",o:["La firma del paciente en los documentos del consentimiento informado","Todas son imprescindibles","La historia clínica del paciente","El consentimiento informado del paciente"],c:1,e:"En el traslado intercentros son imprescindibles TODAS: consentimiento informado firmado, historia clínica del paciente y documento de órdenes médicas para la continuidad de cuidados."},
+{ud:6,q:"En la Escala de Valoración para el Transporte Secundario del paciente, la ponderación valorada con un 0 se corresponde con un estado:",o:["Ninguna de las anteriores","Situación muy inestable","Situación que requiere ayuda médica","Normal, compensado"],c:3,e:"La puntuación 0 en la escala corresponde al estado NORMAL, COMPENSADO (el mejor estado posible). Puntuaciones más altas indican mayor inestabilidad y necesidad de recursos avanzados."},
+{ud:6,q:"Toda llamada entrante al servicio de urgencias ha de ser registrada en:",o:["El registro de solicitudes","En el registro de solicitudes y en el informe de asistencia","El libro de reclamaciones","El informe de asistencia"],c:0,e:"Toda llamada entrante se registra en el REGISTRO DE SOLICITUDES (no en el informe de asistencia, que solo se cumplimenta cuando se realiza el servicio/asistencia). El libro de reclamaciones es para quejas formales."},
+{ud:6,q:"Las siglas EFQM están relacionadas con:",o:["El tipo de permiso para conducir una ambulancia","Las transmisiones realizadas con el centro de coordinación","Con la excelencia en la gestión de calidad","La codificación de las enfermedades"],c:2,e:"EFQM (European Foundation for Quality Management) es el modelo europeo de excelencia en la gestión de calidad. Proporciona un marco para evaluar y mejorar la gestión de las organizaciones."},
+{ud:6,q:"Con respecto a enfermos terminales o en situación de agonía, será cierto:",o:["En caso de enfermo agónico, podemos precipitar su muerte","Si el paciente no puede, tomarán las decisiones los familiares, respetando todo lo que el paciente hubiera deseado","El equipo asistencial no está obligado a respetar los deseos del paciente","El enfermo no tiene derecho a rechazar un tratamiento que le prolongue la vida"],c:1,e:"Cuando el paciente no puede tomar decisiones, los familiares/representantes legales deben tomarlas RESPETANDO los deseos previos del paciente (voluntades anticipadas, testamento vital). El paciente tiene derecho a rechazar tratamientos."},
+{ud:6,q:"El documento en donde está resumida toda la actividad asistencial hospitalaria de un paciente se denomina:",o:["Hoja de Informes de Exploraciones","Hoja de Informe clínico de Alta","Hoja de Anamnesis","Hoja de Interconsulta"],c:1,e:"La HOJA DE INFORME CLÍNICO DE ALTA es el documento que resume toda la actividad asistencial hospitalaria de un paciente al dar el alta. La anamnesis recoge la historia al ingreso. La interconsulta es entre servicios."},
+{ud:6,q:"En los traslados secundarios con personal de enfermería, es imprescindible:",o:["Tener el consentimiento informado firmado","Todas son imprescindibles","Tener el Documento de Órdenes médicas","Tener la Historia clínica del paciente"],c:1,e:"En los traslados secundarios se necesitan TODAS: consentimiento informado, documento de órdenes médicas (para saber qué tratamientos continuar) e historia clínica (antecedentes, evolución). La continuidad asistencial lo requiere."},
+{ud:6,q:"Las técnicas que verifican que el servicio prestado se ajusta a los protocolos, llevadas a cabo a través de registros documentales, reciben el nombre de:",o:["Auditoría","Filiación","Control de calidad","Anamnesis"],c:2,e:"El CONTROL DE CALIDAD son las técnicas que verifican que el servicio se ajusta a los protocolos, revisando los registros documentales (hojas de mantenimiento, informes de asistencia, etc.)."},
+{ud:6,q:"¿Quién puede decidir la denegación voluntaria de asistencia y traslado en el caso de un paciente menor de edad?",o:["El equipo sanitario","El padre, madre o tutor legal","El propio paciente","La denegación voluntaria no está contemplada para menores de edad"],c:1,e:"Para los menores de edad, la denegación de asistencia/traslado debe ser decidida por el PADRE, MADRE O TUTOR LEGAL. El menor no tiene capacidad legal para tomar esta decisión por sí solo."},
+{ud:6,q:"El ingreso involuntario de un paciente psiquiátrico requiere:",o:["Basta con comunicar el ingreso sin más trámites","Informar al juzgado de guardia antes de haber transcurrido 24 horas","Es suficiente con informar a los tres días","No es necesario informar, lo hará el centro psiquiátrico"],c:1,e:"El ingreso psiquiátrico INVOLUNTARIO requiere notificación al JUZGADO DE GUARDIA en menos de 24 horas. Es una medida para proteger los derechos del paciente internado contra su voluntad."},
+{ud:6,q:"¿Cuál es el tercer paso del ciclo de Deming?",o:["Planear","Verificar","Evaluar","Actuar"],c:1,e:"El ciclo de Deming (PDCA): 1=Planear (Plan), 2=Hacer (Do), 3=VERIFICAR (Check), 4=Actuar (Act). El tercer paso es Verificar: comprobar si lo que se hizo produjo el resultado esperado."},
+{ud:6,q:"Si un paciente se niega a ser trasladado a un centro hospitalario por una unidad de SVB, lo primero que hay que hacer es:",o:["No es necesario ninguna comunicación, basta con hacer un informe","Comunicarlo a la policía","Comunicarlo al centro de coordinación","Se debe obligar al paciente al traslado por todos los medios posibles"],c:2,e:"Ante la denegación de traslado, lo PRIMERO es comunicarlo al CENTRO DE COORDINACIÓN (que dará instrucciones y puede mandar recursos de apoyo). Después se cumplimenta el informe de denegación firmado por el paciente."},
+{ud:6,q:"La calidad asistencial NO tiene como objetivo:",o:["Prestar atención según la capacidad de la ciencia","Asegurar la continuidad","Tratar de dar la mayor satisfacción al paciente","Experimentar con los pacientes nuevas técnicas"],c:3,e:"La calidad asistencial NUNCA tiene como objetivo experimentar con pacientes (eso vulnera los derechos del paciente y la ética médica). Sus objetivos son: atención según la evidencia científica, continuidad y satisfacción del paciente."},
+{ud:6,q:"La calidad asistencial, será cierto que trata de:",o:["Todas son ciertas","Saber quién cometió el error","Actúa después de cometido el error","Aprender para prevenir el error"],c:3,e:"La calidad asistencial moderna no busca culpables sino APRENDER PARA PREVENIR futuros errores. Es un enfoque sistémico, no punitivo. El objetivo es mejorar los procesos, no identificar responsables."},
+{ud:6,q:"El libro de reclamaciones debe estar a disposición de:",o:["La policía","El equipo médico receptor","Las personas usuarias","El equipo sanitario responsable de un traslado"],c:2,e:"El libro de reclamaciones es un derecho de los USUARIOS/ciudadanos. Deben tenerlo accesible para que cualquier persona pueda presentar una queja o reclamación formal sobre el servicio recibido."},
+{ud:6,q:"El Código CIE es:",o:["Usado para deletrear palabras en transmisiones con la central","El que se utiliza para la clasificación de enfermedades","Una documentación preceptiva del vehículo sanitario","Ha de quedar registrado en el registro de solicitudes"],c:1,e:"El Código CIE (Clasificación Internacional de Enfermedades) es el sistema utilizado para codificar y clasificar diagnósticos de enfermedades y problemas de salud. Lo usan todos los sistemas sanitarios para estadísticas y registros."},
+{ud:6,q:"Entre la documentación preceptiva que han de llevar las ambulancias se encuentra:",o:["El control de caducidades de los medicamentos","Los formularios de revisión de material","Los formularios de incidencias","La hoja de reclamaciones"],c:3,e:"La HOJA DE RECLAMACIONES es documentación preceptiva y obligatoria en todos los vehículos sanitarios. El control de caducidades, formularios de revisión e incidencias son procedimientos internos, no documentación preceptiva del vehículo."},
+{ud:6,q:"En calidad, determinar las necesidades y expectativas de nuestros pacientes recibe el nombre de:",o:["Satisfacer","Identificar","Mejora continua","Auditoría"],c:1,e:"IDENTIFICAR es el primer paso del ciclo de calidad: determinar las necesidades y expectativas de los pacientes. Luego viene Satisfacer (cumplirlas) y finalmente Mejorar (superar las expectativas)."},
+{ud:6,q:"Las preguntas que se le hacen al paciente o familiares para saber sus antecedentes de interés sanitario, enfermedad actual y situación que provoca el traslado, reciben el nombre de:",o:["Auditoría","Control de calidad","Anamnesis","Filiación"],c:2,e:"La ANAMNESIS es la recogida de información mediante preguntas al paciente o familiares sobre antecedentes, enfermedad actual y motivo de consulta. La filiación son los datos de identificación del paciente."},
+{ud:6,q:"En la Transferencia Hospitalaria del paciente, será correcto:",o:["Todas son correctas","Hay que dejar una copia del Informe de Actuación","La dotación de la unidad asistencial es responsable hasta que se haya formalizado el ingreso","Hay que entregar todos los objetos personales del paciente"],c:0,e:"En la transferencia hospitalaria: TODAS son correctas. Hay que: entregar copia del informe de actuación, ser responsable hasta el ingreso formal y entregar los objetos personales del paciente al personal receptor."},
+{ud:6,q:"Para recoger los datos clínicos del paciente realizados en otro hospital distinto al que está ingresado, ¿cuál es el tipo de documento que se debe cumplimentar?",o:["Hoja de Evolución y planificación","Hoja de Interconsulta","Hoja de órdenes médicas","Hoja de urgencias"],c:1,e:"La HOJA DE INTERCONSULTA se usa para solicitar información o valoración a otro servicio o a otro hospital. Recoge los datos clínicos relevantes del paciente y la consulta específica que se hace."},
+{ud:6,q:"El documento que especifica las dimensiones del vehículo, la potencia del motor, las transformaciones que haya sufrido, etc. es:",o:["La Tarjeta de Inspección Técnica del vehículo","El impuesto de vehículos de tracción mecánica","La Tarjeta de transporte","El Permiso de circulación"],c:0,e:"La TARJETA ITV (Inspección Técnica de Vehículos) especifica las características técnicas: dimensiones, potencia del motor, transformaciones realizadas, etc. El permiso de circulación identifica al propietario y la matrícula."},
+{ud:6,q:"El indicador Centinela, en el estudio de Calidad Asistencial, mide:",o:["Un proceso grave y a menudo evitable","Un suceso que requiere valoración posterior si hay tendencia significativa","Un suceso que excede umbrales predeterminados","La globalidad de la asistencia"],c:0,e:"El INDICADOR CENTINELA mide un proceso grave, poco frecuente y a menudo evitable (muerte en guardia, lesión inesperada grave). Su sola aparición justifica una investigación exhaustiva sin importar su frecuencia."},
+{ud:6,q:"El conjunto de procedimientos, actuaciones y medidas que hacen posible el registro e identificación de un servicio desde la fase de alerta hasta la fase de reactivación del Decálogo prehospitalario es:",o:["La certificación","La trazabilidad","El control de la documentación","La auditoría"],c:1,e:"La TRAZABILIDAD en el contexto prehospitalario es el seguimiento completo de un servicio desde la alerta hasta la reactivación. Permite conocer qué ocurrió, cuándo y cómo en cada fase de la intervención."},
+{ud:6,q:"El examen llevado a cabo por personal auditor donde se valora el funcionamiento de una empresa, su sistema de gestión y el cumplimiento de objetivos recibe el nombre de:",o:["Control de calidad","Anamnesis","Filiación","Auditoría"],c:3,e:"La AUDITORÍA es un examen sistemático realizado por auditores externos o internos que evalúa el funcionamiento de la empresa, su sistema de gestión y el cumplimiento de objetivos y normas."},
+{ud:6,q:"La norma jurídica que sanciona la violación del secreto profesional es:",o:["La constitución","Depende de cada comunidad autónoma","El Código Penal","La Ley de Transporte Sanitario"],c:2,e:"La violación del secreto profesional (incluyendo el secreto médico/sanitario) está tipificada como delito en el CÓDIGO PENAL español (arts. 199 y siguientes). No varía por comunidad autónoma."}
+];
+
+// ===== QUIZ LOGIC =====
+let selectedUDs=[0];
+let numQuestions=30;
+let currentQuestions=[];
+let answered=0;
+let correct=0;
+let wrong=0;
+let skipped=0;
+
+function toggleUD(btn,ud){
+  document.querySelectorAll('#ud-filters .btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedUDs=[ud];
+}
+function setNum(btn,n){
+  document.querySelectorAll('#num-btns .btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  numQuestions=n;
+}
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
   }
-  // Abrir solo los problemas y UD1 al inicio
-  document.querySelectorAll('.section-content').forEach(el => el.classList.remove('open'));
-  document.getElementById('sec-problemas').querySelector('.section-content').classList.add('open');
-  document.getElementById('sec-ud1').querySelector('.section-content').classList.add('open');
+  return a;
+}
+function startTest(){
+  let pool=selectedUDs[0]===0?Q:Q.filter(q=>selectedUDs.includes(q.ud));
+  pool=shuffle(pool);
+  const n=Math.min(numQuestions,pool.length);
+  currentQuestions=pool.slice(0,n);
+  answered=0;correct=0;wrong=0;skipped=0;
+  document.getElementById('score-bar').style.display='flex';
+  document.getElementById('progress-bar').style.display='block';
+  document.getElementById('reset-btn').style.display='inline-block';
+  renderQuestions();
+  updateScore();
+}
+function renderQuestions(){
+  const c=document.getElementById('quiz-container');
+  c.innerHTML='';
+  currentQuestions.forEach((q,i)=>{
+    const shuffOpts=q.o.map((o,oi)=>({text:o,orig:oi}));
+    // shuffle options
+    for(let k=shuffOpts.length-1;k>0;k--){
+      const j=Math.floor(Math.random()*(k+1));
+      [shuffOpts[k],shuffOpts[j]]=[shuffOpts[j],shuffOpts[k]];
+    }
+    const udColors=['','ud1','ud2','ud3','ud4','ud5','ud6'];
+    const udNames=['','UD1 · Tipos de transporte','UD2 · Dotación vehículos','UD3 · Mantenimiento','UD4 · Control existencias','UD5 · Limpieza y esterilización','UD6 · Documentación y calidad'];
+    const card=document.createElement('div');
+    card.className='qcard';
+    card.id='card-'+i;
+    let optsHTML=shuffOpts.map((o,si)=>`<button class="opt" id="opt-${i}-${si}" onclick="answer(${i},${si},${o.orig},${q.c})" data-idx="${si}">${o.text}</button>`).join('');
+    card.innerHTML=`<div class="qnum">Pregunta ${i+1} de ${currentQuestions.length}</div>
+<span class="ud-badge ${udColors[q.ud]}">${udNames[q.ud]}</span>
+<div class="qtxt">${q.q}</div>
+${optsHTML}
+<div class="explanation" id="exp-${i}"><span class="exp-icon">💡</span>${q.e}</div>`;
+    c.appendChild(card);
+  });
+  updateProgress();
+}
+function answer(qIdx,selIdx,selOrig,correctOrig){
+  const card=document.getElementById('card-'+qIdx);
+  if(card.dataset.answered) return;
+  card.dataset.answered='1';
+  answered++;
+  const isCorrect=selOrig===correctOrig;
+  if(isCorrect) correct++;
+  else wrong++;
+  // find correct option index in shuffled array
+  card.querySelectorAll('.opt').forEach((btn,si)=>{
+    const origIdx=parseInt(btn.getAttribute('data-idx')||si);
+    // find original index from button id
+    btn.disabled=true;
+    const btnIdx=parseInt(btn.id.split('-')[2]);
+    if(btnIdx===selIdx){
+      btn.classList.add(isCorrect?'correct':'wrong');
+    }
+    // reveal correct
+    if(origIdx===correctOrig){
+      btn.classList.add(isCorrect?'correct':'reveal');
+    }
+  });
+  document.getElementById('exp-'+qIdx).classList.add('show');
+  updateScore();
+  updateProgress();
+}
+function updateScore(){
+  const total=currentQuestions.length;
+  const pending=total-answered;
+  const nota=total>0?Math.max(0,(correct-wrong/3)/total*10):0;
+  document.getElementById('sc-total').textContent=total;
+  document.getElementById('sc-ok').textContent=correct;
+  document.getElementById('sc-err').textContent=wrong;
+  document.getElementById('sc-skip').textContent=pending;
+  const notaEl=document.getElementById('sc-nota');
+  notaEl.textContent=nota.toFixed(2);
+  notaEl.className='sc-nota'+(nota>=5?' '+(nota>=7?'':'mid'):'fail');
+}
+function updateProgress(){
+  const pct=currentQuestions.length?answered/currentQuestions.length*100:0;
+  document.getElementById('progress-fill').style.width=pct+'%';
+}
+function resetTest(){
+  document.getElementById('quiz-container').innerHTML='';
+  document.getElementById('score-bar').style.display='none';
+  document.getElementById('progress-bar').style.display='none';
+  document.getElementById('reset-btn').style.display='none';
+  answered=0;correct=0;wrong=0;
+}
 </script>
 </body>
 </html>
